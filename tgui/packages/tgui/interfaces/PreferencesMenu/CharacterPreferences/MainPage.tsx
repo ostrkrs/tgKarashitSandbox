@@ -67,7 +67,7 @@ function CharacterControls(props: CharacterControlsProps) {
         <Button
           onClick={props.handleOpenSpecies}
           fontSize="22px"
-          icon="paw"
+          icon="dna"
           tooltip="Species"
           tooltipPosition="top"
         />
