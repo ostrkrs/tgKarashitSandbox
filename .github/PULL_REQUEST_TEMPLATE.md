@@ -1,35 +1,41 @@
-<!-- Write **BELOW** The Headers and **ABOVE** The comments else it may not be viewable. -->
-<!-- You can view Contributing.MD for a detailed description of the pull request process. -->
+<!-- Пишите **НИЖЕ** заголовков и **ВЫШЕ** строк с комментариями, чтобы избежать проблем с написанием PR. -->
+<!-- Вы можете прочитать Contributing.MD ради дополнительной информации. -->
 
-## About The Pull Request
+## Какие изменения вносит этот PR
 
-<!-- Describe The Pull Request. Please be sure every change is documented or this can delay review and even discourage maintainers from merging your PR! -->
+<!-- Опишите свой PR как можно подробнее, чтобы упростить его рассмотрение. -->
 
-## Why It's Good For The Game
+## Почему это хорошо для игры
 
-<!-- Argue for the merits of your changes and how they benefit the game, especially if they are controversial and/or far reaching. If you can't actually explain WHY what you are doing will improve the game, then it probably isn't good for the game in the first place. -->
+<!-- Аргументируйте достоинства ваших изменений и то, как они улучшают игру. -->
 
-## Changelog
+## Изображения изменений
 
-<!-- If your PR modifies aspects of the game that can be concretely observed by players or admins you should add a changelog. If your change does NOT meet this description, remove this section. Be sure to properly mark your PRs to prevent unnecessary GBP loss. You can read up on GBP and its effects on PRs in the tgstation guides for contributors. Please note that maintainers freely reserve the right to remove and add tags should they deem it appropriate. You can attempt to finagle the system all you want, but it's best to shoot for clear communication right off the bat. -->
+<!-- Если PR не затрагивает спрайты, карты или интерфейсы, можно пропустить эту секцию. -->
+
+## Тестирование
+
+<!-- Как вы тестировали свой PR... и тестировали ли вообще? -->
+
+## Чейнджлог
 
 :cl:
-add: Added new mechanics or gameplay changes
-add: Added more things
-del: Removed old things
-qol: made something easier to use
-balance: rebalanced something
-fix: fixed a few things
-sound: added/modified/removed audio or sound effects
-image: added/modified/removed some icons or images
-map: added/modified/removed map content
-spellcheck: fixed a few typos
-code: changed some code
-refactor: refactored some code
-config: changed some config setting
-admin: messed with admin stuff
-server: something server ops should know
+add: Добавил новые вещи/фичи;
+del: Удалил старые вещи/фичи;
+tweak: Изменил существующие вещи/фичи;
+fix: Исправил сломанный код;
+qol: Сделал что-то удобнее;
+balance: Внёс изменения в баланс;
+sound: Модифицировал, добавил или удалил звуки;
+image: Модифицировал, добавил или удалил спрайты;
+map: Модифицировал, добавил или удалил карты;
+spellcheck: Исправил очепятки;
+code: Улучшил качество кода;
+refactor: Улучшил качество кода, капитально;
+config: Изменил конфиг;
+admin: Изменил что-то админское;
+server: Изменил что-то серверное.
 /:cl:
 
-<!-- Both :cl:'s are required for the changelog to work! You can put your name to the right of the first :cl: if you want to overwrite your GitHub username as author ingame. -->
-<!-- You can use multiple of the same prefix (they're only used for the icon ingame) and delete the unneeded ones. Despite some of the tags, changelogs should generally represent how a player might be affected by the changes rather than a summary of the PR's contents. -->
+<!-- Оба :cl:'а необходимы для работы чейнджлога! По желанию, вы можете вписать свое имя справа от первого :cl:, чтобы заменить в чейнджлоге ваш никнейм с GitHub, который будет там по умолчанию. -->
+<!-- Вы можете использовать несколько одинаковых префиксов и удалить ненужные, они используются лишь для иконок в чейнджлоге. Старайтесь отражать в чейнджлоге то, как изменения могут повлиять на игрока, а не краткое изложение содержания PR. -->
