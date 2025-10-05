@@ -61,9 +61,7 @@
 	return
 
 /datum/species/zombie/check_roundstart_eligible()
-	if(check_holidays(HALLOWEEN))
-		return TRUE
-	return ..()
+	return FALSE
 
 /datum/species/zombie/get_physical_attributes()
 	return "Zombies are undead, and thus completely immune to any environmental hazard, or any physical threat besides blunt force trauma and burns. \

@@ -50,6 +50,9 @@
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/golem,
 	)
 
+/datum/species/golem/check_roundstart_eligible()
+	return FALSE
+
 /datum/species/golem/get_physical_attributes()
 	return "Golems are hardy creatures made out of stone, which are thus naturally resistant to many dangers, including asphyxiation, fire, radiation, electricity, and viruses.\
 		They gain special abilities depending on the type of material consumed, but they need to consume material to keep their body animated."

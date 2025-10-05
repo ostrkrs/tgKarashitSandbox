@@ -34,9 +34,7 @@
 	var/owner_first_client_connection_handled = FALSE
 
 /datum/species/dullahan/check_roundstart_eligible()
-	if(check_holidays(HALLOWEEN))
-		return TRUE
-	return ..()
+	return FALSE
 
 /datum/species/dullahan/on_species_gain(mob/living/carbon/human/human, datum/species/old_species, pref_load, regenerate_icons)
 	. = ..()

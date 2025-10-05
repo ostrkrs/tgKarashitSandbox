@@ -26,6 +26,9 @@
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/fly,
 	)
 
+/datum/species/fly/check_roundstart_eligible()
+	return FALSE
+
 /datum/species/fly/on_species_gain(mob/living/carbon/human/human_who_gained_species, datum/species/old_species, pref_load, regenerate_icons)
 	. = ..()
 	RegisterSignal(human_who_gained_species, COMSIG_ATOM_ATTACKBY, PROC_REF(on_attackby))

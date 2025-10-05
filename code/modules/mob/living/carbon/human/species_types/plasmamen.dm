@@ -69,6 +69,9 @@
 	/// If the bones themselves are burning clothes won't help you much
 	var/internal_fire = FALSE
 
+/datum/species/plasmaman/check_roundstart_eligible()
+	return FALSE
+
 /datum/species/plasmaman/pre_equip_species_outfit(datum/job/job, mob/living/carbon/human/equipping, visuals_only = FALSE)
 	if(job?.plasmaman_outfit)
 		equipping.equipOutfit(job.plasmaman_outfit, visuals_only)
