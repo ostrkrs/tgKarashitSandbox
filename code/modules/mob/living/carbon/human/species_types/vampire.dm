@@ -28,9 +28,7 @@
 	var/atom/movable/screen/blood_level/blood_display
 
 /datum/species/human/vampire/check_roundstart_eligible()
-	if(check_holidays(HALLOWEEN))
-		return TRUE
-	return ..()
+	return FALSE
 
 /datum/species/human/vampire/on_species_gain(mob/living/carbon/human/new_vampire, datum/species/old_species, pref_load, regenerate_icons)
 	. = ..()

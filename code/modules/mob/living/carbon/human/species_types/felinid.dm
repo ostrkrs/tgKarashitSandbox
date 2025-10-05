@@ -24,6 +24,9 @@
 	/// Yummy!
 	species_cookie = /obj/item/food/nugget
 
+/datum/species/human/felinid/check_roundstart_eligible()
+	return FALSE
+
 /datum/species/human/felinid/on_species_gain(mob/living/carbon/carbon_being, datum/species/old_species, pref_load, regenerate_icons)
 	if(ishuman(carbon_being))
 		var/mob/living/carbon/human/target_human = carbon_being

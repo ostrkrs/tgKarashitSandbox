@@ -39,6 +39,9 @@
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/pod,
 	)
 
+/datum/species/pod/check_roundstart_eligible()
+	return FALSE
+
 /datum/species/pod/prepare_human_for_preview(mob/living/carbon/human/human)
 	human.dna.features[FEATURE_MUTANT_COLOR] = "#886600"
 	human.dna.features[FEATURE_POD_HAIR] = "Rose"

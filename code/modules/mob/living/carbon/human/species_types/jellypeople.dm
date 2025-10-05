@@ -42,6 +42,9 @@
 	)
 	var/datum/action/innate/regenerate_limbs/regenerate_limbs
 
+/datum/species/jelly/check_roundstart_eligible()
+	return FALSE
+
 /datum/species/jelly/on_species_gain(mob/living/carbon/new_jellyperson, datum/species/old_species, pref_load, regenerate_icons)
 	. = ..()
 	if(ishuman(new_jellyperson))

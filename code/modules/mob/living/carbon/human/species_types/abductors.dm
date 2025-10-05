@@ -29,6 +29,9 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/abductor,
 	)
 
+/datum/species/abductor/check_roundstart_eligible()
+	return FALSE
+
 /datum/species/abductor/get_physical_attributes()
 	return "Abductors do not need to breathe, eat, do not have blood, a heart, stomach, or lungs and cannot be infected by human viruses. \
 		Their hardy physique prevents their skin from being wounded or dismembered, but their chunky tridactyl hands make it hard to operate human equipment."

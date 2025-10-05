@@ -27,6 +27,9 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/snail
 	)
 
+/datum/species/snail/check_roundstart_eligible()
+	return FALSE
+
 /datum/species/snail/prepare_human_for_preview(mob/living/carbon/human/human)
 	human.dna.features[FEATURE_MUTANT_COLOR] = COLOR_BEIGE
 	human.update_body(is_creating = TRUE)
