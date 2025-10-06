@@ -7,7 +7,7 @@
 	opacity = TRUE
 	density = TRUE
 	turf_flags = IS_SOLID
-	smoothing_flags = SMOOTH_BITMASK
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 	hardness = 10
 	sheet_type = /obj/item/stack/sheet/plasteel
 	sheet_amount = 1
@@ -20,6 +20,11 @@
 	var/d_state = INTACT
 	///Base icon state to use for deconstruction
 	var/base_decon_state = "r_wall"
+
+/turf/closed/wall/r_wall/nodiagonal
+	icon = MAP_SWITCH('icons/turf/walls/reinforced_wall.dmi', 'icons/turf/walls/misc_wall.dmi')
+	icon_state = MAP_SWITCH("reinforced_wall-0", "r_wall_nd")
+	smoothing_flags = SMOOTH_BITMASK
 
 /turf/closed/wall/r_wall/deconstruction_hints(mob/user)
 	switch(d_state)
