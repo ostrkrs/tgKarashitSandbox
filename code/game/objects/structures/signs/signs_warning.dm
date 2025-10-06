@@ -93,17 +93,21 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/warning/fire, 32)
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/warning/no_smoking, 32)
 
 /obj/structure/sign/warning/no_smoking/circle
-	name = "\improper NO SMOKING sign"
 	sign_change_name = "Warning - No Smoking Alt"
-	desc = "A warning sign which reads 'NO SMOKING'."
 	icon_state = "nosmoking"
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/warning/no_smoking/circle, 32)
 
-/obj/structure/sign/warning/yes_smoking/circle
+/obj/structure/sign/warning/yes_smoking
 	name = "\improper YES SMOKING sign"
 	sign_change_name = "Warning - Yes Smoking"
 	desc = "A warning sign which reads 'YES SMOKING'."
+	icon_state = "yessmoking2"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/warning/yes_smoking, 32)
+
+/obj/structure/sign/warning/yes_smoking/circle
+	sign_change_name = "Warning - Yes Smoking Alt"
 	icon_state = "yessmoking"
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/warning/yes_smoking/circle, 32)
