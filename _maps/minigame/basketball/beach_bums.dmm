@@ -325,7 +325,7 @@
 /turf/open/misc/beach/coast,
 /area/centcom/basketball)
 "Hu" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/basketball)
 "Hx" = (
 /obj/effect/turf_decal/sand,

@@ -106,9 +106,13 @@ INITIALIZE_IMMEDIATE(/turf/closed/indestructible/splashscreen)
 	icon = 'icons/turf/walls/reinforced_wall.dmi'
 	icon_state = "reinforced_wall-0"
 	base_icon_state = "reinforced_wall"
-	smoothing_flags = SMOOTH_BITMASK
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 	smoothing_groups = SMOOTH_GROUP_WALLS + SMOOTH_GROUP_CLOSED_TURFS
 	canSmoothWith = SMOOTH_GROUP_WALLS
+
+/turf/closed/indestructible/reinforced/nodiagonal
+	icon_state = "reinforced_wall-15"
+	smoothing_flags = SMOOTH_BITMASK
 
 /turf/closed/indestructible/reinforced/titanium
 	name = "reinforced titanium imitation wall"
@@ -121,41 +125,24 @@ INITIALIZE_IMMEDIATE(/turf/closed/indestructible/splashscreen)
 	icon_state = "shuttle_wall-15"
 	smoothing_flags = SMOOTH_BITMASK
 
-/turf/closed/indestructible/riveted
-	icon = 'icons/turf/walls/riveted.dmi'
-	icon_state = "riveted-0"
-	base_icon_state = "riveted"
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = SMOOTH_GROUP_CLOSED_TURFS
-	canSmoothWith = SMOOTH_GROUP_CLOSED_TURFS
-
 /turf/closed/indestructible/syndicate
 	icon = 'icons/turf/walls/plastitanium_wall.dmi'
 	icon_state = "plastitanium_wall-0"
 	base_icon_state = "plastitanium_wall"
-	smoothing_flags = SMOOTH_BITMASK
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 	smoothing_groups = SMOOTH_GROUP_WALLS + SMOOTH_GROUP_CLOSED_TURFS + SMOOTH_GROUP_SYNDICATE_WALLS
 	canSmoothWith = SMOOTH_GROUP_SHUTTLE_PARTS + SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_PLASTITANIUM_WALLS + SMOOTH_GROUP_SYNDICATE_WALLS
 
-/turf/closed/indestructible/riveted/uranium
+/turf/closed/indestructible/syndicate/nodiagonal
+	icon_state = "plastitanium_wall-15"
+	smoothing_flags = SMOOTH_BITMASK
+
+/turf/closed/indestructible/uranium
+	name = "depleted uranium wall"
+	desc = "A wall with depleted uranium plating. This is probably a bad idea. Effectively impervious to conventional methods of destruction."
 	icon = 'icons/turf/walls/uranium_wall.dmi'
 	icon_state = "uranium_wall-0"
 	base_icon_state = "uranium_wall"
-	smoothing_flags = SMOOTH_BITMASK
-
-/turf/closed/indestructible/riveted/plastinum
-	name = "plastinum wall"
-	desc = "A luxurious wall made out of a plasma-platinum alloy. Effectively impervious to conventional methods of destruction."
-	icon = 'icons/turf/walls/plastinum_wall.dmi'
-	icon_state = "plastinum_wall-0"
-	base_icon_state = "plastinum_wall"
-	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
-	smoothing_groups = SMOOTH_GROUP_WALLS + SMOOTH_GROUP_CLOSED_TURFS + SMOOTH_GROUP_PLASTINUM_WALLS
-	canSmoothWith = SMOOTH_GROUP_PLASTINUM_WALLS
-
-/turf/closed/indestructible/riveted/plastinum/nodiagonal
-	icon = MAP_SWITCH('icons/turf/walls/plastinum_wall.dmi', 'icons/turf/walls/misc_wall.dmi')
-	icon_state = MAP_SWITCH("plastinum_wall-0", "plastinum_nd")
 	smoothing_flags = SMOOTH_BITMASK
 
 /turf/closed/indestructible/wood
@@ -303,7 +290,7 @@ INITIALIZE_IMMEDIATE(/turf/closed/indestructible/splashscreen)
 	canSmoothWith = SMOOTH_GROUP_IRON_WALLS
 	opacity = FALSE
 
-/turf/closed/indestructible/riveted/boss
+/turf/closed/indestructible/boss
 	name = "necropolis wall"
 	desc = "A thick, seemingly indestructible stone wall."
 	icon = 'icons/turf/walls/boss_wall.dmi'
@@ -313,20 +300,20 @@ INITIALIZE_IMMEDIATE(/turf/closed/indestructible/splashscreen)
 	smoothing_groups = SMOOTH_GROUP_CLOSED_TURFS + SMOOTH_GROUP_BOSS_WALLS
 	canSmoothWith = SMOOTH_GROUP_BOSS_WALLS
 	explosive_resistance = 50
-	baseturfs = /turf/closed/indestructible/riveted/boss
+	baseturfs = /turf/closed/indestructible/boss
 
-/turf/closed/indestructible/riveted/boss/wasteland
+/turf/closed/indestructible/boss/wasteland
 	baseturfs = /turf/open/misc/asteroid/basalt/wasteland
 
-/turf/closed/indestructible/riveted/boss/see_through
+/turf/closed/indestructible/boss/see_through
 	opacity = FALSE
 
-/turf/closed/indestructible/riveted/boss/get_smooth_underlay_icon(mutable_appearance/underlay_appearance, turf/asking_turf, adjacency_dir)
+/turf/closed/indestructible/boss/get_smooth_underlay_icon(mutable_appearance/underlay_appearance, turf/asking_turf, adjacency_dir)
 	underlay_appearance.icon = 'icons/turf/floors.dmi'
 	underlay_appearance.icon_state = "basalt"
 	return TRUE
 
-/turf/closed/indestructible/riveted/hierophant
+/turf/closed/indestructible/hierophant
 	name = "runic wall"
 	desc = "A wall made out of strange stone, runes on its sides pulsating in a rythmic pattern."
 	icon = 'icons/turf/walls/hierophant_wall.dmi'
@@ -336,11 +323,11 @@ INITIALIZE_IMMEDIATE(/turf/closed/indestructible/splashscreen)
 	smoothing_groups = SMOOTH_GROUP_HIERO_WALL
 	canSmoothWith = SMOOTH_GROUP_HIERO_WALL
 
-/turf/closed/indestructible/riveted/hierophant/set_smoothed_icon_state(new_junction)
+/turf/closed/indestructible/hierophant/set_smoothed_icon_state(new_junction)
 	. = ..()
 	update_appearance(UPDATE_OVERLAYS)
 
-/turf/closed/indestructible/riveted/hierophant/update_overlays()
+/turf/closed/indestructible/hierophant/update_overlays()
 	. = ..()
 	. += emissive_appearance('icons/turf/walls/hierophant_wall_e.dmi', icon_state, src)
 

@@ -19,7 +19,7 @@
 /turf/open/water,
 /area/shuttle/shuttle_arena)
 "bE" = (
-/turf/closed/indestructible/riveted/boss,
+/turf/closed/indestructible/boss,
 /area/shuttle/shuttle_arena)
 "bM" = (
 /obj/structure/stone_tile/surrounding/cracked{

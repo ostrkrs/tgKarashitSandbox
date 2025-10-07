@@ -478,7 +478,7 @@
 /turf/open/floor/plating,
 /area/centcom/basketball)
 "Hu" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/basketball)
 "HH" = (
 /obj/effect/decal/cleanable/dirt,

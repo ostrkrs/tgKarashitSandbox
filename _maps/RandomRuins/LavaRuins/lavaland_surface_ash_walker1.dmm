@@ -58,7 +58,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "ak" = (
-/turf/closed/indestructible/riveted/boss,
+/turf/closed/indestructible/boss,
 /area/ruin/unpowered/ash_walkers)
 "al" = (
 /obj/effect/mapping_helpers/no_lava,
@@ -492,7 +492,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "bG" = (
-/turf/closed/indestructible/riveted/boss/see_through,
+/turf/closed/indestructible/boss/see_through,
 /area/ruin/unpowered/ash_walkers)
 "bH" = (
 /obj/structure/necropolis_gate,

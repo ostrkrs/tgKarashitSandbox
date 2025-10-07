@@ -275,7 +275,7 @@
 	},
 /area/lavaland/surface/outdoors)
 "If" = (
-/turf/closed/indestructible/riveted/boss,
+/turf/closed/indestructible/boss,
 /area/lavaland/surface)
 "Ja" = (
 /turf/open/lava/plasma/ice_moon,

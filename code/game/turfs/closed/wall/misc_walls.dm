@@ -52,8 +52,7 @@
 	AddElement(/datum/element/rust)
 
 /turf/closed/wall/rust/nodiagonal
-	icon = MAP_SWITCH('icons/turf/walls/rusty_wall.dmi', 'icons/turf/walls/misc_wall.dmi')
-	icon_state = MAP_SWITCH("rusty_wall-0", "rusty_wall_nd")
+	icon_state = "rusty_wall-15"
 	smoothing_flags = SMOOTH_BITMASK
 
 /turf/closed/wall/heretic_rust
@@ -74,8 +73,7 @@
 	AddElement(/datum/element/rust)
 
 /turf/closed/wall/r_wall/rust/nodiagonal
-	icon = MAP_SWITCH('icons/turf/walls/rusty_reinforced_wall.dmi', 'icons/turf/walls/misc_wall.dmi')
-	icon_state = MAP_SWITCH("rusty_reinforced_wall-0", "rusty_reinforced_wall_nd")
+	icon_state = "rusty_reinforced_wall-15"
 	smoothing_flags = SMOOTH_BITMASK
 
 /turf/closed/wall/r_wall/heretic_rust

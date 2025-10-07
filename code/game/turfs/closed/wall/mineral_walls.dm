@@ -282,13 +282,11 @@
 	return ..()
 
 /turf/closed/wall/mineral/titanium/nodiagonal
-	icon = MAP_SWITCH('icons/turf/walls/shuttle_wall.dmi', 'icons/turf/walls/misc_wall.dmi')
-	icon_state = MAP_SWITCH("shuttle_wall-0", "shuttle_nd")
+	icon_state = "shuttle_wall-15"
 	smoothing_flags = SMOOTH_BITMASK
 
 /turf/closed/wall/mineral/titanium/overspace
-	icon = MAP_SWITCH('icons/turf/walls/shuttle_wall.dmi', 'icons/turf/walls/misc_wall.dmi')
-	icon_state = MAP_SWITCH("shuttle_wall-0", "shuttle_overspace")
+	icon_state = "shuttle_wall-overspace"
 	fixed_underlay = list("space" = TRUE)
 
 /turf/closed/wall/mineral/titanium/interior/copyTurf(turf/copy_to_turf, copy_air = FALSE, flags = null)
@@ -310,11 +308,8 @@
 	rust_resistance = RUST_RESISTANCE_TITANIUM
 
 /turf/closed/wall/mineral/titanium/survival/nodiagonal
-	icon = 'icons/turf/walls/survival_pod_walls.dmi'
-	icon_state = "survival_pod_walls-0"
-	base_icon_state = "survival_pod_walls"
+	icon_state = "survival_pod_walls-15"
 	smoothing_flags = SMOOTH_BITMASK
-	rust_resistance = RUST_RESISTANCE_TITANIUM
 
 /turf/closed/wall/mineral/titanium/survival/pod
 	smoothing_groups = SMOOTH_GROUP_SURVIVAL_TITANIUM_POD + SMOOTH_GROUP_TITANIUM_WALLS + SMOOTH_GROUP_WALLS + SMOOTH_GROUP_CLOSED_TURFS
@@ -352,13 +347,11 @@
 
 
 /turf/closed/wall/mineral/plastitanium/nodiagonal
-	icon = MAP_SWITCH('icons/turf/walls/plastitanium_wall.dmi', 'icons/turf/walls/misc_wall.dmi')
-	icon_state = MAP_SWITCH("plastitanium_wall-0", "plastitanium_nd")
+	icon_state = "plastitanium_wall-15"
 	smoothing_flags = SMOOTH_BITMASK
 
 /turf/closed/wall/mineral/plastitanium/overspace
-	icon = MAP_SWITCH('icons/turf/walls/plastitanium_wall.dmi', 'icons/turf/walls/misc_wall.dmi')
-	icon_state = MAP_SWITCH("plastitanium_wall-0", "plastitanium_overspace")
+	icon_state = "plastitanium_wall-overspace"
 	fixed_underlay = list("space" = TRUE)
 
 /turf/closed/wall/mineral/plastitanium/rust_turf()

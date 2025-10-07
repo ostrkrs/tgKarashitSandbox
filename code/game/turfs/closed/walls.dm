@@ -35,9 +35,12 @@
 	var/list/dent_decals
 
 /turf/closed/wall/nodiagonal
-	icon = MAP_SWITCH('icons/turf/walls/wall.dmi', 'icons/turf/walls/misc_wall.dmi')
-	icon_state = MAP_SWITCH("wall-0", "wall_nd")
+	icon_state = "wall-15"
 	smoothing_flags = SMOOTH_BITMASK
+
+/turf/closed/wall/overspace
+	icon_state = "wall-overspace"
+	fixed_underlay = list("space" = TRUE)
 
 /turf/closed/wall/Initialize(mapload)
 	. = ..()

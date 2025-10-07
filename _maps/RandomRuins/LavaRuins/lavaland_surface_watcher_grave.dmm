@@ -33,7 +33,7 @@
 /area/lavaland/surface/outdoors)
 "j" = (
 /obj/effect/mapping_helpers/bombable_wall,
-/turf/closed/indestructible/riveted/boss/wasteland,
+/turf/closed/indestructible/boss/wasteland,
 /area/lavaland/surface/outdoors)
 "l" = (
 /turf/closed/mineral/gibtonite/volcanic,
@@ -107,7 +107,7 @@
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "R" = (
-/turf/closed/indestructible/riveted/boss/wasteland,
+/turf/closed/indestructible/boss/wasteland,
 /area/lavaland/surface/outdoors)
 "U" = (
 /obj/structure/stone_tile/slab/cracked,

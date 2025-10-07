@@ -503,7 +503,7 @@
 /turf/open/indestructible/stone,
 /area/deathmatch)
 "Qa" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/deathmatch)
 "Qb" = (
 /obj/structure/sign/departments/exam_room/directional/south,

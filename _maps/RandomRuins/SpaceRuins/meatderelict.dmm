@@ -308,7 +308,7 @@
 /turf/open/indestructible,
 /area/ruin/space/has_grav/powered/biooutpost)
 "hd" = (
-/turf/closed/indestructible/riveted/plastinum/nodiagonal,
+/turf/closed/indestructible/reinforced/titanium/nodiagonal,
 /area/ruin/space)
 "hf" = (
 /obj/structure/table/reinforced/rglass,
@@ -1389,7 +1389,7 @@
 /area/ruin/space/has_grav/powered/biooutpost)
 "AT" = (
 /obj/structure/sign/warning,
-/turf/closed/indestructible/riveted/plastinum/nodiagonal,
+/turf/closed/indestructible/reinforced/titanium/nodiagonal,
 /area/ruin/space/has_grav/powered/biooutpost)
 "AV" = (
 /obj/effect/turf_decal/stripes/full,
@@ -1811,7 +1811,7 @@
 /turf/open/indestructible/white,
 /area/ruin/space/has_grav/powered/biooutpost)
 "Jh" = (
-/turf/closed/indestructible/riveted/plastinum/nodiagonal,
+/turf/closed/indestructible/reinforced/titanium/nodiagonal,
 /area/ruin/space/has_grav/powered/biooutpost)
 "Jo" = (
 /obj/structure/table/wood/fancy/purple,
@@ -2374,7 +2374,7 @@
 /turf/open/indestructible/white,
 /area/ruin/space/has_grav/powered/biooutpost)
 "UX" = (
-/turf/closed/indestructible/riveted/plastinum/nodiagonal,
+/turf/closed/indestructible/reinforced/titanium/nodiagonal,
 /area/ruin/space/has_grav/powered/biooutpost/vault)
 "Vc" = (
 /obj/structure/cable,

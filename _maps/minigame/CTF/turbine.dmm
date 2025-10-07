@@ -228,7 +228,7 @@
 /turf/open/floor/iron/stairs/right,
 /area/centcom/ctf)
 "yA" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/ctf)
 "yB" = (
 /obj/effect/turf_decal/stripes{
@@ -359,7 +359,7 @@
 /area/centcom/ctf)
 "GN" = (
 /obj/machinery/door/poddoor/shutters/indestructible,
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/ctf)
 "Ia" = (
 /obj/structure/table{

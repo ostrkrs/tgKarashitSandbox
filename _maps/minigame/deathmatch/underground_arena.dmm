@@ -240,7 +240,7 @@
 /turf/open/indestructible/vault,
 /area/deathmatch)
 "qa" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/deathmatch)
 "qH" = (
 /obj/item/food/roast_dinner,

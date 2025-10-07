@@ -893,7 +893,7 @@
 /turf/open/floor/carpet/orange,
 /area/centcom/ctf)
 "Xl" = (
-/turf/closed/indestructible/riveted/uranium,
+/turf/closed/indestructible/uranium,
 /area/centcom/ctf)
 "Yl" = (
 /obj/effect/portal/permanent{

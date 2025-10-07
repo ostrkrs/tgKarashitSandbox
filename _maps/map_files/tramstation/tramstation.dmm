@@ -38597,10 +38597,7 @@
 /turf/open/floor/iron,
 /area/station/hallway/primary/tram/center)
 "mpF" = (
-/turf/closed/indestructible/riveted{
-	name = "hyper-reinforced wall";
-	desc = "A wall impregnated with Fixium, able to withstand massive explosions with ease"
-	},
+/turf/closed/indestructible/reinforced,
 /area/station/science/ordnance/bomb)
 "mpX" = (
 /obj/structure/window/reinforced/spawner/directional/south,

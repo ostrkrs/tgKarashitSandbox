@@ -329,7 +329,7 @@
 /turf/open/lava/smooth/basketball,
 /area/centcom/basketball)
 "sb" = (
-/turf/closed/indestructible/riveted/boss,
+/turf/closed/indestructible/boss,
 /area/centcom/basketball)
 "sA" = (
 /obj/effect/decal/remains/xeno,
@@ -629,7 +629,7 @@
 /turf/open/floor/fakebasalt,
 /area/centcom/basketball)
 "Hu" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/basketball)
 "Hx" = (
 /obj/structure/stone_tile,

@@ -22,9 +22,12 @@
 	var/base_decon_state = "r_wall"
 
 /turf/closed/wall/r_wall/nodiagonal
-	icon = MAP_SWITCH('icons/turf/walls/reinforced_wall.dmi', 'icons/turf/walls/misc_wall.dmi')
-	icon_state = MAP_SWITCH("reinforced_wall-0", "r_wall_nd")
+	icon_state = "reinforced_wall-15"
 	smoothing_flags = SMOOTH_BITMASK
+
+/turf/closed/wall/r_wall/overspace
+	icon_state = "reinforced_wall-overspace"
+	fixed_underlay = list("space" = TRUE)
 
 /turf/closed/wall/r_wall/deconstruction_hints(mob/user)
 	switch(d_state)
@@ -253,13 +256,11 @@
 	rust_resistance = RUST_RESISTANCE_TITANIUM
 
 /turf/closed/wall/r_wall/plastitanium/nodiagonal
-	icon = MAP_SWITCH('icons/turf/walls/plastitanium_wall.dmi', 'icons/turf/walls/misc_wall.dmi')
-	icon_state = MAP_SWITCH("plastitanium_wall-0", "plastitanium_nd")
+	icon_state = "plastitanium_wall-15"
 	smoothing_flags = SMOOTH_BITMASK
 
 /turf/closed/wall/r_wall/plastitanium/overspace
-	icon = MAP_SWITCH('icons/turf/walls/plastitanium_wall.dmi', 'icons/turf/walls/misc_wall.dmi')
-	icon_state = MAP_SWITCH("plastitanium_wall-0", "plastitanium_overspace")
+	icon_state = "plastitanium_wall-overspace"
 	fixed_underlay = list("space" = TRUE)
 
 /turf/closed/wall/r_wall/plastitanium/syndicate
@@ -271,11 +272,9 @@
 	return FALSE
 
 /turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal
-	icon = MAP_SWITCH('icons/turf/walls/plastitanium_wall.dmi', 'icons/turf/walls/misc_wall.dmi')
-	icon_state = MAP_SWITCH("plastitanium_wall-0", "plastitanium_nd")
+	icon_state = "plastitanium_wall-15"
 	smoothing_flags = SMOOTH_BITMASK
 
 /turf/closed/wall/r_wall/plastitanium/syndicate/overspace
-	icon = MAP_SWITCH('icons/turf/walls/plastitanium_wall.dmi', 'icons/turf/walls/misc_wall.dmi')
-	icon_state = MAP_SWITCH("plastitanium_wall-0", "plastitanium_overspace")
+	icon_state = "plastitanium_wall-overspace"
 	fixed_underlay = list("space" = TRUE)
