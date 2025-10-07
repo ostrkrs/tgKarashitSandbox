@@ -226,6 +226,8 @@
 	icon_state = "snow_wall-0"
 	base_icon_state = "snow_wall"
 	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = SMOOTH_GROUP_SNOW_WALLS + SMOOTH_GROUP_WALLS + SMOOTH_GROUP_CLOSED_TURFS
+	canSmoothWith = SMOOTH_GROUP_SNOW_WALLS
 	hardness = 80
 	explosive_resistance = 0
 	slicing_duration = 30
