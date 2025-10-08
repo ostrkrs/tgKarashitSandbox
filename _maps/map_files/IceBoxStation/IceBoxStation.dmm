@@ -42481,10 +42481,7 @@
 /turf/open/floor/iron,
 /area/station/hallway/primary/starboard)
 "lZt" = (
-/turf/closed/indestructible/riveted{
-	desc = "A wall impregnated with Fixium, able to withstand massive explosions with ease";
-	name = "hyper-reinforced wall"
-	},
+/turf/closed/indestructible/reinforced,
 /area/station/science/ordnance/bomb/planet)
 "lZQ" = (
 /obj/machinery/airalarm/directional/west,

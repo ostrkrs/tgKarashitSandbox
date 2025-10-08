@@ -1242,9 +1242,7 @@
 /turf/open/floor/iron/airless,
 /area/ruin/space/ks13/engineering/secure_storage)
 "oP" = (
-/turf/closed/indestructible/riveted{
-	color = "#FF8888"
-	},
+/turf/closed/indestructible/reinforced,
 /area/ruin/space/ks13/ai/vault)
 "oQ" = (
 /turf/open/floor/iron/white/airless,

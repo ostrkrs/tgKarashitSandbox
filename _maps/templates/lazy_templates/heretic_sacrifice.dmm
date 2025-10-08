@@ -410,7 +410,7 @@
 /turf/open/misc/ironsand,
 /area/centcom/heretic_sacrifice/rust)
 "Fd" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/space)
 "Gl" = (
 /obj/structure/stone_tile/block/burnt{
@@ -512,7 +512,7 @@
 	},
 /area/centcom/heretic_sacrifice/ash)
 "La" = (
-/turf/closed/indestructible/riveted/plastinum,
+/turf/closed/indestructible/reinforced/titanium,
 /area/centcom/heretic_sacrifice/void)
 "LA" = (
 /obj/effect/decal/cleanable/dirt,
@@ -716,7 +716,7 @@
 /turf/open/indestructible/plating,
 /area/centcom/heretic_sacrifice/lock)
 "ZA" = (
-/turf/closed/indestructible/riveted/boss,
+/turf/closed/indestructible/boss,
 /area/centcom/heretic_sacrifice/ash)
 
 (1,1,1) = {"

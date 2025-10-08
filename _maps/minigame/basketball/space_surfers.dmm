@@ -143,9 +143,6 @@
 	underfloor_accessibility = 1
 	},
 /area/centcom/basketball)
-"Hu" = (
-/turf/closed/indestructible/riveted,
-/area/centcom/basketball)
 "Lu" = (
 /turf/closed/indestructible/reinforced,
 /area/centcom/basketball)
@@ -232,34 +229,34 @@
 /area/centcom/basketball)
 
 (1,1,1) = {"
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
 "}
 (2,1,1) = {"
-Hu
+Lu
 gY
 gY
 gY
@@ -283,10 +280,10 @@ gY
 gY
 gY
 gY
-Hu
+Lu
 "}
 (3,1,1) = {"
-Hu
+Lu
 gY
 gY
 gY
@@ -310,10 +307,10 @@ gY
 gY
 gY
 gY
-Hu
+Lu
 "}
 (4,1,1) = {"
-Hu
+Lu
 gY
 gY
 gY
@@ -337,10 +334,10 @@ gY
 gY
 gY
 gY
-Hu
+Lu
 "}
 (5,1,1) = {"
-Hu
+Lu
 gY
 Nt
 Nt
@@ -364,10 +361,10 @@ Nt
 Nt
 Nt
 gY
-Hu
+Lu
 "}
 (6,1,1) = {"
-Hu
+Lu
 gY
 Nt
 Ul
@@ -391,10 +388,10 @@ Ul
 Ul
 Nt
 gY
-Hu
+Lu
 "}
 (7,1,1) = {"
-Hu
+Lu
 gY
 Nt
 dg
@@ -418,10 +415,10 @@ Ul
 Ul
 Nt
 gY
-Hu
+Lu
 "}
 (8,1,1) = {"
-Hu
+Lu
 Nt
 Nt
 dg
@@ -445,10 +442,10 @@ dg
 dg
 Nt
 Nt
-Hu
+Lu
 "}
 (9,1,1) = {"
-Hu
+Lu
 Lu
 Ul
 Ul
@@ -472,10 +469,10 @@ Ul
 Ul
 Ul
 Nt
-Hu
+Lu
 "}
 (10,1,1) = {"
-Hu
+Lu
 Lu
 Lu
 Lu
@@ -499,10 +496,10 @@ Ul
 Ul
 Ul
 Nt
-Hu
+Lu
 "}
 (11,1,1) = {"
-Hu
+Lu
 Lu
 Lu
 at
@@ -526,10 +523,10 @@ Ul
 Ul
 Ul
 Nt
-Hu
+Lu
 "}
 (12,1,1) = {"
-Hu
+Lu
 Lu
 Se
 OB
@@ -553,10 +550,10 @@ Tc
 Gh
 Ul
 Nt
-Hu
+Lu
 "}
 (13,1,1) = {"
-Hu
+Lu
 Lu
 Lu
 aw
@@ -580,10 +577,10 @@ Ul
 Ul
 Ul
 Nt
-Hu
+Lu
 "}
 (14,1,1) = {"
-Hu
+Lu
 Lu
 Lu
 Lu
@@ -607,10 +604,10 @@ Ul
 Ul
 Ul
 Nt
-Hu
+Lu
 "}
 (15,1,1) = {"
-Hu
+Lu
 Lu
 Ul
 Ul
@@ -634,10 +631,10 @@ Ul
 Ul
 Ul
 Nt
-Hu
+Lu
 "}
 (16,1,1) = {"
-Hu
+Lu
 Nt
 Nt
 dg
@@ -661,10 +658,10 @@ dg
 dg
 Nt
 Nt
-Hu
+Lu
 "}
 (17,1,1) = {"
-Hu
+Lu
 gY
 Nt
 dg
@@ -688,10 +685,10 @@ Ul
 Ul
 Nt
 gY
-Hu
+Lu
 "}
 (18,1,1) = {"
-Hu
+Lu
 gY
 Nt
 Ul
@@ -715,10 +712,10 @@ Ul
 Ul
 Nt
 gY
-Hu
+Lu
 "}
 (19,1,1) = {"
-Hu
+Lu
 gY
 Nt
 Nt
@@ -742,10 +739,10 @@ Nt
 Nt
 Nt
 gY
-Hu
+Lu
 "}
 (20,1,1) = {"
-Hu
+Lu
 gY
 gY
 gY
@@ -769,10 +766,10 @@ gY
 gY
 gY
 gY
-Hu
+Lu
 "}
 (21,1,1) = {"
-Hu
+Lu
 gY
 gY
 gY
@@ -796,10 +793,10 @@ gY
 gY
 gY
 gY
-Hu
+Lu
 "}
 (22,1,1) = {"
-Hu
+Lu
 gY
 gY
 gY
@@ -823,32 +820,32 @@ gY
 gY
 gY
 gY
-Hu
+Lu
 "}
 (23,1,1) = {"
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
-Hu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
+Lu
 "}

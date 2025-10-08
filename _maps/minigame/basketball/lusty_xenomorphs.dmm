@@ -388,7 +388,7 @@
 /turf/open/floor/iron/white,
 /area/centcom/basketball)
 "Hu" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/basketball)
 "Ic" = (
 /obj/structure/sign/xenobio_guide/directional/east,

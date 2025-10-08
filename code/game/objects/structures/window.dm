@@ -711,7 +711,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/window/reinforced/tinted/frosted/spaw
 	obj_flags = CAN_BE_HIT
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = SMOOTH_GROUP_WINDOW_FULLTILE
-	canSmoothWith = SMOOTH_GROUP_WINDOW_FULLTILE
+	canSmoothWith = SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS + SMOOTH_GROUP_AIRLOCK
 	glass_amount = 2
 
 /obj/structure/window/fulltile/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)
@@ -732,7 +732,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/window/reinforced/tinted/frosted/spaw
 	obj_flags = CAN_BE_HIT
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = SMOOTH_GROUP_WINDOW_FULLTILE
-	canSmoothWith = SMOOTH_GROUP_WINDOW_FULLTILE
+	canSmoothWith = SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS + SMOOTH_GROUP_AIRLOCK
 	glass_amount = 2
 
 /obj/structure/window/plasma/fulltile/unanchored
@@ -749,7 +749,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/window/reinforced/tinted/frosted/spaw
 	obj_flags = CAN_BE_HIT
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = SMOOTH_GROUP_WINDOW_FULLTILE
-	canSmoothWith = SMOOTH_GROUP_WINDOW_FULLTILE
+	canSmoothWith = SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS + SMOOTH_GROUP_AIRLOCK
 	glass_amount = 2
 
 /obj/structure/window/reinforced/plasma/fulltile/unanchored
@@ -769,7 +769,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/window/reinforced/tinted/frosted/spaw
 	state = RWINDOW_SECURE
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = SMOOTH_GROUP_WINDOW_FULLTILE
-	canSmoothWith = SMOOTH_GROUP_WINDOW_FULLTILE
+	canSmoothWith = SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS + SMOOTH_GROUP_AIRLOCK
 	glass_amount = 2
 
 /obj/structure/window/reinforced/fulltile/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)
@@ -790,7 +790,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/window/reinforced/tinted/frosted/spaw
 	obj_flags = CAN_BE_HIT
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = SMOOTH_GROUP_WINDOW_FULLTILE
-	canSmoothWith = SMOOTH_GROUP_WINDOW_FULLTILE
+	canSmoothWith = SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS + SMOOTH_GROUP_AIRLOCK
 	glass_amount = 2
 	// Not on the parent because directional opacity does NOT WORK
 	opacity = TRUE
@@ -803,7 +803,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/window/reinforced/tinted/frosted/spaw
 	glass_amount = 2
 
 //there is a sub shuttle window in survival_pod.dm for mining pods
-/obj/structure/window/reinforced/shuttle//this is called reinforced because it is reinforced w/titanium
+/obj/structure/window/reinforced/shuttle //this is called reinforced because it is reinforced w/titanium
 	name = "shuttle window"
 	desc = "A reinforced, air-locked pod window."
 	icon = 'icons/obj/smooth_structures/shuttle_window.dmi'
@@ -820,7 +820,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/window/reinforced/tinted/frosted/spaw
 	armor_type = /datum/armor/reinforced_shuttle
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = SMOOTH_GROUP_SHUTTLE_PARTS + SMOOTH_GROUP_WINDOW_FULLTILE_SHUTTLE
-	canSmoothWith = SMOOTH_GROUP_WINDOW_FULLTILE_SHUTTLE
+	canSmoothWith = SMOOTH_GROUP_WINDOW_FULLTILE_SHUTTLE + SMOOTH_GROUP_TITANIUM_WALLS + SMOOTH_GROUP_AIRLOCK
 	explosion_block = 3
 	glass_type = /obj/item/stack/sheet/titaniumglass
 	glass_amount = 2
@@ -876,7 +876,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/window/reinforced/tinted/frosted/spaw
 	armor_type = /datum/armor/plasma_plastitanium
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = SMOOTH_GROUP_SHUTTLE_PARTS + SMOOTH_GROUP_WINDOW_FULLTILE_PLASTITANIUM
-	canSmoothWith = SMOOTH_GROUP_WINDOW_FULLTILE_PLASTITANIUM
+	canSmoothWith = SMOOTH_GROUP_WINDOW_FULLTILE_PLASTITANIUM + SMOOTH_GROUP_PLASTITANIUM_WALLS + SMOOTH_GROUP_AIRLOCK
 	explosion_block = 3
 	damage_deflection = 21 //The same as reinforced plasma windows.3
 	glass_type = /obj/item/stack/sheet/plastitaniumglass
@@ -899,7 +899,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/window/reinforced/tinted/frosted/spaw
 	armor_type = /datum/armor/plasma_plastitanium
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = SMOOTH_GROUP_SHUTTLE_PARTS + SMOOTH_GROUP_WINDOW_FULLTILE_PLASTITANIUM
-	canSmoothWith = SMOOTH_GROUP_WINDOW_FULLTILE_PLASTITANIUM
+	canSmoothWith = SMOOTH_GROUP_WINDOW_FULLTILE_PLASTITANIUM + SMOOTH_GROUP_PLASTITANIUM_WALLS + SMOOTH_GROUP_AIRLOCK
 	explosion_block = 3
 	damage_deflection = 21 //The same as reinforced plasma windows.3
 	glass_type = /obj/item/stack/sheet/plastitaniumglass

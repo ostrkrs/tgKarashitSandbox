@@ -43,13 +43,17 @@
 	bullet_sizzle = TRUE
 
 /turf/closed/wall/rust
-	//SDMM supports colors, this is simply for easier mapping
-	//and should be removed on initialize
-	color = MAP_SWITCH(null, COLOR_ORANGE_BROWN)
+	icon = 'icons/turf/walls/rusty_wall.dmi'
+	icon_state = "rusty_wall-0"
+	base_icon_state = "rusty_wall"
 
 /turf/closed/wall/rust/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/rust)
+
+/turf/closed/wall/rust/nodiagonal
+	icon_state = "rusty_wall-15"
+	smoothing_flags = SMOOTH_BITMASK
 
 /turf/closed/wall/heretic_rust
 	color = MAP_SWITCH(null, COLOR_GREEN_GRAY)
@@ -59,14 +63,18 @@
 	AddElement(/datum/element/rust/heretic)
 
 /turf/closed/wall/r_wall/rust
-	//SDMM supports colors, this is simply for easier mapping
-	//and should be removed on initialize
-	color = MAP_SWITCH(null, COLOR_ORANGE_BROWN)
+	icon = 'icons/turf/walls/rusty_reinforced_wall.dmi'
+	icon_state = "rusty_reinforced_wall-0"
+	base_icon_state = "rusty_reinforced_wall"
 	base_decon_state = "rusty_r_wall"
 
 /turf/closed/wall/r_wall/rust/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/rust)
+
+/turf/closed/wall/r_wall/rust/nodiagonal
+	icon_state = "rusty_reinforced_wall-15"
+	smoothing_flags = SMOOTH_BITMASK
 
 /turf/closed/wall/r_wall/heretic_rust
 	color = MAP_SWITCH(null, COLOR_GREEN_GRAY)

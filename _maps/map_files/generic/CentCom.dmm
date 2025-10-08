@@ -453,7 +453,7 @@
 /turf/open/floor/iron/white,
 /area/centcom/tdome/observation)
 "cg" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/evacuation)
 "ch" = (
 /obj/machinery/firealarm/directional/east,
@@ -1478,7 +1478,7 @@
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/control)
 "gO" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/briefing)
 "gR" = (
 /obj/item/wrench,
@@ -1491,7 +1491,7 @@
 /area/centcom/central_command_areas/courtroom)
 "gS" = (
 /obj/structure/sign/warning/secure_area,
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/ferry)
 "gU" = (
 /obj/effect/turf_decal/tile/neutral/anticorner/contrasted{
@@ -1727,7 +1727,7 @@
 	},
 /area/awaymission/errorroom)
 "il" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/prison)
 "im" = (
 /obj/effect/turf_decal/stripes/line{
@@ -1738,10 +1738,10 @@
 /area/centcom/central_command_areas/prison)
 "in" = (
 /obj/structure/sign/nanotrasen,
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/control)
 "io" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/control)
 "ip" = (
 /obj/effect/turf_decal/stripes/line{
@@ -1866,7 +1866,7 @@
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/prison)
 "iF" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/supply)
 "iG" = (
 /turf/closed/indestructible/fakedoor{
@@ -1875,7 +1875,7 @@
 /area/centcom/central_command_areas/supply)
 "iH" = (
 /obj/structure/sign/nanotrasen,
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/prison)
 "iK" = (
 /obj/effect/turf_decal/stripes/line{
@@ -1891,7 +1891,7 @@
 /area/centcom/central_command_areas/prison)
 "iN" = (
 /obj/machinery/status_display/supply,
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/supply)
 "iO" = (
 /obj/effect/turf_decal/delivery,
@@ -2395,7 +2395,7 @@
 /area/centcom/central_command_areas/briefing)
 "kR" = (
 /obj/structure/sign/warning/secure_area,
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/admin/storage)
 "kS" = (
 /obj/effect/turf_decal/stripes/line{
@@ -2728,7 +2728,7 @@
 /turf/open/floor/iron/white,
 /area/centcom/central_command_areas/evacuation/ship)
 "mD" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/ferry)
 "mE" = (
 /obj/structure/chair/comfy/brown{
@@ -3316,7 +3316,7 @@
 /area/centcom/tdome/arena)
 "pc" = (
 /obj/structure/sign/nanotrasen,
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/courtroom)
 "pd" = (
 /obj/item/clipboard{
@@ -3583,7 +3583,7 @@
 /area/centcom/central_command_areas/evacuation/ship)
 "qq" = (
 /obj/structure/sign/warning/no_smoking,
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/admin)
 "qr" = (
 /obj/structure/closet/crate/bin,
@@ -3701,7 +3701,7 @@
 /area/centcom/tdome/arena)
 "qR" = (
 /obj/structure/sign/nanotrasen,
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/ferry)
 "qS" = (
 /obj/machinery/door/airlock/centcom{
@@ -3952,7 +3952,7 @@
 /area/centcom/central_command_areas/evacuation)
 "rY" = (
 /obj/structure/sign/warning/secure_area,
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/armory)
 "rZ" = (
 /obj/machinery/shower/directional/west,
@@ -4235,7 +4235,7 @@
 /area/centcom/central_command_areas/briefing)
 "td" = (
 /obj/structure/sign/departments/drop,
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/ferry)
 "tg" = (
 /obj/structure/chair{
@@ -4425,7 +4425,7 @@
 /turf/open/floor/stone,
 /area/centcom/central_command_areas/evacuation/ship)
 "uf" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/tdome/administration)
 "ug" = (
 /obj/machinery/light/directional/east,
@@ -5663,7 +5663,7 @@
 /area/centcom/tdome/observation)
 "zw" = (
 /obj/structure/sign/nanotrasen,
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/tdome/observation)
 "zx" = (
 /obj/effect/turf_decal/siding/wideplating_new/dark{
@@ -6002,7 +6002,7 @@
 /area/centcom/central_command_areas/control)
 "AT" = (
 /obj/structure/sign/departments/medbay/alt,
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/control)
 "AU" = (
 /obj/machinery/computer/operating{
@@ -6531,11 +6531,11 @@
 /turf/open/floor/iron/white,
 /area/centcom/central_command_areas/evacuation)
 "Di" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/ai_multicam_room)
 "Dj" = (
 /obj/structure/sign/nanotrasen,
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/prison/cells)
 "Dk" = (
 /obj/structure/cable,
@@ -6612,7 +6612,7 @@
 /area/centcom/central_command_areas/evacuation/ship)
 "DF" = (
 /obj/structure/sign/warning/no_smoking,
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/tdome/observation)
 "DG" = (
 /obj/structure/chair/office{
@@ -6937,7 +6937,7 @@
 /area/centcom/central_command_areas/prison)
 "Fq" = (
 /obj/structure/sign/warning/secure_area,
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/control)
 "Fs" = (
 /obj/machinery/door/poddoor/shutters{
@@ -7262,7 +7262,7 @@
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/prison)
 "Hv" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/courtroom)
 "Hw" = (
 /obj/item/kirbyplants/organic/plant21,
@@ -7514,7 +7514,7 @@
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/evacuation)
 "Jb" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/prison/cells)
 "Jg" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -8049,7 +8049,7 @@
 /turf/open/floor/iron/dark,
 /area/centcom/central_command_areas/evacuation/ship)
 "LV" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/awaymission/errorroom)
 "LW" = (
 /turf/closed/mineral/ash_rock,
@@ -8227,7 +8227,7 @@
 /area/centcom/central_command_areas/evacuation/ship)
 "MY" = (
 /obj/structure/sign/nanotrasen,
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/briefing)
 "Ne" = (
 /obj/structure/table/wood,
@@ -8475,7 +8475,7 @@
 /turf/open/floor/iron/dark,
 /area/centcom/central_command_areas/briefing)
 "On" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/admin)
 "Oq" = (
 /obj/effect/turf_decal/tile/brown/anticorner/contrasted,
@@ -8839,7 +8839,7 @@
 /area/centcom/central_command_areas/armory)
 "PF" = (
 /obj/structure/sign/nanotrasen,
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/admin)
 "PG" = (
 /obj/effect/turf_decal/tile/dark_blue/fourcorners,
@@ -9061,7 +9061,7 @@
 /turf/open/floor/iron/dark,
 /area/centcom/central_command_areas/evacuation/ship)
 "QC" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/tdome/observation)
 "QH" = (
 /obj/effect/turf_decal/siding/wideplating_new/dark,
@@ -9475,7 +9475,7 @@
 /area/centcom/central_command_areas/supplypod)
 "Sx" = (
 /obj/structure/sign/nanotrasen,
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/admin/storage)
 "Sy" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
@@ -10130,7 +10130,7 @@
 /turf/open/floor/iron/dark,
 /area/centcom/central_command_areas/supply)
 "Vx" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/fore)
 "Vy" = (
 /obj/machinery/status_display/ai/directional/south,
@@ -10594,7 +10594,7 @@
 /turf/open/floor/plating,
 /area/centcom/central_command_areas/supplypod)
 "Ya" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/armory)
 "Yc" = (
 /obj/structure/fireplace,
@@ -10639,7 +10639,7 @@
 /turf/open/misc/asteroid,
 /area/centcom/central_command_areas/control)
 "Yn" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/supplypod)
 "Yq" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
@@ -10739,7 +10739,7 @@
 /turf/open/floor/iron/grimy,
 /area/centcom/tdome/observation)
 "YU" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/admin/storage)
 "YV" = (
 /obj/structure/closet/lawcloset,
@@ -10755,7 +10755,7 @@
 /area/centcom/central_command_areas/evacuation/ship)
 "YX" = (
 /obj/structure/sign/warning/secure_area,
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/prison/cells)
 "YY" = (
 /obj/item/storage/medkit/toxin,
@@ -10772,7 +10772,7 @@
 /area/centcom/central_command_areas/control)
 "Za" = (
 /obj/structure/sign/nanotrasen,
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/central_command_areas/fore)
 "Ze" = (
 /obj/effect/turf_decal/tile/red,

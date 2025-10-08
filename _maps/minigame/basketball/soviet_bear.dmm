@@ -106,7 +106,7 @@
 /area/centcom/basketball)
 "gk" = (
 /obj/structure/sign/warning/firing_range,
-/turf/closed/indestructible/riveted/plastinum,
+/turf/closed/indestructible/reinforced/titanium,
 /area/centcom/basketball)
 "gq" = (
 /obj/effect/turf_decal/stripes/line{
@@ -419,7 +419,7 @@
 /turf/open/floor/engine,
 /area/centcom/basketball)
 "Hu" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/basketball)
 "HH" = (
 /obj/effect/turf_decal/plaque{
@@ -597,7 +597,7 @@
 /turf/open/floor/engine,
 /area/centcom/basketball)
 "Tc" = (
-/turf/closed/indestructible/riveted/plastinum,
+/turf/closed/indestructible/reinforced/titanium,
 /area/centcom/basketball)
 "TV" = (
 /obj/effect/turf_decal/stripes/line{
@@ -644,7 +644,7 @@
 /area/centcom/basketball)
 "WM" = (
 /obj/structure/sign/poster/contraband/kss13,
-/turf/closed/indestructible/riveted/plastinum,
+/turf/closed/indestructible/reinforced/titanium,
 /area/centcom/basketball)
 "Xm" = (
 /obj/structure/table,

@@ -619,7 +619,7 @@
 /area/shuttle/escape/luxury)
 "zq" = (
 /obj/machinery/vending/boozeomat,
-/turf/closed/indestructible/riveted/plastinum/nodiagonal,
+/turf/closed/indestructible/reinforced/titanium/nodiagonal,
 /area/shuttle/escape/brig)
 "zt" = (
 /obj/item/food/spaghetti/meatballspaghetti{
@@ -782,7 +782,7 @@
 /turf/open/floor/mineral/diamond,
 /area/shuttle/escape/luxury)
 "Ex" = (
-/turf/closed/indestructible/riveted/plastinum/nodiagonal,
+/turf/closed/indestructible/reinforced/titanium/nodiagonal,
 /area/shuttle/escape/luxury)
 "EG" = (
 /obj/machinery/power/shuttle_engine/propulsion{
@@ -832,7 +832,7 @@
 /turf/open/floor/plating,
 /area/shuttle/escape)
 "Gq" = (
-/turf/closed/indestructible/riveted/plastinum/nodiagonal,
+/turf/closed/indestructible/reinforced/titanium/nodiagonal,
 /area/shuttle/escape/brig)
 "Hq" = (
 /obj/item/kirbyplants/random,
@@ -914,7 +914,7 @@
 	dir = 4;
 	id = "gimmemoney"
 	},
-/turf/closed/indestructible/riveted/plastinum/nodiagonal,
+/turf/closed/indestructible/reinforced/titanium/nodiagonal,
 /area/shuttle/escape/luxury)
 "Ky" = (
 /obj/structure/table/wood/fancy/black,

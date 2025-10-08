@@ -548,11 +548,11 @@
 /turf/open/floor/iron/white,
 /area/awaymission/cabin)
 "cx" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/awaymission/cabin/caves/mountain)
 "cy" = (
 /obj/structure/sign/poster/contraband/fun_police,
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/awaymission/cabin/caves/mountain)
 "cA" = (
 /obj/structure/cable,

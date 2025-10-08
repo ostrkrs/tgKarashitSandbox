@@ -120,7 +120,7 @@
 /turf/closed/indestructible/alien,
 /area/centcom/ctf)
 "fU" = (
-/turf/closed/indestructible/riveted/plastinum,
+/turf/closed/indestructible/reinforced/titanium,
 /area/centcom/ctf)
 "gr" = (
 /obj/effect/turf_decal/siding/purple{
@@ -205,7 +205,7 @@
 /obj/structure/sign/warning/radiation/rad_area{
 	resistance_flags = 64
 	},
-/turf/closed/indestructible/riveted/plastinum,
+/turf/closed/indestructible/reinforced/titanium,
 /area/centcom/ctf)
 "lY" = (
 /obj/effect/turf_decal/tile/green/fourcorners,

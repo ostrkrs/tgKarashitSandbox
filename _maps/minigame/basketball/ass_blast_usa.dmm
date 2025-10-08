@@ -51,9 +51,7 @@
 /turf/open/floor/iron/dark,
 /area/centcom/basketball)
 "dS" = (
-/turf/closed/indestructible/riveted/plastinum{
-	color = "#FF0000"
-	},
+/turf/closed/indestructible/reinforced/titanium,
 /area/centcom/basketball)
 "eU" = (
 /obj/structure/showcase/machinery/tv/broken,
@@ -116,11 +114,6 @@
 	},
 /obj/effect/turf_decal/tile/neutral/half,
 /turf/open/floor/iron/white/smooth_half,
-/area/centcom/basketball)
-"kc" = (
-/turf/closed/indestructible/riveted/plastinum{
-	color = "#0000FF"
-	},
 /area/centcom/basketball)
 "ku" = (
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
@@ -367,7 +360,7 @@
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/centcom/basketball)
 "Hu" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/centcom/basketball)
 "Ic" = (
 /obj/effect/turf_decal/tile/dark_blue/full,
@@ -530,9 +523,6 @@
 /obj/item/storage/box/lethalshot,
 /turf/open/floor/iron/dark,
 /area/centcom/basketball)
-"WM" = (
-/turf/closed/indestructible/riveted/plastinum,
-/area/centcom/basketball)
 "Xm" = (
 /obj/effect/turf_decal/tile/neutral/anticorner/contrasted,
 /turf/open/floor/iron/dark,
@@ -590,20 +580,20 @@ tO
 tO
 tO
 tO
-WM
-kc
 dS
-WM
-kc
 dS
-WM
-kc
 dS
-WM
-kc
 dS
-WM
-kc
+dS
+dS
+dS
+dS
+dS
+dS
+dS
+dS
+dS
+dS
 dS
 tO
 tO
@@ -631,7 +621,7 @@ Ql
 Ql
 Ql
 fi
-WM
+dS
 tO
 tO
 tO
@@ -644,7 +634,7 @@ tO
 tO
 tO
 tO
-kc
+dS
 Ql
 Ql
 Ql
@@ -658,7 +648,7 @@ Ql
 Ql
 Ql
 Ql
-kc
+dS
 tO
 tO
 tO
@@ -668,10 +658,10 @@ Hu
 (5,1,1) = {"
 Hu
 tO
-WM
-kc
 dS
-WM
+dS
+dS
+dS
 at
 Ql
 AI
@@ -686,8 +676,8 @@ AI
 Ql
 Ql
 dS
-WM
-kc
+dS
+dS
 dS
 tO
 Hu
@@ -715,14 +705,14 @@ Ql
 CV
 tX
 Ma
-WM
+dS
 tO
 Hu
 "}
 (7,1,1) = {"
 Hu
 tO
-kc
+dS
 ly
 lD
 mp
@@ -742,14 +732,14 @@ Ql
 CV
 tX
 eU
-kc
+dS
 tO
 Hu
 "}
 (8,1,1) = {"
 Hu
 dS
-WM
+dS
 Qi
 ku
 Xm
@@ -770,12 +760,12 @@ LV
 Cw
 Cw
 dS
-WM
+dS
 Hu
 "}
 (9,1,1) = {"
 Hu
-kc
+dS
 nE
 nE
 nE
@@ -797,12 +787,12 @@ Cw
 Gh
 my
 cz
-kc
+dS
 Hu
 "}
 (10,1,1) = {"
 Hu
-WM
+dS
 Tc
 Dt
 Dt
@@ -851,12 +841,12 @@ PW
 LI
 LI
 fu
-WM
+dS
 Hu
 "}
 (12,1,1) = {"
 Hu
-kc
+dS
 OB
 Dt
 jj
@@ -878,12 +868,12 @@ PW
 LI
 LI
 Ax
-kc
+dS
 Hu
 "}
 (13,1,1) = {"
 Hu
-WM
+dS
 Rl
 Dt
 Dt
@@ -932,12 +922,12 @@ Cw
 LI
 LI
 LI
-WM
+dS
 Hu
 "}
 (15,1,1) = {"
 Hu
-kc
+dS
 nE
 nE
 nE
@@ -959,12 +949,12 @@ Cw
 WK
 zZ
 Bd
-kc
+dS
 Hu
 "}
 (16,1,1) = {"
 Hu
-WM
+dS
 dS
 dJ
 kT
@@ -985,14 +975,14 @@ Ql
 rU
 Cw
 Cw
-WM
+dS
 dS
 Hu
 "}
 (17,1,1) = {"
 Hu
 tO
-kc
+dS
 gq
 xP
 pu
@@ -1012,14 +1002,14 @@ Ql
 su
 oR
 WB
-kc
+dS
 tO
 Hu
 "}
 (18,1,1) = {"
 Hu
 tO
-WM
+dS
 JM
 vo
 dM
@@ -1047,8 +1037,8 @@ Hu
 Hu
 tO
 dS
-kc
-WM
+dS
+dS
 dS
 be
 Ql
@@ -1063,10 +1053,10 @@ Cw
 AI
 Ql
 Ql
-WM
 dS
-kc
-WM
+dS
+dS
+dS
 tO
 Hu
 "}
@@ -1076,7 +1066,7 @@ tO
 tO
 tO
 tO
-kc
+dS
 Ql
 Ql
 Ql
@@ -1090,7 +1080,7 @@ Ql
 Ql
 Ql
 Ql
-kc
+dS
 tO
 tO
 tO
@@ -1103,7 +1093,7 @@ tO
 tO
 tO
 tO
-WM
+dS
 fi
 Ql
 Ql
@@ -1131,20 +1121,20 @@ tO
 tO
 tO
 dS
-kc
-WM
 dS
-kc
-WM
 dS
-kc
-WM
 dS
-kc
-WM
 dS
-kc
-WM
+dS
+dS
+dS
+dS
+dS
+dS
+dS
+dS
+dS
+dS
 tO
 tO
 tO

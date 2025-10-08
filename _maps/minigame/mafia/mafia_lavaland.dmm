@@ -1,7 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"aa" = (
-/turf/closed/indestructible/riveted,
-/area/centcom/mafia)
 "ab" = (
 /obj/effect/turf_decal/tile/red/half/contrasted{
 	dir = 8
@@ -293,32 +290,31 @@
 
 (1,1,1) = {"
 qp
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
 qp
 "}
 (2,1,1) = {"
 qp
-aa
 aY
 aY
 aY
@@ -338,12 +334,13 @@ aY
 aY
 aY
 aY
-aa
+aY
+aY
 qp
 "}
 (3,1,1) = {"
 qp
-aa
+aY
 aY
 ac
 ac
@@ -363,12 +360,12 @@ ac
 ac
 ac
 aY
-aa
+aY
 qp
 "}
 (4,1,1) = {"
 qp
-aa
+aY
 aY
 ac
 ag
@@ -388,12 +385,12 @@ ah
 ak
 ac
 aY
-aa
+aY
 qp
 "}
 (5,1,1) = {"
-aa
-aa
+aY
+aY
 aY
 ac
 ah
@@ -413,11 +410,11 @@ ai
 ah
 ac
 aY
-aa
-aa
+aY
+aY
 "}
 (6,1,1) = {"
-aa
+aY
 aY
 aY
 ac
@@ -439,10 +436,10 @@ ad
 ac
 aY
 aY
-aa
+aY
 "}
 (7,1,1) = {"
-aa
+aY
 aY
 ac
 ac
@@ -464,10 +461,10 @@ ad
 ac
 ac
 aY
-aa
+aY
 "}
 (8,1,1) = {"
-aa
+aY
 aY
 ac
 ad
@@ -489,10 +486,10 @@ ad
 ad
 ac
 aY
-aa
+aY
 "}
 (9,1,1) = {"
-aa
+aY
 aY
 ac
 ad
@@ -514,10 +511,10 @@ aY
 ad
 ac
 aY
-aa
+aY
 "}
 (10,1,1) = {"
-aa
+aY
 aY
 ac
 ad
@@ -539,10 +536,10 @@ aY
 ad
 ac
 aY
-aa
+aY
 "}
 (11,1,1) = {"
-aa
+aY
 aY
 ac
 ad
@@ -564,10 +561,10 @@ aj
 ai
 ac
 aY
-aa
+aY
 "}
 (12,1,1) = {"
-aa
+aY
 aY
 ac
 ai
@@ -589,10 +586,10 @@ aY
 ad
 ac
 aY
-aa
+aY
 "}
 (13,1,1) = {"
-aa
+aY
 aY
 ac
 ad
@@ -614,10 +611,10 @@ aj
 ad
 ac
 aY
-aa
+aY
 "}
 (14,1,1) = {"
-aa
+aY
 aY
 ac
 ad
@@ -639,10 +636,10 @@ aY
 ai
 ac
 aY
-aa
+aY
 "}
 (15,1,1) = {"
-aa
+aY
 aY
 ac
 ad
@@ -664,10 +661,10 @@ aY
 ad
 ac
 aY
-aa
+aY
 "}
 (16,1,1) = {"
-aa
+aY
 aY
 ac
 af
@@ -689,10 +686,10 @@ ad
 ad
 ac
 aY
-aa
+aY
 "}
 (17,1,1) = {"
-aa
+aY
 aY
 ac
 ac
@@ -714,10 +711,10 @@ ad
 ac
 ac
 aY
-aa
+aY
 "}
 (18,1,1) = {"
-aa
+aY
 aY
 aY
 ac
@@ -739,11 +736,11 @@ ad
 ac
 aY
 aY
-aa
+aY
 "}
 (19,1,1) = {"
-aa
-aa
+aY
+aY
 aY
 ac
 ah
@@ -763,12 +760,12 @@ ad
 ah
 ac
 aY
-aa
-aa
+aY
+aY
 "}
 (20,1,1) = {"
 qp
-aa
+aY
 aY
 ac
 ak
@@ -788,12 +785,12 @@ ah
 av
 ac
 aY
-aa
+aY
 qp
 "}
 (21,1,1) = {"
 qp
-aa
+aY
 aY
 ac
 ac
@@ -813,12 +810,11 @@ ac
 ac
 ac
 aY
-aa
+aY
 qp
 "}
 (22,1,1) = {"
 qp
-aa
 aY
 aY
 aY
@@ -838,31 +834,32 @@ aY
 aY
 aY
 aY
-aa
+aY
+aY
 qp
 "}
 (23,1,1) = {"
 qp
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
 qp
 "}

@@ -3,7 +3,7 @@
 /turf/closed/mineral/random,
 /area/ruin/space)
 "b" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/ruin/space/has_grav)
 "c" = (
 /obj/item/storage/toolbox/mechanical/old,
@@ -39,7 +39,7 @@
 /area/ruin/space)
 "s" = (
 /obj/effect/mapping_helpers/bombable_wall,
-/turf/closed/indestructible/riveted,
+/turf/closed/indestructible/reinforced,
 /area/ruin/space/has_grav)
 "t" = (
 /obj/effect/gibspawner/human/bodypartless,

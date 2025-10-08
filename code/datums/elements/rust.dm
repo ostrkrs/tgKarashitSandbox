@@ -12,8 +12,9 @@
 	. = ..()
 	if(!isatom(target))
 		return ELEMENT_INCOMPATIBLE
-	if(!rust_overlay)
-		rust_overlay = image(rust_icon, rust_icon_state)
+	if(!istype(target, /turf/closed/wall))
+		if(!rust_overlay)
+			rust_overlay = image(rust_icon, rust_icon_state)
 	ADD_TRAIT(target, TRAIT_RUSTY, ELEMENT_TRAIT(type))
 	RegisterSignal(target, COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(apply_rust_overlay))
 	RegisterSignal(target, COMSIG_ATOM_EXAMINE, PROC_REF(handle_examine))

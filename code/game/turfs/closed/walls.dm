@@ -14,9 +14,9 @@
 
 	flags_ricochet = RICOCHET_HARD
 
-	smoothing_flags = SMOOTH_BITMASK
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 	smoothing_groups = SMOOTH_GROUP_WALLS + SMOOTH_GROUP_CLOSED_TURFS
-	canSmoothWith = SMOOTH_GROUP_WALLS
+	canSmoothWith = SMOOTH_GROUP_WALLS + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_GIRDER
 
 	rcd_memory = RCD_MEMORY_WALL
 	///bool on whether this wall can be chiselled into
@@ -33,6 +33,14 @@
 	var/added_leaning = FALSE
 
 	var/list/dent_decals
+
+/turf/closed/wall/nodiagonal
+	icon_state = "wall-15"
+	smoothing_flags = SMOOTH_BITMASK
+
+/turf/closed/wall/overspace
+	icon_state = "wall-overspace"
+	fixed_underlay = list("space" = TRUE)
 
 /turf/closed/wall/Initialize(mapload)
 	. = ..()
