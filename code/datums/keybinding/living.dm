@@ -31,7 +31,7 @@
 		owner.hud_used.resist_icon.icon_state = owner.hud_used.resist_icon.base_icon_state
 
 /datum/keybinding/living/look_up
-	hotkey_keys = list("L")
+	hotkey_keys = list("P")
 	name = "look up"
 	full_name = "Look Up"
 	description = "Look up at the next z-level.  Only works if directly below open space."
@@ -73,7 +73,7 @@
 	return TRUE
 
 /datum/keybinding/living/rest
-	hotkey_keys = list("U")
+	hotkey_keys = list("ShiftB")
 	name = "rest"
 	full_name = "Rest"
 	description = "Lay down, or get up."
@@ -131,7 +131,7 @@
 	user_mob.set_combat_mode(FALSE, silent = FALSE)
 
 /datum/keybinding/living/toggle_move_intent
-	hotkey_keys = list("C")
+	hotkey_keys = list("Alt")
 	name = "toggle_move_intent"
 	full_name = "Hold to toggle move intent"
 	description = "Held down to cycle to the other move intent, release to cycle back"
@@ -167,7 +167,7 @@
 	return TRUE
 
 /datum/keybinding/living/toggle_throw_mode
-	hotkey_keys = list("Southwest") // END
+	hotkey_keys = list("R", "Southwest") // END
 	name = "toggle_throw_mode"
 	full_name = "Toggle throw mode"
 	description = "Toggle throwing the current item or not."
@@ -203,7 +203,7 @@
 	living_user.throw_mode_off(THROW_MODE_HOLD)
 
 /datum/keybinding/living/give
-	hotkey_keys = list("G")
+	hotkey_keys = list("V")
 	name = "Give_Item"
 	full_name = "Give item"
 	description = "Give the item you're currently holding"
