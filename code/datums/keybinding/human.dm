@@ -6,7 +6,7 @@
 	return ishuman(user.mob)
 
 /datum/keybinding/human/quick_equip
-	hotkey_keys = list("R")
+	hotkey_keys = list("E")
 	name = "quick_equip"
 	full_name = "Quick equip"
 	description = "Quickly puts an item in the best slot available"
@@ -21,7 +21,7 @@
 	return TRUE
 
 /datum/keybinding/human/quick_equip_belt
-	hotkey_keys = list("ShiftR")
+	hotkey_keys = list("ShiftE")
 	name = "quick_equip_belt"
 	full_name = "Quick equip belt"
 	description = "Put held thing in belt or take out most recent thing from belt"
@@ -40,7 +40,7 @@
 	return TRUE
 
 /datum/keybinding/human/quick_equip_belt/quick_equip_bag
-	hotkey_keys = list("ShiftB")
+	hotkey_keys = list("ShiftV")
 	name = "quick_equip_bag"
 	full_name = "Quick equip bag"
 	description = "Put held thing in backpack or take out most recent thing from backpack"
@@ -58,7 +58,7 @@
 	keybind_signal = COMSIG_KB_HUMAN_SUITEQUIP_DOWN
 
 /datum/keybinding/human/quick_equip_belt/quick_equip_lpocket
-	hotkey_keys = list("Ctrl1")
+	hotkey_keys = list("Alt1")
 	name = "quick_equip_lpocket"
 	full_name = "Quick equip left pocket"
 	description = "Put in or take out an item in left pocket"
@@ -67,7 +67,7 @@
 	keybind_signal = COMSIG_KB_HUMAN_LPOCKETEQUIP_DOWN
 
 /datum/keybinding/human/quick_equip_belt/quick_equip_rpocket
-	hotkey_keys = list("Ctrl2")
+	hotkey_keys = list("Alt2")
 	name = "quick_equip_rpocket"
 	full_name = "Quick equip right pocket"
 	description = "Put in or take out an item in right pocket"
