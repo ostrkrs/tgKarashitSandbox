@@ -48,7 +48,7 @@
 /// Watch your ankles
 /obj/structure/steps/proc/on_enter(turf/our_turf, mob/living/arrived, turf/old_loc, list/atom/old_locs)
 	SIGNAL_HANDLER
-	if (!isliving(arrived) || !isturf(old_loc) || !our_turf.Adjacent(old_loc) || !has_gravity(src) || HAS_TRAIT(arrived, TRAIT_MOB_ELEVATED) || (arrived.movement_type & MOVETYPES_NOT_TOUCHING_GROUND) || arrived.move_intent != MOVE_INTENT_RUN)
+	if (!isliving(arrived) || !isturf(old_loc) || !our_turf.Adjacent(old_loc) || !has_gravity(src) || HAS_TRAIT(arrived, TRAIT_MOB_ELEVATED) || (arrived.movement_type & MOVETYPES_NOT_TOUCHING_GROUND) || arrived.move_intent == MOVE_INTENT_WALK)
 		return
 	var/entered_dir = get_dir(our_turf, old_loc)
 	if (entered_dir == dir)

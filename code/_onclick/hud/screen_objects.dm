@@ -402,9 +402,9 @@
 	screen_loc = ui_spacesuit
 
 /atom/movable/screen/mov_intent
-	name = "run/walk toggle"
+	name = "jog/walk toggle"
 	icon = 'icons/hud/screen_midnight.dmi'
-	icon_state = "running"
+	icon_state = "jogging"
 	mouse_over_pointer = MOUSE_HAND_POINTER
 
 /atom/movable/screen/mov_intent/Click()
@@ -417,6 +417,8 @@
 	switch(living_hud_owner.move_intent)
 		if(MOVE_INTENT_WALK)
 			icon_state = "walking"
+		if(MOVE_INTENT_JOG)
+			icon_state = "jogging"
 		if(MOVE_INTENT_RUN)
 			icon_state = "running"
 	return ..()
@@ -424,7 +426,7 @@
 /atom/movable/screen/mov_intent/proc/toggle(mob/living/user)
 	if(!istype(user))
 		return
-	user.toggle_move_intent()
+	user.toggle_move_intent_jogwalk()
 
 /atom/movable/screen/pull
 	name = "stop pulling"

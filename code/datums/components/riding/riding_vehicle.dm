@@ -238,7 +238,7 @@
 	. = ..()
 	if(!can_slow_down)
 		return
-	RegisterSignal(rider, COMSIG_MOVE_INTENT_TOGGLED, PROC_REF(toggle_move_delay))
+	RegisterSignal(rider, COMSIG_MOVE_INTENT_JOGWALK_TOGGLED, PROC_REF(toggle_move_delay))
 	if(rider.move_intent == MOVE_INTENT_WALK)
 		vehicle_move_delay += 0.6
 
@@ -246,7 +246,7 @@
 	. = ..()
 	if(!can_slow_down)
 		return
-	UnregisterSignal(rider, COMSIG_MOVE_INTENT_TOGGLED)
+	UnregisterSignal(rider, COMSIG_MOVE_INTENT_JOGWALK_TOGGLED)
 	if(rider.move_intent == MOVE_INTENT_WALK)
 		vehicle_move_delay -= 0.6
 

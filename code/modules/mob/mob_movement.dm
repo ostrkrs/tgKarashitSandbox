@@ -525,23 +525,43 @@
 	var/atom/movable/screen/zone_sel/selector = mob.hud_used.zone_select
 	selector.set_selected_zone(BODY_ZONE_L_LEG, mob)
 
-///Verb to toggle the walk or run status
-/client/verb/toggle_walk_run()
-	set name = "toggle-walk-run"
+///Verb to toggle the walk, jog or run status
+/client/verb/toggle_jog_walk()
+	set name = "toggle-walk-jog"
 	set hidden = TRUE
 	set instant = TRUE
 	if(isliving(mob))
 		var/mob/living/user_mob = mob
-		user_mob.toggle_move_intent()
+		user_mob.toggle_move_intent_jogwalk()
+
+/client/verb/toggle_jog_run()
+	set name = "toggle-jog-run"
+	set hidden = TRUE
+	set instant = TRUE
+	if(isliving(mob))
+		var/mob/living/user_mob = mob
+		user_mob.toggle_move_intent_jogrun()
 
 /**
  * Toggle the move intent of the mob
  *
  * triggers an update the move intent hud as well
  */
-/mob/living/proc/toggle_move_intent()
-	if(move_intent == MOVE_INTENT_RUN)
+/mob/living/proc/toggle_move_intent_jogwalk()
+	if(move_intent != MOVE_INTENT_JOG)
+		move_intent = MOVE_INTENT_JOG
+	else
 		move_intent = MOVE_INTENT_WALK
+	if(hud_used?.static_inventory)
+		for(var/atom/movable/screen/mov_intent/selector in hud_used.static_inventory)
+			selector.update_appearance()
+	update_move_intent_slowdown()
+
+	SEND_SIGNAL(src, COMSIG_MOVE_INTENT_JOGRUN_TOGGLED)
+
+/mob/living/proc/toggle_move_intent_jogrun()
+	if(move_intent != MOVE_INTENT_JOG)
+		move_intent = MOVE_INTENT_JOG
 	else
 		move_intent = MOVE_INTENT_RUN
 	if(hud_used?.static_inventory)
@@ -549,7 +569,7 @@
 			selector.update_appearance()
 	update_move_intent_slowdown()
 
-	SEND_SIGNAL(src, COMSIG_MOVE_INTENT_TOGGLED)
+	SEND_SIGNAL(src, COMSIG_MOVE_INTENT_JOGWALK_TOGGLED)
 
 ///Moves a mob upwards in z level
 /mob/verb/up()

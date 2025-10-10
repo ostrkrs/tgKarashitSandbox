@@ -17,8 +17,10 @@
 /// Called when an organ finishes inserting into a bodypart (obj/item/bodypart/limb, movement_flags)
 #define COMSIG_ORGAN_BODYPART_INSERTED "organ_bodypart_inserted"
 
-///Called when movement intent is toggled.
-#define COMSIG_MOVE_INTENT_TOGGLED "move_intent_toggled"
+///Called when jog/walk intents are toggled.
+#define COMSIG_MOVE_INTENT_JOGWALK_TOGGLED "move_intent_jogwalk_toggled"
+///Called when jog/run intents are toggled.
+#define COMSIG_MOVE_INTENT_JOGRUN_TOGGLED "move_intent_jogrun_toggled"
 
 ///from base of mob/update_transform()
 #define COMSIG_LIVING_POST_UPDATE_TRANSFORM "living_post_update_transform"

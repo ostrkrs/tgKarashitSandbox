@@ -138,8 +138,10 @@
 	lose_text = span_notice("You feel awake and aware again.")
 	/// Odds seconds_per_tick the user falls asleep
 	var/sleep_chance = 1
+	/// Odds seconds_per_tick the user falls asleep while jogging
+	var/sleep_chance_jogging = 2
 	/// Odds seconds_per_tick the user falls asleep while running
-	var/sleep_chance_running = 2
+	var/sleep_chance_running = 5
 	/// Odds seconds_per_tick the user falls asleep while drowsy
 	var/sleep_chance_drowsy = 3
 	/// Time values for how long the user will stay drowsy
@@ -165,6 +167,8 @@
 	var/drowsy = !!owner.has_status_effect(/datum/status_effect/drowsiness)
 	var/caffeinated = HAS_TRAIT(owner, TRAIT_STIMULATED)
 	var/final_sleep_chance = sleep_chance
+	if(owner.move_intent == MOVE_INTENT_JOG)
+		final_sleep_chance += sleep_chance_jogging
 	if(owner.move_intent == MOVE_INTENT_RUN)
 		final_sleep_chance += sleep_chance_running
 	if(drowsy)
