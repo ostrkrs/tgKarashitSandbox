@@ -73,7 +73,14 @@
 	return ..()
 
 /mob/living/proc/update_move_intent_slowdown()
-	add_movespeed_modifier((move_intent == MOVE_INTENT_WALK)? /datum/movespeed_modifier/config_walk_run/walk : /datum/movespeed_modifier/config_walk_run/run)
+	var/modifier
+	if(move_intent == MOVE_INTENT_RUN)
+		modifier = /datum/movespeed_modifier/config_walk_jog_run/run
+	if(move_intent == MOVE_INTENT_JOG)
+		modifier = /datum/movespeed_modifier/config_walk_jog_run/jog
+	if(move_intent == MOVE_INTENT_WALK)
+		modifier = /datum/movespeed_modifier/config_walk_jog_run/walk
+	add_movespeed_modifier(modifier)
 
 /mob/living/proc/update_turf_movespeed(turf/open/turf)
 	if(isopenturf(turf) && !HAS_TRAIT(turf, TRAIT_TURF_IGNORE_SLOWDOWN))

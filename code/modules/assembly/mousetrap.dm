@@ -191,7 +191,7 @@
 			if(!(MM.movement_type & MOVETYPES_NOT_TOUCHING_GROUND))
 				if(ishuman(AM))
 					var/mob/living/carbon/H = AM
-					if(H.move_intent == MOVE_INTENT_RUN)
+					if(H.move_intent != MOVE_INTENT_WALK)
 						INVOKE_ASYNC(src, PROC_REF(triggered), H)
 						H.visible_message(span_warning("[H] accidentally steps on [src]."), \
 							span_warning("You accidentally step on [src]"))

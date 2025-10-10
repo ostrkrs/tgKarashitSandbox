@@ -52,18 +52,22 @@
 /datum/movespeed_modifier/grab_slowdown/kill
 	multiplicative_slowdown = 9
 
-/datum/movespeed_modifier/config_walk_run
+/datum/movespeed_modifier/config_walk_jog_run
 	multiplicative_slowdown = 1
-	id = MOVESPEED_ID_MOB_WALK_RUN
+	id = MOVESPEED_ID_MOB_WALK_JOG_RUN
 	flags = IGNORE_NOSLOW
 
-/datum/movespeed_modifier/config_walk_run/proc/sync()
+/datum/movespeed_modifier/config_walk_jog_run/proc/sync()
 
-/datum/movespeed_modifier/config_walk_run/walk/sync()
+/datum/movespeed_modifier/config_walk_jog_run/walk/sync()
 	var/mod = CONFIG_GET(number/movedelay/walk_delay)
 	multiplicative_slowdown = isnum(mod)? mod : initial(multiplicative_slowdown)
 
-/datum/movespeed_modifier/config_walk_run/run/sync()
+/datum/movespeed_modifier/config_walk_jog_run/jog/sync()
+	var/mod = CONFIG_GET(number/movedelay/jog_delay)
+	multiplicative_slowdown = isnum(mod)? mod : initial(multiplicative_slowdown)
+
+/datum/movespeed_modifier/config_walk_jog_run/run/sync()
 	var/mod = CONFIG_GET(number/movedelay/run_delay)
 	multiplicative_slowdown = isnum(mod)? mod : initial(multiplicative_slowdown)
 

@@ -8,6 +8,7 @@
 
 //movement intent defines for the move_intent var
 #define MOVE_INTENT_WALK "walk"
+#define MOVE_INTENT_JOG "jog"
 #define MOVE_INTENT_RUN "run"
 
 /// Amount of oxyloss that KOs a human

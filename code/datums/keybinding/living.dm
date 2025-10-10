@@ -130,40 +130,78 @@
 	var/mob/living/user_mob = user.mob
 	user_mob.set_combat_mode(FALSE, silent = FALSE)
 
-/datum/keybinding/living/toggle_move_intent
+// JOG/RUN
+/datum/keybinding/living/toggle_move_intent_jogrun
+	hotkey_keys = list("Ctrl")
+	name = "toggle_move_intent_jogrun"
+	full_name = "Hold to switch jogging/running"
+	description = "Held down to switch between jogging and running, release to cycle back"
+	keybind_signal = COMSIG_KB_LIVING_TOGGLEMOVEINTENT_UP
+
+/datum/keybinding/living/toggle_move_intent_jogrun/down(client/user, turf/target)
+	. = ..()
+	if(.)
+		return
+	var/mob/living/M = user.mob
+	M.toggle_move_intent_jogrun()
+	return TRUE
+
+/datum/keybinding/living/toggle_move_intent_jogrun/up(client/user, turf/target)
+	. = ..()
+	var/mob/living/M = user.mob
+	M.toggle_move_intent_jogrun()
+	return TRUE
+
+/datum/keybinding/living/toggle_move_intent_jogrun_alternative
+	hotkey_keys = list("Unbound")
+	name = "toggle_move_intent_jogrun_alt"
+	full_name = "Press to switch jogging/running"
+	description = "Pressing this switch between jogging and running, does not cycle back"
+	keybind_signal = COMSIG_KB_LIVING_TOGGLEMOVEINTENTALT_UP
+
+/datum/keybinding/living/toggle_move_intent_jogrun_alternative/up(client/user, turf/target)
+	. = ..()
+	if(.)
+		return
+	var/mob/living/M = user.mob
+	M.toggle_move_intent_jogrun()
+	return TRUE
+
+// JOG/WALK
+/datum/keybinding/living/toggle_move_intent_jogwalk
 	hotkey_keys = list("Alt")
-	name = "toggle_move_intent"
-	full_name = "Hold to toggle move intent"
-	description = "Held down to cycle to the other move intent, release to cycle back"
+	name = "toggle_move_intent_jogwalk"
+	full_name = "Hold to switch jogging/walking"
+	description = "Held down to switch between jogging and walking, release to cycle back"
 	keybind_signal = COMSIG_KB_LIVING_TOGGLEMOVEINTENT_DOWN
 
-/datum/keybinding/living/toggle_move_intent/down(client/user, turf/target)
+/datum/keybinding/living/toggle_move_intent_jogwalk/down(client/user, turf/target)
 	. = ..()
 	if(.)
 		return
 	var/mob/living/M = user.mob
-	M.toggle_move_intent()
+	M.toggle_move_intent_jogwalk()
 	return TRUE
 
-/datum/keybinding/living/toggle_move_intent/up(client/user, turf/target)
+/datum/keybinding/living/toggle_move_intent_jogwalk/up(client/user, turf/target)
 	. = ..()
 	var/mob/living/M = user.mob
-	M.toggle_move_intent()
+	M.toggle_move_intent_jogwalk()
 	return TRUE
 
-/datum/keybinding/living/toggle_move_intent_alternative
+/datum/keybinding/living/toggle_move_intent_jogwalk_alternative
 	hotkey_keys = list("Unbound")
-	name = "toggle_move_intent_alt"
-	full_name = "press to cycle move intent"
-	description = "Pressing this cycle to the opposite move intent, does not cycle back"
+	name = "toggle_move_intent_jogwalk_alt"
+	full_name = "Press to switch jogging/walking"
+	description = "Pressing this switch between jogging and walking, does not cycle back"
 	keybind_signal = COMSIG_KB_LIVING_TOGGLEMOVEINTENTALT_DOWN
 
-/datum/keybinding/living/toggle_move_intent_alternative/down(client/user, turf/target)
+/datum/keybinding/living/toggle_move_intent_jogwalk_alternative/down(client/user, turf/target)
 	. = ..()
 	if(.)
 		return
 	var/mob/living/M = user.mob
-	M.toggle_move_intent()
+	M.toggle_move_intent_jogwalk()
 	return TRUE
 
 /datum/keybinding/living/toggle_throw_mode

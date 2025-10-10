@@ -13,9 +13,17 @@
 	if(nutrition <= 0 || stat == DEAD)
 		return
 	var/hunger_loss = HUNGER_FACTOR / 10
-	if(move_intent == MOVE_INTENT_RUN)
+	if(move_intent == MOVE_INTENT_JOG)
 		hunger_loss *= 2
+	if(move_intent == MOVE_INTENT_RUN)
+		hunger_loss *= 4
 	adjust_nutrition(-1 * hunger_loss)
+
+	if(move_intent == MOVE_INTENT_RUN)
+		if(getStaminaLoss() < 60)
+			adjustStaminaLoss(0.5)
+		else
+			adjustStaminaLoss(0.1)
 
 /mob/living/carbon/set_usable_legs(new_value)
 	. = ..()
