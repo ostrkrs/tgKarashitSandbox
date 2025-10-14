@@ -14,6 +14,9 @@
 	resistance_flags = FIRE_PROOF
 	damage_deflection = 70
 	can_open_with_hands = FALSE
+	smoothing_groups = SMOOTH_GROUP_AIRLOCK
+	canSmoothWith = SMOOTH_GROUP_WALLS + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_GIRDER
+
 	/// The recipe for this door
 	var/datum/crafting_recipe/recipe_type = /datum/crafting_recipe/blast_doors
 	/// The current deconstruction step
