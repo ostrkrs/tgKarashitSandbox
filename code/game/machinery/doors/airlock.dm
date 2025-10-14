@@ -2544,6 +2544,7 @@
 /obj/machinery/door/airlock/multi_tile
 	icon = 'icons/obj/doors/airlocks/multi_tile/public/glass.dmi'
 	overlays_file = 'icons/obj/doors/airlocks/multi_tile/public/overlays.dmi'
+	note_overlay_file = 'icons/obj/doors/airlocks/multi_tile/public/overlays.dmi'
 	assemblytype = /obj/structure/door_assembly/multi_tile/door_assembly_public
 	multi_tile = TRUE
 	opacity = TRUE
