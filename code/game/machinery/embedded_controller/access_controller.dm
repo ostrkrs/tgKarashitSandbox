@@ -32,7 +32,7 @@
 	return TRUE
 
 /obj/machinery/door_buttons/access_button
-	icon = 'icons/obj/machines/wallmounts.dmi'
+	icon = 'icons/obj/machines/wallmounts/wallmounts.dmi'
 	icon_state = "access_button_standby"
 	base_icon_state = "access_button"
 	name = "access button"
@@ -106,7 +106,7 @@
 /obj/machinery/door_buttons/airlock_controller
 	name = "access console"
 	desc = "A small console that can cycle opening between two airlocks."
-	icon = 'icons/obj/machines/wallmounts.dmi'
+	icon = 'icons/obj/machines/wallmounts/wallmounts.dmi'
 	icon_state = "access_control_standby"
 	base_icon_state = "access_control"
 	interaction_flags_machine = INTERACT_MACHINE_WIRES_IF_OPEN|INTERACT_MACHINE_ALLOW_SILICON|INTERACT_MACHINE_OPEN_SILICON
