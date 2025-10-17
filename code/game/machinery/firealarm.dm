@@ -5,7 +5,7 @@
 /obj/item/wallframe/firealarm
 	name = "fire alarm frame"
 	desc = "Used for building fire alarms."
-	icon = 'icons/obj/machines/wallmounts/wallmounts.dmi'
+	icon = 'icons/obj/machines/wallmounts/fire_alarm.dmi'
 	icon_state = "fire_bitem"
 	result_path = /obj/machinery/firealarm
 	pixel_shift = 26
@@ -13,7 +13,7 @@
 /obj/machinery/firealarm
 	name = "fire alarm"
 	desc = "Pull this in case of emergency. Thus, keep pulling it forever."
-	icon = 'icons/obj/machines/wallmounts/wallmounts.dmi'
+	icon = 'icons/obj/machines/wallmounts/fire_alarm.dmi'
 	icon_state = "fire0"
 	max_integrity = 250
 	integrity_failure = 0.4
@@ -616,7 +616,7 @@
 		reset()
 	user?.log_message("enabled firelock sensors using [src].", LOG_GAME)
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/firealarm, 26)
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/firealarm, 31)
 
 /*
  * Return of Party button
