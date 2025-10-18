@@ -9,6 +9,9 @@
 	armor_type = /datum/armor/door_password
 	resistance_flags = INDESTRUCTIBLE | FIRE_PROOF | ACID_PROOF | LAVA_PROOF
 	damage_deflection = 70
+	smoothing_groups = SMOOTH_GROUP_AIRLOCK
+	canSmoothWith = SMOOTH_GROUP_WALLS + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_GIRDER
+
 	/// Password that must be provided to open the door.
 	var/password = "Swordfish"
 	/// Setting to true allows the user to input the password through a text box after clicking on the door.
