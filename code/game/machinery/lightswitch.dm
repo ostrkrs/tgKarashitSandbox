@@ -1,7 +1,7 @@
 /// The light switch. Can have multiple per area.
 /obj/machinery/light_switch
 	name = "light switch"
-	icon = 'icons/obj/machines/wallmounts/wallmounts.dmi'
+	icon = 'icons/obj/machines/wallmounts/buttons.dmi'
 	icon_state = "light-nopower"
 	base_icon_state = "light"
 	desc = "Make dark."
@@ -16,7 +16,7 @@
 	/// Should this lightswitch automatically rename itself to match the area it's in?
 	var/autoname = TRUE
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light_switch, 26)
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light_switch, 24)
 
 /obj/machinery/light_switch/Initialize(mapload)
 	. = ..()
@@ -117,7 +117,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light_switch, 26)
 /obj/item/wallframe/light_switch
 	name = "light switch"
 	desc = "An unmounted light switch. Attach it to a wall to use."
-	icon = 'icons/obj/machines/wallmounts/wallmounts.dmi'
+	icon = 'icons/obj/machines/wallmounts/buttons.dmi'
 	icon_state = "light-nopower"
 	result_path = /obj/machinery/light_switch
 	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT)
