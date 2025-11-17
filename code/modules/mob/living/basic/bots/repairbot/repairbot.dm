@@ -343,9 +343,8 @@
 	return ..()
 
 /obj/item/weldingtool/repairbot
-	max_fuel = INFINITY
-	starting_fuel = TRUE
 	change_icons = FALSE
+	tank = /obj/item/welder_tank/integrated/infinite
 
 /obj/item/construction/rcd/repairbot
 	matter = INFINITY

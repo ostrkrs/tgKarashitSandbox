@@ -1,3 +1,4 @@
+/// MARK: BASE WELDER
 /obj/item/weldingtool
 	name = "welding tool"
 	desc = "A standard edition welder provided by Nanotrasen."
@@ -35,10 +36,10 @@
 	var/welding = FALSE
 	/// Whether the welder is secured or unsecured (able to attach rods to it to make a flamethrower)
 	var/status = TRUE
-	/// The max amount of fuel the welder can hold
-	var/max_fuel = 20
-	/// Does the welder start with fuel.
-	var/starting_fuel = TRUE
+	/// TRUE if using interchangeable fuel tanks, FALSE if using integrated fuel storage
+	var/integrated_tank = FALSE
+	/// Where the fuel is stored.
+	var/obj/item/welder_tank/tank = /obj/item/welder_tank
 	/// Whether or not we're changing the icon based on fuel left.
 	var/change_icons = TRUE
 	/// Used in process(), dictates whether or not we're calling STOP_PROCESSING whilst we're not welding.
@@ -59,9 +60,9 @@
 	AddElement(/datum/element/tool_flash, light_range)
 	AddElement(/datum/element/falling_hazard, damage = force, wound_bonus = wound_bonus, hardhat_safety = TRUE, crushes = FALSE, impact_sound = hitsound)
 
-	create_reagents(max_fuel)
-	if(starting_fuel)
-		reagents.add_reagent(/datum/reagent/fuel, max_fuel)
+	if(ispath(tank))
+		tank = new tank
+
 	update_appearance()
 
 /obj/item/weldingtool/update_icon_state()
@@ -71,16 +72,18 @@
 		inhand_icon_state = "[initial(inhand_icon_state)]"
 	return ..()
 
-
 /obj/item/weldingtool/update_overlays()
 	. = ..()
 	if(change_icons)
-		var/ratio = get_fuel() / max_fuel
+		var/ratio = get_fuel() / tank.max_fuel
 		ratio = CEILING(ratio*4, 1) * 25
 		. += "[initial(icon_state)][ratio]"
 	if(welding)
 		. += "[initial(icon_state)]-on"
 
+	var/inserted_tank_state = tank.icon_state
+	if(tank && !integrated_tank)
+		. += "[initial(icon_state)]-[inserted_tank_state]"
 
 /obj/item/weldingtool/process(seconds_per_tick)
 	if(welding)
@@ -103,7 +106,6 @@
 	//This is to start fires. process() is only called if the welder is on.
 	open_flame()
 
-
 /obj/item/weldingtool/suicide_act(mob/living/user)
 	user.visible_message(span_suicide("[user] welds [user.p_their()] every orifice closed! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return FIRELOSS
@@ -120,8 +122,9 @@
 	update_appearance()
 
 /obj/item/weldingtool/proc/explode()
-	var/plasmaAmount = reagents.get_reagent_amount(/datum/reagent/toxin/plasma)
+	var/plasmaAmount = tank.reagents.get_reagent_amount(/datum/reagent/toxin/plasma)
 	dyn_explosion(src, plasmaAmount/5, explosion_cause = src) // 20 plasma in a standard welder has a 4 power explosion. no breaches, but enough to kill/dismember holder
+	QDEL_NULL(tank)
 	qdel(src)
 
 /obj/item/weldingtool/cyborg_unequip(mob/user)
@@ -139,16 +142,43 @@
 
 /obj/item/weldingtool/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
 	if(!status && interacting_with.is_refillable())
-		reagents.trans_to(interacting_with, reagents.total_volume, transferred_by = user)
+		tank.reagents.trans_to(interacting_with, tank.reagents.total_volume, transferred_by = user)
 		to_chat(user, span_notice("You empty [src]'s fuel tank into [interacting_with]."))
 		update_appearance()
 		return ITEM_INTERACT_SUCCESS
+
 	if(!ishuman(interacting_with))
 		return NONE
+
 	if(user.combat_mode)
 		return NONE
 
+	if(!integrated_tank)
+		if(istype(interacting_with, /obj/item/welder_tank))
+			if(tank)
+				to_chat(user, span_warning("\The [src] already has a tank attached - remove it first."))
+				return TRUE
+			if(user.get_active_hand() != src && user.get_inactive_hand() != src)
+				to_chat(user, span_warning("You must hold the welder in your hands to attach a tank."))
+				return TRUE
+			tank = interacting_with
+			user.visible_message("\The [user] slots \a [tank] into \the [src].", "You slot \a [tank] into \the [src].")
+			playsound(src, 'sound/items/handling/reagent_containers/plastic_bottle/bottle_cap_close.ogg', 10, 1)
+			update_icon()
+			return TRUE
+
 	return try_heal_loop(interacting_with, user)
+
+/obj/item/weldingtool/attack_hand(mob/user as mob)
+	if(tank && !integrated_tank)
+		if(!welding)
+			user.visible_message("[user] removes \the [tank] from \the [src].", "You remove \the [tank] from \the [src].")
+			user.put_in_hands(tank)
+			tank = NONE
+			playsound(src, 'sound/items/handling/reagent_containers/plastic_bottle/bottle_cap_open.ogg', 10, 1)
+			update_icon()
+		else
+			to_chat(user, span_danger("Turn off the welder first!"))
 
 /obj/item/weldingtool/proc/try_heal_loop(atom/interacting_with, mob/living/user, repeating = FALSE)
 	var/mob/living/carbon/human/attacked_humanoid = interacting_with
@@ -189,7 +219,7 @@
 		user.log_message("set [key_name(attacked_mob)] on fire with [src].", LOG_ATTACK)
 
 /obj/item/weldingtool/attack_self(mob/user)
-	if(reagents.has_reagent(/datum/reagent/toxin/plasma))
+	if(tank.reagents.has_reagent(/datum/reagent/toxin/plasma))
 		message_admins("[ADMIN_LOOKUPFLW(user)] activated a rigged welder at [AREACOORD(user)].")
 		user.log_message("activated a rigged welder", LOG_VICTIM)
 		explode()
@@ -200,7 +230,7 @@
 
 /// Returns the amount of fuel in the welder
 /obj/item/weldingtool/proc/get_fuel()
-	return reagents.get_reagent_amount(/datum/reagent/fuel) + reagents.get_reagent_amount(/datum/reagent/toxin/plasma)
+	return tank.reagents.get_reagent_amount(/datum/reagent/fuel) + tank.reagents.get_reagent_amount(/datum/reagent/toxin/plasma)
 
 /// Uses fuel from the welding tool.
 /obj/item/weldingtool/use(used = 0)
@@ -211,12 +241,11 @@
 		burned_fuel_for = 0
 
 	if(get_fuel() >= used)
-		reagents.remove_reagent(/datum/reagent/fuel, used)
+		tank.reagents.remove_reagent(/datum/reagent/fuel, used)
 		check_fuel()
 		return TRUE
 	else
 		return FALSE
-
 
 /// Toggles the welding value.
 /obj/item/weldingtool/proc/set_welding(new_value)
@@ -238,6 +267,8 @@
 
 // /Switches the welder on
 /obj/item/weldingtool/proc/switched_on(mob/user)
+	if(!tank)
+		balloon_alert(user, "no tank!")
 	if(!status)
 		balloon_alert(user, "unsecured!")
 		return
@@ -269,7 +300,7 @@
 
 /obj/item/weldingtool/examine(mob/user)
 	. = ..()
-	. += "It contains [get_fuel()] unit\s of fuel out of [max_fuel]."
+	. += "It contains [get_fuel()] unit\s of fuel out of [tank.max_fuel]."
 
 /obj/item/weldingtool/get_temperature()
 	return welding * heat
@@ -293,6 +324,9 @@
 
 /// Ran when the welder is attacked by a screwdriver.
 /obj/item/weldingtool/proc/flamethrower_screwdriver(obj/item/tool, mob/user)
+	if(tank)
+		to_chat(user, span_warning("Remove fuel tank first!"))
+		return
 	if(welding)
 		to_chat(user, span_warning("Turn it off first!"))
 		return
@@ -327,43 +361,37 @@
 		return ""
 
 /obj/item/weldingtool/empty
-	starting_fuel = FALSE
+	tank = NONE
 
 /obj/item/weldingtool/largetank
-	name = "industrial welding tool"
-	desc = "A slightly larger welder with a larger tank."
-	icon_state = "indwelder"
-	max_fuel = 40
-	custom_materials = list(/datum/material/glass=SMALL_MATERIAL_AMOUNT*0.6)
+	tank = /obj/item/welder_tank/large
 
-/obj/item/weldingtool/largetank/flamethrower_screwdriver()
-	return
-
-/obj/item/weldingtool/largetank/empty
-	starting_fuel = FALSE
-
-/obj/item/weldingtool/largetank/cyborg
+/obj/item/weldingtool/cyborg
 	name = "integrated welding tool"
 	desc = "An advanced welder designed to be used in robotic systems. Custom framework doubles the speed of welding."
 	icon = 'icons/obj/items_cyborg.dmi'
 	icon_state = "indwelder_cyborg"
 	toolspeed = 0.5
+	integrated_tank = TRUE
 
+/// MARK: MINI WELDER
 /obj/item/weldingtool/mini
 	name = "emergency welding tool"
 	desc = "A miniature welder used during emergencies."
 	icon_state = "miniwelder"
-	max_fuel = 10
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron=SMALL_MATERIAL_AMOUNT*0.3, /datum/material/glass=SMALL_MATERIAL_AMOUNT*0.1)
 	change_icons = FALSE
+	tank = /obj/item/welder_tank/integrated/mini
+	integrated_tank = TRUE
 
 /obj/item/weldingtool/mini/flamethrower_screwdriver()
 	return
 
 /obj/item/weldingtool/mini/empty
-	starting_fuel = FALSE
+	tank = /obj/item/welder_tank/integrated/mini/empty
 
+/// MARK: ALIEN WELDER
 /obj/item/weldingtool/abductor
 	name = "alien welding tool"
 	desc = "An alien welding tool. Whatever fuel it uses, it never runs out."
@@ -374,37 +402,89 @@
 	light_system = NO_LIGHT_SUPPORT
 	light_range = 0
 	change_icons = FALSE
+	tank = /obj/item/welder_tank/integrated
+	integrated_tank = TRUE
 
 /obj/item/weldingtool/abductor/process()
-	if(get_fuel() <= max_fuel)
-		reagents.add_reagent(/datum/reagent/fuel, 1)
+	if(tank)
+		if(get_fuel() <= tank.max_fuel)
+			tank.reagents.add_reagent(/datum/reagent/fuel, 1)
 	..()
 
-/obj/item/weldingtool/hugetank
-	name = "upgraded industrial welding tool"
-	desc = "An upgraded welder based of the industrial welder."
-	icon_state = "upindwelder"
-	inhand_icon_state = "upindwelder"
-	max_fuel = 80
-	custom_materials = list(/datum/material/iron=SMALL_MATERIAL_AMOUNT*0.7, /datum/material/glass=SMALL_MATERIAL_AMOUNT*1.2)
-
+/// MARK: RND WELDER
 /obj/item/weldingtool/experimental
 	name = "experimental welding tool"
 	desc = "An experimental welder capable of self-fuel generation and less harmful to the eyes."
 	icon_state = "exwelder"
 	inhand_icon_state = "exwelder"
-	max_fuel = 40
 	custom_materials = list(/datum/material/iron =HALF_SHEET_MATERIAL_AMOUNT, /datum/material/glass = SMALL_MATERIAL_AMOUNT*5, /datum/material/plasma =HALF_SHEET_MATERIAL_AMOUNT*1.5, /datum/material/uranium =SMALL_MATERIAL_AMOUNT * 2)
 	change_icons = FALSE
 	can_off_process = TRUE
 	light_range = 1
 	w_class = WEIGHT_CLASS_NORMAL
 	toolspeed = 0.5
+	tank = /obj/item/welder_tank/integrated
 	var/last_gen = 0
 	var/nextrefueltick = 0
 
 /obj/item/weldingtool/experimental/process()
 	..()
-	if(get_fuel() < max_fuel && nextrefueltick < world.time)
-		nextrefueltick = world.time + 10
-		reagents.add_reagent(/datum/reagent/fuel, 1)
+	if(tank)
+		if(get_fuel() < tank.max_fuel && nextrefueltick < world.time)
+			nextrefueltick = world.time + 10
+			tank.reagents.add_reagent(/datum/reagent/fuel, 1)
+
+/// MARK: Welding tool tanks
+/obj/item/welder_tank
+	name = "\improper welding fuel cartridge"
+	desc = "An interchangeable fuel tank meant for a welding tool."
+	icon = 'icons/obj/tools.dmi'
+	icon_state = "weldertank"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 5
+	throwforce = 5
+	custom_materials = list(/datum/material/iron =SHEET_MATERIAL_AMOUNT * 0.25)
+	var/max_fuel = 20
+
+/obj/item/welder_tank/Initialize()
+	create_reagents(max_fuel)
+	reagents.add_reagent(/datum/reagent/fuel, max_fuel)
+	. = ..()
+
+/obj/item/welder_tank/plasma
+	name = "\improper welding plasma cartridge"
+	icon_state = "weldertank_plasma"
+
+/obj/item/welder_tank/plasma/Initialize()
+	create_reagents(max_fuel)
+	reagents.add_reagent(/datum/reagent/toxin/plasma, max_fuel)
+	. = ..()
+
+/obj/item/welder_tank/empty/Initialize()
+	create_reagents(max_fuel)
+	. = ..()
+
+/obj/item/welder_tank/large
+	name = "\improper industrial welding fuel cartridge"
+	icon_state = "weldertank_large"
+	max_fuel = 40
+	custom_materials = list(/datum/material/iron =SHEET_MATERIAL_AMOUNT * 0.5)
+
+/obj/item/welder_tank/large/empty/Initialize()
+	create_reagents(max_fuel)
+	. = ..()
+
+/obj/item/welder_tank/integrated
+	name = "integrated fuel cartridge"
+	desc = "This shouldnt be existing outside its welding tool on its own."
+
+/obj/item/welder_tank/integrated/mini
+	name = "integrated mini fuel cartridge"
+	max_fuel = 10
+
+/obj/item/welder_tank/integrated/mini/empty/Initialize()
+	create_reagents(max_fuel)
+	. = ..()
+
+/obj/item/welder_tank/integrated/infinite
+	max_fuel = INFINITY

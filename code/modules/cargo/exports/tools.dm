@@ -46,7 +46,7 @@
 /datum/export/weldingtool/industrial
 	cost = CARGO_CRATE_VALUE * 0.05
 	unit_name = "industrial welding tool"
-	export_types = list(/obj/item/weldingtool/largetank, /obj/item/weldingtool/hugetank)
+	export_types = list(/obj/item/weldingtool/largetank)
 
 
 /datum/export/extinguisher
