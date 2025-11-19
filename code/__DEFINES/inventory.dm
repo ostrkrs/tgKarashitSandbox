@@ -355,6 +355,7 @@ GLOBAL_LIST_INIT(tool_items, list(
 	/obj/item/stack/cable_coil,
 	/obj/item/t_scanner,
 	/obj/item/weldingtool,
+	/obj/item/welder_tank,
 	/obj/item/wirecutters,
 	/obj/item/wrench,
 	/obj/item/spess_knife,

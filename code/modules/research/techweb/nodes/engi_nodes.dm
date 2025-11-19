@@ -136,6 +136,8 @@
 		"rwd",
 		"cable_coil",
 		"welding_helmet",
+		"welding_tank",
+		"welding_tank_large",
 		"welding_tool",
 		"mini_welding_tool",
 		"tscanner",

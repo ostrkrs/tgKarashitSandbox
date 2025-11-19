@@ -128,9 +128,6 @@
 			if(tank)
 				to_chat(user, span_warning("\The [src] already has a tank attached - remove it first."))
 				return TRUE
-			if(!user.is_holding(src))
-				to_chat(user, span_danger("You must hold \the [src] in your hands!"))
-				return TRUE
 			tank = tool
 			balloon_alert(user, "inserted tank")
 			user.transferItemToLoc(tool, src)
@@ -183,10 +180,9 @@
 		return
 	if(integrated_tank)
 		return
+	if(!user.is_holding(src))
+		return
 	else
-		if(!user.is_holding(src))
-			to_chat(user, span_danger("You must hold \the [src] in your hands!"))
-			return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 		if(welding)
 			to_chat(user, span_danger("Turn off the welder first!"))
 			return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
@@ -455,10 +451,10 @@
 			nextrefueltick = world.time + 10
 			tank.reagents.add_reagent(/datum/reagent/fuel, 1)
 
-/// MARK: Welding tool tanks
+/// MARK: Welding torch tanks
 /obj/item/welder_tank
 	name = "\improper welding cartridge"
-	desc = "An interchangeable fuel tank meant for a welding tool."
+	desc = "An interchangeable fuel tank meant for a welding torch."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "weldertank"
 	pickup_sound = 'sound/items/handling/grenade/grenade_pick_up.ogg'
@@ -491,7 +487,7 @@
 	icon_state = "weldertank_large"
 	max_fuel = 40
 	custom_materials = list(/datum/material/iron =SHEET_MATERIAL_AMOUNT * 0.5)
-	custom_price = PAYCHECK_CREW * 1.5
+	custom_price = PAYCHECK_CREW * 1
 
 /obj/item/welder_tank/large/empty/Initialize()
 	. = ..()
