@@ -65,11 +65,12 @@
 	item_flags = NO_MAT_REDEMPTION
 
 /obj/item/weldingtool/drone
-	name = "built-in welding tool"
+	name = "built-in welding torch"
 	desc = "A welding tool built into your chassis."
 	icon = 'icons/obj/items_cyborg.dmi'
 	icon_state = "indwelder_cyborg"
 	item_flags = NO_MAT_REDEMPTION
+	integrated_tank = TRUE
 
 /obj/item/wirecutters/drone
 	name = "built-in wirecutters"

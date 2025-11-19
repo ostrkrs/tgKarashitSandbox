@@ -83,18 +83,6 @@
 	)
 	departmental_flags = DEPARTMENT_BITFLAG_ENGINEERING
 
-/datum/design/large_welding_tool
-	name = "Industrial Welding Tool"
-	id = "large_welding_tool"
-	build_type = AUTOLATHE | PROTOLATHE | AWAY_LATHE
-	materials = list(/datum/material/iron = SMALL_MATERIAL_AMOUNT*0.7, /datum/material/glass = SMALL_MATERIAL_AMOUNT*0.6)
-	build_path = /obj/item/weldingtool/largetank/empty
-	category = list(
-		RND_CATEGORY_HACKED,
-		RND_CATEGORY_TOOLS + RND_SUBCATEGORY_TOOLS_ENGINEERING,
-	)
-	departmental_flags = DEPARTMENT_BITFLAG_ENGINEERING
-
 /datum/design/earmuffs
 	name = "Earmuffs"
 	id = "earmuffs"

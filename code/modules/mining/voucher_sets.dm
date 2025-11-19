@@ -85,7 +85,7 @@
 	icon_state = "mining_drone"
 	set_items = list(
 		/mob/living/basic/mining_drone,
-		/obj/item/weldingtool/hugetank,
+		/obj/item/weldingtool/largetank,
 		/obj/item/clothing/head/utility/welding,
 		/obj/item/borg/upgrade/modkit/minebot_passthrough,
 	)
