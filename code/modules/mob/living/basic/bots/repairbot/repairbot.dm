@@ -344,7 +344,8 @@
 
 /obj/item/weldingtool/repairbot
 	change_icons = FALSE
-	tank = /obj/item/welder_tank/integrated/infinite
+	tank = /obj/item/welder_tank/infinite
+	integrated_tank = TRUE
 
 /obj/item/construction/rcd/repairbot
 	matter = INFINITY

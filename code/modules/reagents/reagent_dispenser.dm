@@ -296,6 +296,16 @@
 	return ..()
 
 /obj/structure/reagent_dispensers/fueltank/attackby(obj/item/attacking_item, mob/user, list/modifiers, list/attack_modifiers)
+	var/obj/item/welder_tank/refilling_weldertank = attacking_item
+	if(istype(refilling_weldertank))
+		if(refilling_weldertank.reagents.has_reagent(/datum/reagent/fuel, refilling_weldertank.max_fuel))
+			to_chat(user, span_warning("Your [refilling_weldertank.name] is already full!"))
+			return
+		reagents.trans_to(refilling_weldertank, refilling_weldertank.max_fuel, transferred_by = user)
+		user.visible_message(span_notice("[user] refills [user.p_their()] [refilling_weldertank.name]."), span_notice("You refill [refilling_weldertank]."))
+		playsound(src, 'sound/effects/refill.ogg', 25, TRUE)
+		return
+
 	if(attacking_item.tool_behaviour != TOOL_WELDER)
 		return ..()
 
@@ -304,7 +314,7 @@
 		if(refilling_welder.tank.reagents.has_reagent(/datum/reagent/fuel, refilling_welder.tank.max_fuel))
 			to_chat(user, span_warning("Your [refilling_welder.name] is already full!"))
 			return
-		reagents.trans_to(refilling_welder, refilling_welder.tank.max_fuel, transferred_by = user)
+		reagents.trans_to(refilling_welder.tank, refilling_welder.tank.max_fuel, transferred_by = user)
 		user.visible_message(span_notice("[user] refills [user.p_their()] [refilling_welder.name]."), span_notice("You refill [refilling_welder]."))
 		playsound(src, 'sound/effects/refill.ogg', 50, TRUE)
 		refilling_welder.update_appearance()

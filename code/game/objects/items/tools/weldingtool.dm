@@ -1,7 +1,7 @@
 /// MARK: BASE WELDER
 /obj/item/weldingtool
-	name = "welding tool"
-	desc = "A standard edition welder provided by Nanotrasen."
+	name = "welding torch"
+	desc = "A standard edition welding torch with a port for attaching fuel tanks."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "welder"
 	inhand_icon_state = "welder"
@@ -75,14 +75,17 @@
 /obj/item/weldingtool/update_overlays()
 	. = ..()
 	if(change_icons)
-		var/ratio = get_fuel() / tank.max_fuel
-		ratio = CEILING(ratio*4, 1) * 25
-		. += "[initial(icon_state)][ratio]"
+		if(!tank)
+			. += "[initial(icon_state)][0]"
+		else
+			var/ratio = tank.get_fuel() / tank.max_fuel
+			ratio = CEILING(ratio*4, 1) * 25
+			. += "[initial(icon_state)][ratio]"
 	if(welding)
 		. += "[initial(icon_state)]-on"
 
-	var/inserted_tank_state = tank.icon_state
 	if(tank && !integrated_tank)
+		var/inserted_tank_state = tank.icon_state
 		. += "[initial(icon_state)]-[inserted_tank_state]"
 
 /obj/item/weldingtool/process(seconds_per_tick)
@@ -116,7 +119,24 @@
 
 /obj/item/weldingtool/attackby(obj/item/tool, mob/user, list/modifiers, list/attack_modifiers)
 	if(istype(tool, /obj/item/stack/rods))
+		if(tank)
+			to_chat(user, span_warning("\The [src] has a tank attached - remove it first."))
+			return TRUE
 		flamethrower_rods(tool, user)
+	if(!integrated_tank)
+		if(istype(tool, /obj/item/welder_tank))
+			if(tank)
+				to_chat(user, span_warning("\The [src] already has a tank attached - remove it first."))
+				return TRUE
+			if(!user.is_holding(src))
+				to_chat(user, span_danger("You must hold \the [src] in your hands!"))
+				return TRUE
+			tank = tool
+			balloon_alert(user, "inserted tank")
+			user.transferItemToLoc(tool, src)
+			playsound(src, 'sound/items/tools/weldertank_insert.ogg', 25, 1)
+			update_icon()
+			return TRUE
 	else
 		. = ..()
 	update_appearance()
@@ -153,32 +173,31 @@
 	if(user.combat_mode)
 		return NONE
 
-	if(!integrated_tank)
-		if(istype(interacting_with, /obj/item/welder_tank))
-			if(tank)
-				to_chat(user, span_warning("\The [src] already has a tank attached - remove it first."))
-				return TRUE
-			if(user.get_active_hand() != src && user.get_inactive_hand() != src)
-				to_chat(user, span_warning("You must hold the welder in your hands to attach a tank."))
-				return TRUE
-			tank = interacting_with
-			user.visible_message("\The [user] slots \a [tank] into \the [src].", "You slot \a [tank] into \the [src].")
-			playsound(src, 'sound/items/handling/reagent_containers/plastic_bottle/bottle_cap_close.ogg', 10, 1)
-			update_icon()
-			return TRUE
-
 	return try_heal_loop(interacting_with, user)
 
-/obj/item/weldingtool/attack_hand(mob/user as mob)
-	if(tank && !integrated_tank)
-		if(!welding)
-			user.visible_message("[user] removes \the [tank] from \the [src].", "You remove \the [tank] from \the [src].")
+/obj/item/weldingtool/attack_hand_secondary(mob/user as mob)
+	. = ..()
+	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
+		return
+	if(!tank)
+		return
+	if(integrated_tank)
+		return
+	else
+		if(!user.is_holding(src))
+			to_chat(user, span_danger("You must hold \the [src] in your hands!"))
+			return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+		if(welding)
+			to_chat(user, span_danger("Turn off the welder first!"))
+			return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+		else
+			balloon_alert(user, "removed tank")
 			user.put_in_hands(tank)
 			tank = NONE
-			playsound(src, 'sound/items/handling/reagent_containers/plastic_bottle/bottle_cap_open.ogg', 10, 1)
+			playsound(src, 'sound/items/tools/weldertank_remove.ogg', 25, 1)
 			update_icon()
-		else
-			to_chat(user, span_danger("Turn off the welder first!"))
+
+	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/item/weldingtool/proc/try_heal_loop(atom/interacting_with, mob/living/user, repeating = FALSE)
 	var/mob/living/carbon/human/attacked_humanoid = interacting_with
@@ -219,6 +238,12 @@
 		user.log_message("set [key_name(attacked_mob)] on fire with [src].", LOG_ATTACK)
 
 /obj/item/weldingtool/attack_self(mob/user)
+	if(!tank)
+		balloon_alert(user, "no tank!")
+		return
+	if(tank && !tank.reagents)
+		balloon_alert(user, "no fuel!")
+		return
 	if(tank.reagents.has_reagent(/datum/reagent/toxin/plasma))
 		message_admins("[ADMIN_LOOKUPFLW(user)] activated a rigged welder at [AREACOORD(user)].")
 		user.log_message("activated a rigged welder", LOG_VICTIM)
@@ -228,10 +253,6 @@
 	switched_on(user)
 	update_appearance()
 
-/// Returns the amount of fuel in the welder
-/obj/item/weldingtool/proc/get_fuel()
-	return tank.reagents.get_reagent_amount(/datum/reagent/fuel) + tank.reagents.get_reagent_amount(/datum/reagent/toxin/plasma)
-
 /// Uses fuel from the welding tool.
 /obj/item/weldingtool/use(used = 0)
 	if(!isOn() || !check_fuel())
@@ -240,7 +261,7 @@
 	if(used > 0)
 		burned_fuel_for = 0
 
-	if(get_fuel() >= used)
+	if(tank.get_fuel() >= used)
 		tank.reagents.remove_reagent(/datum/reagent/fuel, used)
 		check_fuel()
 		return TRUE
@@ -258,7 +279,7 @@
 
 /// Turns off the welder if there is no more fuel (does this really need to be its own proc?)
 /obj/item/weldingtool/proc/check_fuel(mob/user)
-	if(get_fuel() <= 0 && welding)
+	if(tank.get_fuel() <= 0 && welding)
 		set_light_on(FALSE)
 		switched_on(user)
 		update_appearance()
@@ -267,14 +288,12 @@
 
 // /Switches the welder on
 /obj/item/weldingtool/proc/switched_on(mob/user)
-	if(!tank)
-		balloon_alert(user, "no tank!")
 	if(!status)
 		balloon_alert(user, "unsecured!")
 		return
 	set_welding(!welding)
 	if(welding)
-		if(get_fuel() >= 1)
+		if(tank.get_fuel() >= 1)
 			playsound(loc, activation_sound, 50, TRUE)
 			force = 15
 			damtype = BURN
@@ -300,7 +319,8 @@
 
 /obj/item/weldingtool/examine(mob/user)
 	. = ..()
-	. += "It contains [get_fuel()] unit\s of fuel out of [tank.max_fuel]."
+	if(tank)
+		. += "It contains [tank.get_fuel()] unit\s of fuel out of [tank.max_fuel]."
 
 /obj/item/weldingtool/get_temperature()
 	return welding * heat
@@ -314,7 +334,7 @@
 	if(!isOn() || !check_fuel())
 		to_chat(user, span_warning("[src] has to be on to complete this task!"))
 		return FALSE
-	if(get_fuel() < amount)
+	if(tank.get_fuel() < amount)
 		to_chat(user, span_warning("You need more welding fuel to complete this task!"))
 		return FALSE
 	if(heat < heat_required)
@@ -367,7 +387,7 @@
 	tank = /obj/item/welder_tank/large
 
 /obj/item/weldingtool/cyborg
-	name = "integrated welding tool"
+	name = "integrated welding torch"
 	desc = "An advanced welder designed to be used in robotic systems. Custom framework doubles the speed of welding."
 	icon = 'icons/obj/items_cyborg.dmi'
 	icon_state = "indwelder_cyborg"
@@ -376,24 +396,24 @@
 
 /// MARK: MINI WELDER
 /obj/item/weldingtool/mini
-	name = "emergency welding tool"
+	name = "emergency welding torch"
 	desc = "A miniature welder used during emergencies."
 	icon_state = "miniwelder"
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron=SMALL_MATERIAL_AMOUNT*0.3, /datum/material/glass=SMALL_MATERIAL_AMOUNT*0.1)
-	change_icons = FALSE
-	tank = /obj/item/welder_tank/integrated/mini
+	change_icons = TRUE
+	tank = /obj/item/welder_tank/mini
 	integrated_tank = TRUE
 
 /obj/item/weldingtool/mini/flamethrower_screwdriver()
 	return
 
 /obj/item/weldingtool/mini/empty
-	tank = /obj/item/welder_tank/integrated/mini/empty
+	tank = /obj/item/welder_tank/mini/empty
 
 /// MARK: ALIEN WELDER
 /obj/item/weldingtool/abductor
-	name = "alien welding tool"
+	name = "alien welding torch"
 	desc = "An alien welding tool. Whatever fuel it uses, it never runs out."
 	icon = 'icons/obj/antags/abductor.dmi'
 	icon_state = "welder"
@@ -402,18 +422,18 @@
 	light_system = NO_LIGHT_SUPPORT
 	light_range = 0
 	change_icons = FALSE
-	tank = /obj/item/welder_tank/integrated
+	tank = /obj/item/welder_tank/mini
 	integrated_tank = TRUE
 
 /obj/item/weldingtool/abductor/process()
 	if(tank)
-		if(get_fuel() <= tank.max_fuel)
+		if(tank.get_fuel() <= tank.max_fuel)
 			tank.reagents.add_reagent(/datum/reagent/fuel, 1)
 	..()
 
 /// MARK: RND WELDER
 /obj/item/weldingtool/experimental
-	name = "experimental welding tool"
+	name = "experimental welding torch"
 	desc = "An experimental welder capable of self-fuel generation and less harmful to the eyes."
 	icon_state = "exwelder"
 	inhand_icon_state = "exwelder"
@@ -423,27 +443,31 @@
 	light_range = 1
 	w_class = WEIGHT_CLASS_NORMAL
 	toolspeed = 0.5
-	tank = /obj/item/welder_tank/integrated
+	tank = /obj/item/welder_tank/mini
+	integrated_tank = TRUE
 	var/last_gen = 0
 	var/nextrefueltick = 0
 
 /obj/item/weldingtool/experimental/process()
 	..()
 	if(tank)
-		if(get_fuel() < tank.max_fuel && nextrefueltick < world.time)
+		if(tank.get_fuel() < tank.max_fuel && nextrefueltick < world.time)
 			nextrefueltick = world.time + 10
 			tank.reagents.add_reagent(/datum/reagent/fuel, 1)
 
 /// MARK: Welding tool tanks
 /obj/item/welder_tank
-	name = "\improper welding fuel cartridge"
+	name = "\improper welding cartridge"
 	desc = "An interchangeable fuel tank meant for a welding tool."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "weldertank"
+	pickup_sound = 'sound/items/handling/grenade/grenade_pick_up.ogg'
+	drop_sound = 'sound/items/handling/grenade/grenade_drop.ogg'
 	w_class = WEIGHT_CLASS_SMALL
 	force = 5
 	throwforce = 5
 	custom_materials = list(/datum/material/iron =SHEET_MATERIAL_AMOUNT * 0.25)
+	custom_price = PAYCHECK_CREW * 0.5
 	var/max_fuel = 20
 
 /obj/item/welder_tank/Initialize()
@@ -451,40 +475,38 @@
 	reagents.add_reagent(/datum/reagent/fuel, max_fuel)
 	. = ..()
 
-/obj/item/welder_tank/plasma
-	name = "\improper welding plasma cartridge"
-	icon_state = "weldertank_plasma"
+/obj/item/welder_tank/proc/get_fuel()
+	return reagents.get_reagent_amount(/datum/reagent/fuel) + reagents.get_reagent_amount(/datum/reagent/toxin/plasma)
 
-/obj/item/welder_tank/plasma/Initialize()
-	create_reagents(max_fuel)
-	reagents.add_reagent(/datum/reagent/toxin/plasma, max_fuel)
+/obj/item/welder_tank/examine(mob/user)
 	. = ..()
+	. += "It contains [get_fuel()] unit\s of fuel out of [max_fuel]."
 
 /obj/item/welder_tank/empty/Initialize()
-	create_reagents(max_fuel)
 	. = ..()
+	create_reagents(max_fuel)
 
 /obj/item/welder_tank/large
-	name = "\improper industrial welding fuel cartridge"
+	name = "\improper extended welding cartridge"
 	icon_state = "weldertank_large"
 	max_fuel = 40
 	custom_materials = list(/datum/material/iron =SHEET_MATERIAL_AMOUNT * 0.5)
+	custom_price = PAYCHECK_CREW * 1.5
 
 /obj/item/welder_tank/large/empty/Initialize()
-	create_reagents(max_fuel)
 	. = ..()
+	create_reagents(max_fuel)
 
-/obj/item/welder_tank/integrated
-	name = "integrated fuel cartridge"
-	desc = "This shouldnt be existing outside its welding tool on its own."
-
-/obj/item/welder_tank/integrated/mini
-	name = "integrated mini fuel cartridge"
+/obj/item/welder_tank/mini
+	name = "integrated welding mini cartridge"
+	desc = "You shouldn't see this shit, report to coders."
 	max_fuel = 10
 
-/obj/item/welder_tank/integrated/mini/empty/Initialize()
-	create_reagents(max_fuel)
+/obj/item/welder_tank/mini/empty/Initialize()
 	. = ..()
+	create_reagents(max_fuel)
 
-/obj/item/welder_tank/integrated/infinite
+/obj/item/welder_tank/infinite
+	name = "integrated welding infinite cartridge"
+	desc = "You shouldn't see this shit, report to coders."
 	max_fuel = INFINITY

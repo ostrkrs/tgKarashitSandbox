@@ -34,19 +34,14 @@
 
 /datum/export/weldingtool
 	cost = CARGO_CRATE_VALUE * 0.025
-	unit_name = "welding tool"
+	unit_name = "welding torch"
 	export_types = list(/obj/item/weldingtool)
 	include_subtypes = FALSE
 
 /datum/export/weldingtool/emergency
 	cost = CARGO_CRATE_VALUE * 0.01
-	unit_name = "emergency welding tool"
+	unit_name = "emergency welding torch"
 	export_types = list(/obj/item/weldingtool/mini)
-
-/datum/export/weldingtool/industrial
-	cost = CARGO_CRATE_VALUE * 0.05
-	unit_name = "industrial welding tool"
-	export_types = list(/obj/item/weldingtool/largetank)
 
 
 /datum/export/extinguisher
@@ -98,7 +93,7 @@
 //Advanced/Power Tools.
 /datum/export/weldingtool/experimental
 	cost = CARGO_CRATE_VALUE * 0.45
-	unit_name = "experimental welding tool"
+	unit_name = "experimental welding torch"
 	export_types = list(/obj/item/weldingtool/experimental)
 
 /datum/export/jawsoflife
