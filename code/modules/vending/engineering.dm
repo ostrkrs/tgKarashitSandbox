@@ -21,7 +21,7 @@
 		/obj/item/t_scanner = 12,
 		/obj/item/stock_parts/power_store/cell = 8,
 		/obj/item/stock_parts/power_store/battery = 8,
-		/obj/item/weldingtool = 4,
+		/obj/item/weldingtool/empty = 4,
 		/obj/item/welder_tank = 8,
 		/obj/item/clothing/head/utility/welding = 8,
 		/obj/item/light/tube = 10,
