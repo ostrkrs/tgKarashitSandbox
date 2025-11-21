@@ -5,12 +5,12 @@
 	value = -3
 	hardcore_value = 3
 	quirk_flags = QUIRK_HUMAN_ONLY | QUIRK_CHANGES_APPEARANCE
-	mail_goodies = list(/obj/item/weldingtool/mini, /obj/item/stack/cable_coil/five)
+	mail_goodies = list(/obj/item/weldingtool/fueled/mini, /obj/item/stack/cable_coil/five)
 	/// The slot to replace, in string form
 	var/slot_string = "limb"
 	/// The slot to replace, in GLOB.limb_zones (both arms and both legs)
 	var/limb_zone
-	
+
 
 /datum/quirk_constant_data/prosthetic_limb
 	associated_typepath = /datum/quirk/prosthetic_limb

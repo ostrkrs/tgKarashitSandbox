@@ -94,7 +94,7 @@
 /area/ruin/space/has_grav/listeningstation)
 "cq" = (
 /obj/effect/turf_decal/bot,
-/obj/item/weldingtool/largetank,
+/obj/item/weldingtool/fueled/largetank,
 /obj/item/wrench,
 /obj/item/clothing/head/utility/welding,
 /obj/structure/rack,

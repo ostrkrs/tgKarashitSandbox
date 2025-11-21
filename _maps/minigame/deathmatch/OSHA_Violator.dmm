@@ -332,7 +332,7 @@
 /area/deathmatch)
 "uv" = (
 /obj/structure/table/reinforced,
-/obj/item/weldingtool/largetank,
+/obj/item/weldingtool/fueled/largetank,
 /turf/open/indestructible,
 /area/deathmatch)
 "uY" = (
@@ -912,7 +912,7 @@
 /area/deathmatch)
 "Rv" = (
 /obj/structure/table/reinforced,
-/obj/item/weldingtool/mini,
+/obj/item/weldingtool/fueled/mini,
 /turf/open/indestructible,
 /area/deathmatch)
 "RF" = (

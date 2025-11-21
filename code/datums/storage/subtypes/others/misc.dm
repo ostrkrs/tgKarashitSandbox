@@ -100,7 +100,7 @@
 		/obj/item/crowbar/drone,
 		/obj/item/screwdriver/drone,
 		/obj/item/wrench/drone,
-		/obj/item/weldingtool/drone,
+		/obj/item/weldingtool/fueled/drone,
 		/obj/item/wirecutters/drone,
 		/obj/item/multitool/drone,
 		/obj/item/pipe_dispenser/drone,

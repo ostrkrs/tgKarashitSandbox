@@ -57,7 +57,7 @@
 /obj/item/storage/belt/utility/chief/full/PopulateContents()
 	SSwardrobe.provide_type(/obj/item/screwdriver, src)
 	SSwardrobe.provide_type(/obj/item/wrench, src)
-	SSwardrobe.provide_type(/obj/item/weldingtool/largetank, src)
+	SSwardrobe.provide_type(/obj/item/weldingtool/fueled/largetank, src)
 	SSwardrobe.provide_type(/obj/item/crowbar, src)
 	SSwardrobe.provide_type(/obj/item/wirecutters, src)
 	SSwardrobe.provide_type(/obj/item/multitool, src)
@@ -67,7 +67,7 @@
 	var/list/to_preload = list() //Yes this is a pain. Yes this is the point
 	to_preload += /obj/item/screwdriver
 	to_preload += /obj/item/wrench
-	to_preload += /obj/item/weldingtool/largetank
+	to_preload += /obj/item/weldingtool/fueled/largetank
 	to_preload += /obj/item/crowbar
 	to_preload += /obj/item/wirecutters
 	to_preload += /obj/item/multitool
@@ -77,7 +77,7 @@
 /obj/item/storage/belt/utility/full/PopulateContents()
 	SSwardrobe.provide_type(/obj/item/screwdriver, src)
 	SSwardrobe.provide_type(/obj/item/wrench, src)
-	SSwardrobe.provide_type(/obj/item/weldingtool, src)
+	SSwardrobe.provide_type(/obj/item/weldingtool/fueled, src)
 	SSwardrobe.provide_type(/obj/item/crowbar, src)
 	SSwardrobe.provide_type(/obj/item/wirecutters, src)
 	SSwardrobe.provide_type(/obj/item/multitool, src)
@@ -87,7 +87,7 @@
 	var/list/to_preload = list() //Yes this is a pain. Yes this is the point
 	to_preload += /obj/item/screwdriver
 	to_preload += /obj/item/wrench
-	to_preload += /obj/item/weldingtool
+	to_preload += /obj/item/weldingtool/fueled
 	to_preload += /obj/item/crowbar
 	to_preload += /obj/item/wirecutters
 	to_preload += /obj/item/multitool
@@ -100,7 +100,7 @@
 /obj/item/storage/belt/utility/full/powertools/PopulateContents()
 	new /obj/item/screwdriver/power(src)
 	new /obj/item/crowbar/power(src)
-	new /obj/item/weldingtool/experimental(src)
+	new /obj/item/weldingtool/fueled/experimental(src)
 	new /obj/item/multitool(src)
 	new /obj/item/holosign_creator/atmos(src)
 	new /obj/item/extinguisher/mini(src)
@@ -109,7 +109,7 @@
 /obj/item/storage/belt/utility/full/powertools/rcd/PopulateContents()
 	new /obj/item/screwdriver/power(src)
 	new /obj/item/crowbar/power(src)
-	new /obj/item/weldingtool/experimental(src)
+	new /obj/item/weldingtool/fueled/experimental(src)
 	new /obj/item/multitool(src)
 	new /obj/item/construction/rcd/loaded/upgraded(src)
 	new /obj/item/extinguisher/mini(src)
@@ -118,7 +118,7 @@
 /obj/item/storage/belt/utility/full/engi/PopulateContents()
 	SSwardrobe.provide_type(/obj/item/screwdriver, src)
 	SSwardrobe.provide_type(/obj/item/wrench, src)
-	SSwardrobe.provide_type(/obj/item/weldingtool/largetank, src)
+	SSwardrobe.provide_type(/obj/item/weldingtool/fueled/largetank, src)
 	SSwardrobe.provide_type(/obj/item/crowbar, src)
 	SSwardrobe.provide_type(/obj/item/wirecutters, src)
 	SSwardrobe.provide_type(/obj/item/multitool, src)
@@ -128,7 +128,7 @@
 	var/list/to_preload = list() //Yes this is a pain. Yes this is the point
 	to_preload += /obj/item/screwdriver
 	to_preload += /obj/item/wrench
-	to_preload += /obj/item/weldingtool/largetank
+	to_preload += /obj/item/weldingtool/fueled/largetank
 	to_preload += /obj/item/crowbar
 	to_preload += /obj/item/wirecutters
 	to_preload += /obj/item/multitool
@@ -138,7 +138,7 @@
 /obj/item/storage/belt/utility/atmostech/PopulateContents()
 	SSwardrobe.provide_type(/obj/item/screwdriver, src)
 	SSwardrobe.provide_type(/obj/item/wrench, src)
-	SSwardrobe.provide_type(/obj/item/weldingtool, src)
+	SSwardrobe.provide_type(/obj/item/weldingtool/fueled, src)
 	SSwardrobe.provide_type(/obj/item/crowbar, src)
 	SSwardrobe.provide_type(/obj/item/wirecutters, src)
 	SSwardrobe.provide_type(/obj/item/t_scanner, src)
@@ -148,7 +148,7 @@
 	var/list/to_preload = list() //Yes this is a pain. Yes this is the point
 	to_preload += /obj/item/screwdriver
 	to_preload += /obj/item/wrench
-	to_preload += /obj/item/weldingtool
+	to_preload += /obj/item/weldingtool/fueled
 	to_preload += /obj/item/crowbar
 	to_preload += /obj/item/wirecutters
 	to_preload += /obj/item/t_scanner
@@ -158,7 +158,7 @@
 /obj/item/storage/belt/utility/full/inducer/PopulateContents()
 	SSwardrobe.provide_type(/obj/item/screwdriver, src)
 	SSwardrobe.provide_type(/obj/item/wrench, src)
-	SSwardrobe.provide_type(/obj/item/weldingtool, src)
+	SSwardrobe.provide_type(/obj/item/weldingtool/fueled, src)
 	SSwardrobe.provide_type(/obj/item/crowbar/red, src)
 	SSwardrobe.provide_type(/obj/item/wirecutters, src)
 	SSwardrobe.provide_type(/obj/item/multitool, src)
@@ -168,7 +168,7 @@
 	var/list/to_preload = list() //Yes this is a pain. Yes this is the point
 	to_preload += /obj/item/screwdriver
 	to_preload += /obj/item/wrench
-	to_preload += /obj/item/weldingtool
+	to_preload += /obj/item/weldingtool/fueled
 	to_preload += /obj/item/crowbar
 	to_preload += /obj/item/wirecutters
 	to_preload += /obj/item/multitool
@@ -181,7 +181,7 @@
 /obj/item/storage/belt/utility/syndicate/PopulateContents()
 	new /obj/item/screwdriver/nuke(src)
 	new /obj/item/wrench/combat(src)
-	new /obj/item/weldingtool/largetank(src)
+	new /obj/item/weldingtool/fueled/largetank(src)
 	new /obj/item/crowbar(src)
 	new /obj/item/wirecutters(src)
 	new /obj/item/multitool(src)
@@ -406,7 +406,7 @@
 /obj/item/storage/belt/military/abductor/full/PopulateContents()
 	new /obj/item/screwdriver/abductor(src)
 	new /obj/item/wrench/abductor(src)
-	new /obj/item/weldingtool/abductor(src)
+	new /obj/item/weldingtool/fueled/abductor(src)
 	new /obj/item/crowbar/abductor(src)
 	new /obj/item/wirecutters/abductor(src)
 	new /obj/item/multitool/abductor(src)

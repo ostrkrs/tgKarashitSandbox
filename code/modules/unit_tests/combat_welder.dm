@@ -3,7 +3,7 @@
 /datum/unit_test/welder_combat/Run()
 	var/mob/living/carbon/human/consistent/tider = EASY_ALLOCATE()
 	var/mob/living/carbon/human/consistent/victim = EASY_ALLOCATE()
-	var/obj/item/weldingtool/weapon = EASY_ALLOCATE()
+	var/obj/item/weldingtool/fueled/weapon = EASY_ALLOCATE()
 
 	tider.put_in_active_hand(weapon, forced = TRUE)
 	tider.set_combat_mode(TRUE)

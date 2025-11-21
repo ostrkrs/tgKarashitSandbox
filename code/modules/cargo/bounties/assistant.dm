@@ -49,7 +49,7 @@
 	var/static/list/static_packing_list = list(
 		/obj/item/screwdriver,
 		/obj/item/wrench,
-		/obj/item/weldingtool,
+		/obj/item/weldingtool/fueled,
 		/obj/item/crowbar,
 		/obj/item/analyzer,
 		/obj/item/wirecutters,

@@ -40,7 +40,7 @@
 "cr" = (
 /obj/effect/turf_decal/bot,
 /obj/structure/reagent_dispensers/fueltank,
-/obj/item/weldingtool/largetank,
+/obj/item/weldingtool/fueled/largetank,
 /turf/open/floor/pod/dark,
 /area/shuttle/hunter/russian)
 "cM" = (

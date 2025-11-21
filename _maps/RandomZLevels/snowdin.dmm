@@ -4456,7 +4456,7 @@
 "qd" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/item/clothing/head/utility/welding,
-/obj/item/weldingtool/largetank,
+/obj/item/weldingtool/fueled/largetank,
 /obj/effect/turf_decal/bot,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible{
 	dir = 8

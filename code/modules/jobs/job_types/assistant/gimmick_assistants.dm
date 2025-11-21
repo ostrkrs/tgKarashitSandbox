@@ -40,7 +40,7 @@
 	head = /obj/item/clothing/head/costume/cardborg
 	uniform = /obj/item/clothing/under/color/black
 
-	r_hand = /obj/item/weldingtool/largetank
+	r_hand = /obj/item/weldingtool/fueled/largetank
 	l_hand = /obj/item/stack/cable_coil/five
 
 	uniform = /obj/item/clothing/under/color/black

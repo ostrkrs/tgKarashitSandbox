@@ -3205,7 +3205,7 @@
 /obj/structure/table,
 /obj/item/storage/belt/utility,
 /obj/item/wrench,
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /obj/item/clothing/head/utility/welding{
 	pixel_x = -3;
 	pixel_y = 5
@@ -18869,7 +18869,7 @@
 /turf/open/floor/wood/large,
 /area/station/commons/lounge)
 "fkF" = (
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 5
 	},
@@ -36177,7 +36177,7 @@
 	pixel_y = -1
 	},
 /obj/item/crowbar,
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 8
 	},
@@ -42562,7 +42562,7 @@
 /area/station/cargo/storage)
 "maY" = (
 /obj/item/wrench,
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /obj/item/clothing/head/utility/welding{
 	pixel_x = -3;
 	pixel_y = 5
@@ -44577,7 +44577,7 @@
 "mFy" = (
 /obj/structure/rack,
 /obj/effect/spawner/random/maintenance/two,
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /turf/open/floor/plating,
 /area/station/maintenance/port/fore)
 "mFE" = (

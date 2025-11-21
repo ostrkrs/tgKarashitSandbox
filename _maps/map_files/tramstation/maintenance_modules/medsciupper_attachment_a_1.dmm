@@ -22,7 +22,7 @@
 /area/station/maintenance/department/science)
 "l" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/weldingtool/empty{
+/obj/item/weldingtool/fueled/empty{
 	pixel_y = 8;
 	pixel_x = -10
 	},

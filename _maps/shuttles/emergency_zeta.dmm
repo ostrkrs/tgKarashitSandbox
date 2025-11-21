@@ -145,7 +145,7 @@
 /obj/item/screwdriver/abductor{
 	pixel_y = -5
 	},
-/obj/item/weldingtool/abductor{
+/obj/item/weldingtool/fueled/abductor{
 	pixel_y = 3
 	},
 /turf/open/floor/plating/abductor,

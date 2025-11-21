@@ -527,7 +527,7 @@
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/central)
 "SV" = (
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/central)

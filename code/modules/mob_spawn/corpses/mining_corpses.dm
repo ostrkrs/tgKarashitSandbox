@@ -297,7 +297,7 @@
 			/obj/item/screwdriver/power,
 			/obj/item/storage/belt/mining/vendor,
 			/obj/item/storage/belt/utility/full,
-			/obj/item/weldingtool/experimental,
+			/obj/item/weldingtool/fueled/experimental,
 		))
 	if(prob(50))
 		neck = /obj/item/bedsheet/rd/royal_cape

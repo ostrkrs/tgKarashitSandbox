@@ -157,7 +157,7 @@
 /area/station/engineering/atmos)
 "bd" = (
 /obj/structure/table,
-/obj/item/weldingtool/experimental,
+/obj/item/weldingtool/fueled/experimental,
 /obj/item/inducer,
 /obj/item/storage/belt/utility/chief/full,
 /obj/machinery/power/apc/auto_name/directional/west,

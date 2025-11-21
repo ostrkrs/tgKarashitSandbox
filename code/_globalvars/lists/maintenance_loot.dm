@@ -82,7 +82,8 @@ GLOBAL_LIST_INIT(common_loot, list( //common: basic items
 		/obj/item/screwdriver = 1,
 		/obj/item/t_scanner = 1,
 		/obj/item/toy/crayon/spraycan = 1,
-		/obj/item/weldingtool = 1,
+		/obj/item/weldingtool/fueled = 1,
+		/obj/item/weldingtool/electric = 1,
 		/obj/item/wirecutters = 1,
 		/obj/item/wrench = 1,
 		) = 1,
@@ -173,7 +174,7 @@ GLOBAL_LIST_INIT(uncommon_loot, list(//uncommon: useful items
 		/obj/item/restraints/legcuffs/bola = 1,
 		/obj/item/emergency_bed = 1,
 		/obj/item/spear = 1,
-		/obj/item/weldingtool/largetank = 1,
+		/obj/item/weldingtool/fueled/largetank = 1,
 		/obj/item/market_uplink/blackmarket = 1,
 		) = 8,
 

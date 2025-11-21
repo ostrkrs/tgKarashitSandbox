@@ -28,7 +28,7 @@
 	///our floor stack
 	var/obj/item/stack/tile/our_tiles
 	///our welder
-	var/obj/item/weldingtool/repairbot/our_welder
+	var/obj/item/weldingtool/fueled/repairbot/our_welder
 	///our crowbar
 	var/obj/item/crowbar/our_crowbar
 	///our screwdriver
@@ -44,7 +44,7 @@
 		/obj/item/stack/sheet/glass = typecacheof(list(/obj/structure/grille)),
 	)
 	var/static/list/possible_tool_interactions = list(
-		/obj/item/weldingtool/repairbot = typecacheof(list(/obj/structure/window)),
+		/obj/item/weldingtool/fueled/repairbot = typecacheof(list(/obj/structure/window)),
 		/obj/item/crowbar = typecacheof(list(/obj/machinery/door, /turf/open/floor)),
 	)
 	///our neutral voicelines
@@ -342,7 +342,7 @@
 	drop_part(toolbox, drop_location())
 	return ..()
 
-/obj/item/weldingtool/repairbot
+/obj/item/weldingtool/fueled/repairbot
 	change_icons = FALSE
 	tank = /obj/item/welder_tank/infinite
 	integrated_tank = TRUE

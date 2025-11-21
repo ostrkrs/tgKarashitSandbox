@@ -3674,7 +3674,7 @@
 /turf/open/misc/ice/smooth,
 /area/awaymission/cabin/caves)
 "zI" = (
-/obj/item/weldingtool/mini,
+/obj/item/weldingtool/fueled/mini,
 /obj/effect/decal/cleanable/glitter{
 	desc = "It looks like fancy glitter to me.";
 	name = "icy wind";

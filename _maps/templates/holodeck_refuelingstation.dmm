@@ -7,7 +7,7 @@
 /turf/open/floor/holofloor/plating,
 /area/template_noop)
 "F" = (
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /turf/open/floor/holofloor/plating,
 /area/template_noop)
 

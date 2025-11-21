@@ -1000,7 +1000,7 @@
 "Ss" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/reagent_dispensers/fueltank,
-/obj/item/weldingtool/largetank,
+/obj/item/weldingtool/fueled/largetank,
 /obj/effect/turf_decal/delivery/red,
 /obj/effect/turf_decal/stripes/line{
 	dir = 9

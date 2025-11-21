@@ -210,7 +210,7 @@
 /turf/open/floor/iron/dark/small,
 /area/centcom/basketball)
 "oR" = (
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/centcom/basketball)

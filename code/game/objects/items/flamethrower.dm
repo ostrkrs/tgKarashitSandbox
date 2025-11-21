@@ -24,7 +24,7 @@
 	var/status = FALSE
 	var/lit = FALSE //on or off
 	var/operating = FALSE//cooldown
-	var/obj/item/weldingtool/weldtool = null
+	var/obj/item/weldingtool/fueled/weldtool = null
 	var/obj/item/assembly/igniter/igniter = null
 	var/obj/item/tank/internals/plasma/ptank = null
 	var/warned_admins = FALSE //for the message_admins() when lit
@@ -195,7 +195,7 @@
 
 /obj/item/flamethrower/on_craft_completion(list/components, datum/crafting_recipe/current_recipe, atom/crafter)
 	. =..()
-	weldtool = locate(/obj/item/weldingtool) in contents
+	weldtool = locate(/obj/item/weldingtool/fueled) in contents
 	igniter = locate(/obj/item/assembly/igniter) in contents
 	weldtool.status = FALSE
 	igniter.secured = FALSE
@@ -247,7 +247,7 @@
 	)
 	if(create_full)
 		if(!weldtool)
-			weldtool = new /obj/item/weldingtool(src)
+			weldtool = new /obj/item/weldingtool/fueled(src)
 		weldtool.status = FALSE
 		if(!igniter)
 			igniter = new igniter_type(src)

@@ -346,7 +346,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/item/weldingtool/empty,
+/obj/item/weldingtool/fueled/empty,
 /turf/open/floor/catwalk_floor,
 /area/station/maintenance/department/medical)
 "DH" = (

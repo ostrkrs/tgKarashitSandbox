@@ -9,7 +9,7 @@
 	var/pickedcolor = pick("red","yellow","green","blue","pink","orange","cyan","white")
 	new /obj/item/screwdriver(src)
 	new /obj/item/wrench(src)
-	new /obj/item/weldingtool(src)
+	new /obj/item/weldingtool/fueled(src)
 	new /obj/item/crowbar(src)
 	new /obj/item/stack/cable_coil(src,MAXCOIL,pickedcolor)
 	new /obj/item/wirecutters(src)

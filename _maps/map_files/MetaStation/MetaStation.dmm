@@ -49850,7 +49850,7 @@
 /area/station/maintenance/aft/lesser)
 "rhW" = (
 /obj/structure/reagent_dispensers/fueltank,
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /obj/item/clothing/head/utility/welding,
 /obj/machinery/light/directional/east,
 /turf/open/floor/iron,

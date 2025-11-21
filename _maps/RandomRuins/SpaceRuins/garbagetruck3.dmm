@@ -827,7 +827,7 @@
 	pixel_x = 8;
 	pixel_y = -3
 	},
-/obj/item/weldingtool/largetank{
+/obj/item/weldingtool/fueled/largetank{
 	light_color = "#F57247";
 	pixel_x = -7;
 	pixel_y = 3

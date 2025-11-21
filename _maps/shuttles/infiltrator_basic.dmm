@@ -334,7 +334,7 @@
 /area/shuttle/syndicate/engineering)
 "bz" = (
 /obj/machinery/light/directional/north,
-/obj/item/weldingtool/largetank{
+/obj/item/weldingtool/fueled/largetank{
 	pixel_y = 3
 	},
 /obj/item/multitool,

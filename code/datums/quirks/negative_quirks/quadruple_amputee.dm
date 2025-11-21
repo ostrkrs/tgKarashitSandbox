@@ -6,7 +6,7 @@
 	medical_record_text = "During physical examination, patient was found to have all low-budget prosthetic limbs."
 	hardcore_value = 6
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_CHANGES_APPEARANCE
-	mail_goodies = list(/obj/item/weldingtool/mini, /obj/item/stack/cable_coil/five)
+	mail_goodies = list(/obj/item/weldingtool/fueled/mini, /obj/item/stack/cable_coil/five)
 
 /datum/quirk/quadruple_amputee/add_unique(client/client_source)
 	var/mob/living/carbon/human/human_holder = quirk_holder
@@ -22,7 +22,7 @@
 /datum/quirk/quadruple_amputee/remove()
 	if(QDELING(quirk_holder))
 		return
-	
+
 	var/mob/living/carbon/human/human_holder = quirk_holder
 	human_holder.reset_to_original_bodypart(BODY_ZONE_L_ARM)
 	human_holder.reset_to_original_bodypart(BODY_ZONE_R_ARM)

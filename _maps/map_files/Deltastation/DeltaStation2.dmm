@@ -3164,7 +3164,7 @@
 "aNF" = (
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /obj/item/assembly/voice,
 /obj/item/clothing/head/utility/welding,
 /obj/effect/spawner/random/maintenance,
@@ -4087,7 +4087,7 @@
 /obj/structure/table/reinforced,
 /obj/item/clothing/glasses/welding,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/item/weldingtool/empty{
+/obj/item/weldingtool/fueled/empty{
 	pixel_x = 9;
 	pixel_y = 8
 	},
@@ -11722,7 +11722,7 @@
 "cRd" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/belt/utility,
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /obj/item/clothing/head/utility/welding,
 /obj/machinery/newscaster/directional/north,
 /turf/open/floor/iron,
@@ -19053,7 +19053,7 @@
 /area/station/command/heads_quarters/rd)
 "eKQ" = (
 /obj/structure/table/reinforced,
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /obj/effect/turf_decal/bot,
 /obj/item/wrench,
 /obj/item/storage/belt/utility,
@@ -45914,7 +45914,7 @@
 	},
 /obj/structure/reagent_dispensers/fueltank,
 /obj/structure/window/reinforced/spawner/directional/west,
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /obj/effect/turf_decal/tile/brown/anticorner/contrasted{
 	dir = 1
 	},
@@ -55825,7 +55825,7 @@
 "nPO" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/rack,
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /obj/item/wrench,
 /obj/item/clothing/head/utility/welding,
 /obj/item/clothing/gloves/color/yellow,
@@ -60767,7 +60767,7 @@
 "peo" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/belt/utility,
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /obj/effect/turf_decal/bot,
 /obj/item/wrench,
 /obj/item/clothing/head/utility/welding,
@@ -70012,7 +70012,7 @@
 "rrq" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/structure/table/reinforced,
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /obj/item/wrench,
 /obj/item/clothing/head/utility/welding,
 /obj/machinery/airalarm/directional/north,

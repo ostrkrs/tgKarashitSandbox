@@ -83,8 +83,8 @@
 		return ITEM_INTERACT_BLOCKING
 
 	atom_storage.animate_parent()
-	if (istype(picked_item, /obj/item/weldingtool))
-		var/obj/item/weldingtool/welder = picked_item
+	if (istype(picked_item, /obj/item/weldingtool/fueled))
+		var/obj/item/weldingtool/fueled/welder = picked_item
 		if (!welder.welding)
 			welder.attack_self(user)
 

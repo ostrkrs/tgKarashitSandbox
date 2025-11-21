@@ -1051,7 +1051,7 @@
 "Dt" = (
 /obj/structure/rack,
 /obj/item/clothing/head/collectable/welding,
-/obj/item/weldingtool/largetank,
+/obj/item/weldingtool/fueled/largetank,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/misc/anomaly_research)

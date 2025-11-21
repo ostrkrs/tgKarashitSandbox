@@ -1345,7 +1345,7 @@
 	},
 /obj/item/stack/sheet/iron/twenty,
 /obj/item/stack/rods/twentyfive,
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /turf/open/floor/iron/dark/textured_large,
 /area/shuttle/abandoned/cargo)
 "Tg" = (

@@ -1474,7 +1474,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/shuttle/sbc_starfury)
 "fs" = (
-/obj/item/weldingtool/largetank,
+/obj/item/weldingtool/fueled/largetank,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -1484,7 +1484,7 @@
 /obj/structure/rack,
 /obj/item/crowbar,
 /obj/item/wrench,
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/clothing/head/utility/welding,
 /obj/machinery/firealarm/directional/south,

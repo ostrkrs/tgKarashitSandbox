@@ -309,7 +309,7 @@
 	if(attacking_item.tool_behaviour != TOOL_WELDER)
 		return ..()
 
-	var/obj/item/weldingtool/refilling_welder = attacking_item
+	var/obj/item/weldingtool/fueled/refilling_welder = attacking_item
 	if(istype(refilling_welder) && !refilling_welder.welding)
 		if(refilling_welder.tank.reagents.has_reagent(/datum/reagent/fuel, refilling_welder.tank.max_fuel))
 			to_chat(user, span_warning("Your [refilling_welder.name] is already full!"))

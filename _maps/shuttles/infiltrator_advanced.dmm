@@ -1812,7 +1812,7 @@
 "eo" = (
 /obj/structure/table/reinforced,
 /obj/item/wrench,
-/obj/item/weldingtool/largetank,
+/obj/item/weldingtool/fueled/largetank,
 /obj/item/assembly/signaler{
 	desc = "Used to remotely activate devices. Allows for syncing when using a secure signaler on another. Slightly scooted.";
 	pixel_x = 4;

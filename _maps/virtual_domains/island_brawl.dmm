@@ -3046,7 +3046,7 @@
 /area/virtual_domain/fullbright)
 "Mj" = (
 /obj/structure/table,
-/obj/item/weldingtool{
+/obj/item/weldingtool/fueled{
 	pixel_y = -7;
 	pixel_x = 4
 	},

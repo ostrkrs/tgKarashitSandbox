@@ -152,7 +152,7 @@ GLOBAL_LIST_INIT(phobia_objs, list(
 		/obj/item/toy/plush/abductor,
 		/obj/item/toy/plush/abductor/agent,
 		/obj/item/toy/plush/rouny,
-		/obj/item/weldingtool/abductor,
+		/obj/item/weldingtool/fueled/abductor,
 		/obj/item/wirecutters/abductor,
 		/obj/item/wrench/abductor,
 		/obj/machinery/abductor,

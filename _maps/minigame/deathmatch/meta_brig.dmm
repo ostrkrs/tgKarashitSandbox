@@ -1918,7 +1918,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /turf/open/indestructible/dark,
 /area/deathmatch)
 "CS" = (

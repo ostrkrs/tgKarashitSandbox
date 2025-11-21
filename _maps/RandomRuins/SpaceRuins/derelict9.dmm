@@ -14,7 +14,7 @@
 /area/ruin/space)
 "h" = (
 /obj/structure/closet/crate,
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /obj/item/clothing/glasses/welding,
 /turf/open/misc/asteroid/airless,
 /area/ruin/space)

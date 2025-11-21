@@ -55,7 +55,7 @@ GLOBAL_LIST_EMPTY(roundstart_station_closets)
 	var/max_mob_size = MOB_SIZE_HUMAN //Biggest mob_size accepted by the container
 	var/mob_storage_capacity = 3 // how many human sized mob/living can fit together inside a closet.
 	var/storage_capacity = 30 //This is so that someone can't pack hundreds of items in a locker/crate then open it in a populated area to crash clients.
-	var/cutting_tool = /obj/item/weldingtool
+	var/cutting_tool = /obj/item/weldingtool/fueled
 	var/open_sound = 'sound/machines/closet/closet_open.ogg'
 	var/close_sound = 'sound/machines/closet/closet_close.ogg'
 	var/lock_sound = 'sound/machines/closet/closet_lock.ogg'

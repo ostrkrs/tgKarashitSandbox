@@ -181,7 +181,7 @@
 /turf/open/indestructible,
 /area/deathmatch)
 "wC" = (
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /obj/structure/rack,
 /obj/item/flashlight/flare,
 /turf/open/indestructible,
@@ -309,7 +309,7 @@
 /area/deathmatch)
 "Kt" = (
 /obj/structure/table/reinforced/ctf,
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /turf/open/indestructible,
 /area/deathmatch)
 "KW" = (
@@ -408,7 +408,7 @@
 /turf/open/indestructible,
 /area/deathmatch)
 "Rm" = (
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /obj/structure/rack,
 /turf/open/indestructible,
 /area/deathmatch)

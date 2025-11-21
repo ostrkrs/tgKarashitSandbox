@@ -220,7 +220,7 @@
 "aB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/reagent_dispensers/fueltank,
-/obj/item/weldingtool/largetank,
+/obj/item/weldingtool/fueled/largetank,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
 "aC" = (

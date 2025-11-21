@@ -45,7 +45,7 @@
 	id = "exwelder"
 	build_type = PROTOLATHE | AWAY_LATHE
 	materials = list(/datum/material/iron =HALF_SHEET_MATERIAL_AMOUNT, /datum/material/glass =SMALL_MATERIAL_AMOUNT*5, /datum/material/plasma =HALF_SHEET_MATERIAL_AMOUNT * 1.5, /datum/material/uranium =SMALL_MATERIAL_AMOUNT * 2)
-	build_path = /obj/item/weldingtool/experimental
+	build_path = /obj/item/weldingtool/fueled/experimental
 	category = list(
 		RND_CATEGORY_TOOLS + RND_SUBCATEGORY_TOOLS_ENGINEERING_ADVANCED
 	)
@@ -304,7 +304,7 @@
 	name = "Alien Welding Torch"
 	desc = "An advanced welding tool obtained through Abductor technology."
 	id = "alien_welder"
-	build_path = /obj/item/weldingtool/abductor
+	build_path = /obj/item/weldingtool/fueled/abductor
 	build_type = PROTOLATHE | AWAY_LATHE
 	materials = list(/datum/material/iron =SHEET_MATERIAL_AMOUNT * 2.5, /datum/material/silver =SHEET_MATERIAL_AMOUNT*1.25, /datum/material/plasma =SHEET_MATERIAL_AMOUNT * 2.5, /datum/material/titanium =SHEET_MATERIAL_AMOUNT, /datum/material/diamond =SHEET_MATERIAL_AMOUNT)
 	category = list(

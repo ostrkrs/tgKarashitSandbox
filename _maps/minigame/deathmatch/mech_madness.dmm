@@ -40,7 +40,7 @@
 /obj/item/clothing/head/utility/welding,
 /obj/machinery/light/directional/west,
 /obj/item/inducer,
-/obj/item/weldingtool/largetank,
+/obj/item/weldingtool/fueled/largetank,
 /turf/open/floor/carpet/neon/simple/yellow,
 /area/deathmatch)
 "ao" = (
@@ -152,7 +152,7 @@
 /area/deathmatch)
 "aY" = (
 /obj/structure/closet/crate/trashcart/filled,
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /turf/open/floor/engine,
 /area/deathmatch)
 "aZ" = (
@@ -258,7 +258,7 @@
 /obj/item/clothing/head/utility/welding,
 /obj/machinery/light/directional/east,
 /obj/item/inducer,
-/obj/item/weldingtool/largetank,
+/obj/item/weldingtool/fueled/largetank,
 /turf/open/floor/carpet/neon/simple/teal,
 /area/deathmatch)
 "bw" = (
@@ -493,7 +493,7 @@
 /obj/item/clothing/head/utility/welding,
 /obj/machinery/light/directional/east,
 /obj/item/inducer,
-/obj/item/weldingtool/largetank,
+/obj/item/weldingtool/fueled/largetank,
 /turf/open/floor/carpet/neon/simple/green,
 /area/deathmatch)
 "cH" = (
@@ -546,7 +546,7 @@
 /area/deathmatch)
 "cT" = (
 /obj/item/inducer,
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /turf/open/floor/engine,
 /area/deathmatch)
 "cU" = (
@@ -615,7 +615,7 @@
 "di" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/head/utility/welding,
-/obj/item/weldingtool/largetank,
+/obj/item/weldingtool/fueled/largetank,
 /obj/machinery/light/directional/west,
 /obj/item/inducer,
 /turf/open/floor/carpet/neon/simple/orange,

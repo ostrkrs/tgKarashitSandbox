@@ -585,7 +585,7 @@
 "Ll" = (
 /obj/structure/rack,
 /obj/item/storage/toolbox/emergency,
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},

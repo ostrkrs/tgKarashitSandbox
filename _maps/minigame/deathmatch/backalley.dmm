@@ -418,7 +418,7 @@
 /area/deathmatch)
 "JD" = (
 /obj/structure/reagent_dispensers/fueltank,
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /turf/open/indestructible/plating,
 /area/deathmatch)
 "JR" = (

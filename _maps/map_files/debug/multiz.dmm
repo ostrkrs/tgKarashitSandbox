@@ -172,7 +172,7 @@
 /area/station/engineering/atmos)
 "bd" = (
 /obj/structure/table,
-/obj/item/weldingtool/experimental,
+/obj/item/weldingtool/fueled/experimental,
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/plating,

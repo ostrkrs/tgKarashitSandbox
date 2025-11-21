@@ -11098,7 +11098,7 @@
 /area/station/commons/vacant_room)
 "cKE" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/port/central)
 "cLs" = (
@@ -57014,7 +57014,7 @@
 	pixel_x = 13
 	},
 /obj/item/crowbar,
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /turf/open/floor/iron,
 /area/station/commons/storage/primary)
 "sXW" = (
@@ -57284,7 +57284,7 @@
 /area/station/commons/lounge)
 "tcD" = (
 /obj/item/wrench,
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /obj/item/clothing/head/utility/welding{
 	pixel_x = -3;
 	pixel_y = 5
@@ -61421,7 +61421,7 @@
 /obj/effect/turf_decal/trimline/neutral/filled/line{
 	dir = 4
 	},
-/obj/item/weldingtool/mini,
+/obj/item/weldingtool/fueled/mini,
 /obj/item/clothing/glasses/welding,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,

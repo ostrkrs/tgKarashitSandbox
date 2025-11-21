@@ -245,7 +245,7 @@
 /area/ruin/space/has_grav/garbagetruck/toystore)
 "sO" = (
 /obj/item/clothing/suit/syndicatefake,
-/obj/item/weldingtool/largetank{
+/obj/item/weldingtool/fueled/largetank{
 	pixel_x = -4;
 	pixel_y = 2
 	},

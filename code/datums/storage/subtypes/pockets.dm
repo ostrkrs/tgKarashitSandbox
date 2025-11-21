@@ -106,7 +106,7 @@
 			/obj/item/reagent_containers/dropper,
 			/obj/item/implanter,
 			/obj/item/screwdriver,
-			/obj/item/weldingtool/mini,
+			/obj/item/weldingtool/fueled/mini,
 			/obj/item/firing_pin,
 			/obj/item/suppressor,
 			/obj/item/ammo_box/magazine/m9mm,
@@ -166,7 +166,7 @@
 			/obj/item/suppressor,
 			/obj/item/switchblade,
 			/obj/item/toy/crayon,
-			/obj/item/weldingtool/mini,
+			/obj/item/weldingtool/fueled/mini,
 		),
 		cant_hold_list = list(
 			/obj/item/ammo_casing/rocket,

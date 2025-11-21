@@ -12045,7 +12045,7 @@
 /obj/structure/rack,
 /obj/item/clothing/head/utility/welding,
 /obj/item/wrench,
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
@@ -15338,7 +15338,7 @@
 "ewx" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/tile/yellow/opposingcorners,
-/obj/item/weldingtool/empty{
+/obj/item/weldingtool/fueled/empty{
 	pixel_x = -5;
 	pixel_y = -6
 	},
@@ -79382,7 +79382,7 @@
 	dir = 8
 	},
 /obj/machinery/airalarm/directional/north,
-/obj/item/weldingtool{
+/obj/item/weldingtool/fueled{
 	pixel_y = 5;
 	pixel_x = -4
 	},

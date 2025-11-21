@@ -113,7 +113,7 @@
 /obj/structure/closet/crate,
 /obj/item/aicard,
 /obj/item/multitool,
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /obj/item/wrench,
 /obj/item/circuitboard/computer/teleporter,
 /turf/open/floor/plating/airless,

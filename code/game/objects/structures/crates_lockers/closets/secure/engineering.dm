@@ -59,7 +59,9 @@
 	for(var/i in 1 to 3)
 		new /obj/item/clothing/head/utility/welding(src)
 	for(var/i in 1 to 3)
-		new /obj/item/weldingtool(src)
+		new /obj/item/weldingtool/fueled(src)
+	for(var/i in 1 to 3)
+		new /obj/item/weldingtool/electric(src)
 
 /obj/structure/closet/secure_closet/engineering_personal
 	name = "engineer's locker"

@@ -99,7 +99,7 @@
 	id = "welding_tool"
 	build_type = AUTOLATHE | PROTOLATHE | AWAY_LATHE
 	materials = list(/datum/material/iron = SMALL_MATERIAL_AMOUNT*0.7, /datum/material/glass =SMALL_MATERIAL_AMOUNT*0.2)
-	build_path = /obj/item/weldingtool/empty
+	build_path = /obj/item/weldingtool/fueled/empty
 	category = list(
 		RND_CATEGORY_INITIAL,
 		RND_CATEGORY_TOOLS + RND_SUBCATEGORY_TOOLS_ENGINEERING,
@@ -111,7 +111,7 @@
 	id = "mini_welding_tool"
 	build_type = AUTOLATHE | PROTOLATHE | AWAY_LATHE
 	materials = list(/datum/material/iron = SMALL_MATERIAL_AMOUNT*0.3, /datum/material/glass = SMALL_MATERIAL_AMOUNT*0.1)
-	build_path = /obj/item/weldingtool/mini/empty
+	build_path = /obj/item/weldingtool/fueled/mini/empty
 	category = list(
 		RND_CATEGORY_INITIAL,
 		RND_CATEGORY_TOOLS + RND_SUBCATEGORY_TOOLS_ENGINEERING,

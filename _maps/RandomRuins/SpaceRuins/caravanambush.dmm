@@ -668,7 +668,7 @@
 /area/shuttle/ruin/caravan/freighter2)
 "AP" = (
 /obj/structure/rack,
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /obj/item/crowbar,
 /obj/item/wirecutters,
 /obj/item/wrench,

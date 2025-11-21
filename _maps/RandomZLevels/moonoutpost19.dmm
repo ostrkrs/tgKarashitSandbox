@@ -1196,10 +1196,10 @@
 "io" = (
 /obj/structure/rack,
 /obj/item/stack/ducts/fifty,
-/obj/item/weldingtool{
+/obj/item/weldingtool/fueled{
 	pixel_x = 7
 	},
-/obj/item/weldingtool{
+/obj/item/weldingtool/fueled{
 	pixel_x = -7
 	},
 /turf/open/floor/plating,

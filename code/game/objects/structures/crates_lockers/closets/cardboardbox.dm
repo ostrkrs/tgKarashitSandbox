@@ -113,7 +113,7 @@
 	mob_storage_capacity = 5
 	resistance_flags = NONE
 	move_speed_multiplier = 2
-	cutting_tool = /obj/item/weldingtool
+	cutting_tool = /obj/item/weldingtool/fueled
 	open_sound = 'sound/machines/crate/crate_open.ogg'
 	close_sound = 'sound/machines/crate/crate_close.ogg'
 	open_sound_volume = 35

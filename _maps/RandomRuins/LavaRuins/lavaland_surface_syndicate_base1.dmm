@@ -2960,7 +2960,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/head/utility/welding,
-/obj/item/weldingtool/largetank,
+/obj/item/weldingtool/fueled/largetank,
 /obj/item/analyzer,
 /obj/effect/mapping_helpers/airalarm/syndicate_access,
 /turf/open/floor/iron,

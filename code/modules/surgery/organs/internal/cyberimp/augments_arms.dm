@@ -268,7 +268,7 @@
 	items_to_create = list(
 		/obj/item/screwdriver/cyborg,
 		/obj/item/wrench/cyborg,
-		/obj/item/weldingtool/cyborg,
+		/obj/item/weldingtool/fueled/cyborg,
 		/obj/item/crowbar/cyborg,
 		/obj/item/wirecutters/cyborg,
 		/obj/item/multitool/cyborg,

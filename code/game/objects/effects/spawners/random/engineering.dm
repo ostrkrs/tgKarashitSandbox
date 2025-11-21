@@ -11,7 +11,8 @@
 		/obj/item/wirecutters = 2,
 		/obj/item/screwdriver = 2,
 		/obj/item/crowbar = 2,
-		/obj/item/weldingtool = 2,
+		/obj/item/weldingtool/fueled = 2,
+		/obj/item/weldingtool/electric = 2,
 		/obj/item/stack/cable_coil = 2,
 		/obj/item/analyzer = 2,
 		/obj/item/t_scanner = 2,
@@ -29,7 +30,8 @@
 		/obj/item/wirecutters/caravan,
 		/obj/item/screwdriver/caravan,
 		/obj/item/crowbar/red/caravan,
-		/obj/item/weldingtool/largetank,
+		/obj/item/weldingtool/fueled/largetank,
+		/obj/item/weldingtool/electric,
 	)
 
 /obj/effect/spawner/random/engineering/tool_alien
@@ -40,7 +42,7 @@
 		/obj/item/wirecutters/abductor,
 		/obj/item/screwdriver/abductor,
 		/obj/item/crowbar/abductor,
-		/obj/item/weldingtool/abductor,
+		/obj/item/weldingtool/fueled/abductor,
 		/obj/item/multitool/abductor,
 	)
 

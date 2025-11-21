@@ -462,7 +462,7 @@
 	pixel_x = 3;
 	pixel_y = 8
 	},
-/obj/item/weldingtool/largetank{
+/obj/item/weldingtool/fueled/largetank{
 	pixel_x = -3
 	},
 /obj/structure/rack,

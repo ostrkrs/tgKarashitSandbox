@@ -1700,7 +1700,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
 /obj/item/storage/belt/utility,
-/obj/item/weldingtool,
+/obj/item/weldingtool/fueled,
 /obj/item/clothing/head/utility/welding,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/iron/dark,

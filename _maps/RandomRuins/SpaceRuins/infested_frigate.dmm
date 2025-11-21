@@ -2039,7 +2039,7 @@
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/item/weldingtool/mini/empty,
+/obj/item/weldingtool/fueled/mini/empty,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/infested_frigate)
 "Hu" = (

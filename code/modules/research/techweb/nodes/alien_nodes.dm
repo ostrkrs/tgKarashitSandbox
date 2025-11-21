@@ -25,7 +25,7 @@
 		/obj/item/scalpel/alien,
 		/obj/item/screwdriver/abductor,
 		/obj/item/surgicaldrill/alien,
-		/obj/item/weldingtool/abductor,
+		/obj/item/weldingtool/fueled/abductor,
 		/obj/item/wirecutters/abductor,
 		/obj/item/wrench/abductor,
 	)
@@ -60,7 +60,7 @@ ABDUCTOR_SUBTYPE_UNLOCKS(/datum/techweb_node/alientech)
 		/obj/item/melee/baton/abductor,
 		/obj/item/multitool/abductor,
 		/obj/item/screwdriver/abductor,
-		/obj/item/weldingtool/abductor,
+		/obj/item/weldingtool/fueled/abductor,
 		/obj/item/wirecutters/abductor,
 		/obj/item/wrench/abductor,
 	)
@@ -100,7 +100,7 @@ ABDUCTOR_SUBTYPE_UNLOCKS(/datum/techweb_node/alien_engi)
 		/obj/item/scalpel/alien,
 		/obj/item/screwdriver/abductor,
 		/obj/item/surgicaldrill/alien,
-		/obj/item/weldingtool/abductor,
+		/obj/item/weldingtool/fueled/abductor,
 		/obj/item/wirecutters/abductor,
 		/obj/item/wrench/abductor,
 	)
