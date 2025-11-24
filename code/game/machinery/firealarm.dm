@@ -8,7 +8,7 @@
 	icon = 'icons/obj/machines/wallmounts/wallmounts.dmi'
 	icon_state = "fire_bitem"
 	result_path = /obj/machinery/firealarm
-	pixel_shift = 26
+	pixel_shift = 31
 
 /obj/machinery/firealarm
 	name = "fire alarm"

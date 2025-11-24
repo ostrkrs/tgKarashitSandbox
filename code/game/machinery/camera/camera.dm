@@ -13,6 +13,7 @@
 	)
 	result_path = /obj/machinery/camera/autoname/deconstructed
 	wall_external = TRUE
+	pixel_shift = 12
 
 /obj/machinery/camera
 	name = "security camera"

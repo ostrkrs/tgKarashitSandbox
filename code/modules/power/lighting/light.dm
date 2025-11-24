@@ -88,7 +88,7 @@
 	return ..()
 
 // create a new lighting fixture
-/obj/machinery/light/Initialize(mapload, ndir)
+/obj/machinery/light/Initialize(mapload)
 	. = ..()
 
 	// Detect and scream about double stacked lights
@@ -119,7 +119,7 @@
 	AddElement(/datum/element/atmos_sensitive, mapload)
 	AddElement(/datum/element/contextual_screentip_bare_hands, rmb_text = "Remove bulb")
 	if(break_if_moved)
-		find_and_hang_on_wall()
+		find_and_hang_on_wall(custom_drop_callback = CALLBACK(src, PROC_REF(knock_down)))
 
 /obj/machinery/light/post_machine_initialize()
 	. = ..()

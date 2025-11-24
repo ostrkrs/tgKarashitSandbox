@@ -148,6 +148,8 @@
 					if("bulb")
 						new_light = new /obj/machinery/light/small/built(loc)
 				new_light.setDir(dir)
+				new_light.pixel_x = pixel_x
+				new_light.pixel_y = pixel_y
 				transfer_fingerprints_to(new_light)
 				if(!QDELETED(cell))
 					new_light.cell = cell
