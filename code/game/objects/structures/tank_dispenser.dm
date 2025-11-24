@@ -19,7 +19,7 @@
 
 /obj/structure/tank_dispenser/Initialize(mapload)
 	. = ..()
-	AddElement(/datum/element/contextual_screentip_bare_hands, lmb_text = "Take Plasma Tank", rmb_text = "Take Oxygen Tank")
+	AddElement(/datum/element/contextual_screentip_bare_hands, lmb_text = "Take Oxygen Tank", rmb_text = "Take Plasma Tank")
 	update_appearance()
 
 /obj/structure/tank_dispenser/update_overlays()
@@ -37,20 +37,20 @@
 
 /obj/structure/tank_dispenser/attack_hand(mob/living/user, list/modifiers)
 	. = ..()
-	if (!plasmatanks)
-		balloon_alert(user, "no plasma tanks!")
+	if (!oxygentanks)
+		balloon_alert(user, "no oxygen tanks!")
 		return
-	dispense(/obj/item/tank/internals/plasma, user)
-	plasmatanks--
+	dispense(/obj/item/tank/internals/oxygen, user)
+	oxygentanks--
 	update_appearance()
 
 /obj/structure/tank_dispenser/attack_hand_secondary(mob/user, list/modifiers)
 	. = ..()
-	if (!oxygentanks)
-		balloon_alert(user, "no oxygen tanks!")
+	if (!plasmatanks)
+		balloon_alert(user, "no plasma tanks!")
 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-	dispense(/obj/item/tank/internals/oxygen, user)
-	oxygentanks--
+	dispense(/obj/item/tank/internals/plasma, user)
+	plasmatanks--
 	update_appearance()
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 

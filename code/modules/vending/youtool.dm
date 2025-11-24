@@ -9,6 +9,7 @@
 		/obj/item/stack/cable_coil = 10,
 		/obj/item/crowbar = 5,
 		/obj/item/weldingtool = 3,
+		/obj/item/welder_tank = 5,
 		/obj/item/wirecutters = 5,
 		/obj/item/wrench = 5,
 		/obj/item/analyzer = 5,
@@ -25,7 +26,7 @@
 	premium = list(
 		/obj/item/storage/belt/utility = 2,
 		/obj/item/multitool = 2,
-		/obj/item/weldingtool/hugetank = 2,
+		/obj/item/welder_tank/large = 3,
 		/obj/item/clothing/head/utility/welding = 2,
 		/obj/item/clothing/gloves/color/yellow = 1,
 	)

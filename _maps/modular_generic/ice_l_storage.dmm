@@ -140,7 +140,7 @@
 /area/template_noop)
 "A" = (
 /obj/structure/rack,
-/obj/item/weldingtool/hugetank,
+/obj/item/weldingtool/largetank,
 /turf/open/floor/plating,
 /area/template_noop)
 "B" = (

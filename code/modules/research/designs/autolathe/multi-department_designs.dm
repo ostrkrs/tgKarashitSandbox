@@ -70,8 +70,32 @@
 	)
 	departmental_flags = DEPARTMENT_BITFLAG_ENGINEERING | DEPARTMENT_BITFLAG_SCIENCE | DEPARTMENT_BITFLAG_CARGO
 
+/datum/design/welding_tank
+	name = "Welding Fuel Cartridge"
+	id = "welding_tank"
+	build_type = AUTOLATHE | PROTOLATHE | AWAY_LATHE
+	materials = list(/datum/material/iron = SMALL_MATERIAL_AMOUNT*0.25)
+	build_path = /obj/item/welder_tank/empty
+	category = list(
+		RND_CATEGORY_INITIAL,
+		RND_CATEGORY_TOOLS + RND_SUBCATEGORY_TOOLS_ENGINEERING,
+	)
+	departmental_flags = DEPARTMENT_BITFLAG_ENGINEERING | DEPARTMENT_BITFLAG_SCIENCE
+
+/datum/design/welding_tank_large
+	name = "Extended Welding Fuel Cartridge"
+	id = "welding_tank_large"
+	build_type = AUTOLATHE | PROTOLATHE | AWAY_LATHE
+	materials = list(/datum/material/iron = SMALL_MATERIAL_AMOUNT*0.5)
+	build_path = /obj/item/welder_tank/large/empty
+	category = list(
+		RND_CATEGORY_INITIAL,
+		RND_CATEGORY_TOOLS + RND_SUBCATEGORY_TOOLS_ENGINEERING,
+	)
+	departmental_flags = DEPARTMENT_BITFLAG_ENGINEERING | DEPARTMENT_BITFLAG_SCIENCE
+
 /datum/design/weldingtool
-	name = "Welding Tool"
+	name = "Welding Torch"
 	id = "welding_tool"
 	build_type = AUTOLATHE | PROTOLATHE | AWAY_LATHE
 	materials = list(/datum/material/iron = SMALL_MATERIAL_AMOUNT*0.7, /datum/material/glass =SMALL_MATERIAL_AMOUNT*0.2)
@@ -83,7 +107,7 @@
 	departmental_flags = DEPARTMENT_BITFLAG_ENGINEERING | DEPARTMENT_BITFLAG_SCIENCE
 
 /datum/design/mini_weldingtool
-	name = "Emergency Welding Tool"
+	name = "Emergency Welding Torch"
 	id = "mini_welding_tool"
 	build_type = AUTOLATHE | PROTOLATHE | AWAY_LATHE
 	materials = list(/datum/material/iron = SMALL_MATERIAL_AMOUNT*0.3, /datum/material/glass = SMALL_MATERIAL_AMOUNT*0.1)

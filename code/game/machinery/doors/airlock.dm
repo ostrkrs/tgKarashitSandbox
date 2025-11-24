@@ -85,6 +85,7 @@
 	explosion_block = 1
 	hud_possible = list(DIAG_AIRLOCK_HUD)
 	smoothing_groups = SMOOTH_GROUP_AIRLOCK
+	canSmoothWith = SMOOTH_GROUP_WALLS + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_GIRDER
 
 	interaction_flags_machine = INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON | INTERACT_MACHINE_OPEN
 	interaction_flags_click = ALLOW_SILICON_REACH
@@ -179,8 +180,8 @@
 		damage_deflection = AIRLOCK_DAMAGE_DEFLECTION_R
 
 	prepare_huds()
-	for(var/datum/atom_hud/data/diagnostic/diag_hud in GLOB.huds)
-		diag_hud.add_atom_to_hud(src)
+	var/datum/atom_hud/data/diagnostic/diag_hud = GLOB.huds[DATA_HUD_DIAGNOSTIC]
+	diag_hud.add_atom_to_hud(src)
 
 	diag_hud_set_electrified()
 
@@ -308,8 +309,8 @@
 		close_others.Cut()
 	QDEL_NULL(note)
 	QDEL_NULL(seal)
-	for(var/datum/atom_hud/data/diagnostic/diag_hud in GLOB.huds)
-		diag_hud.remove_atom_from_hud(src)
+	var/datum/atom_hud/data/diagnostic/diag_hud = GLOB.huds[DATA_HUD_DIAGNOSTIC]
+	diag_hud.remove_atom_from_hud(src)
 	return ..()
 
 /obj/machinery/door/airlock/Exited(atom/movable/gone, direction)
@@ -626,7 +627,7 @@
 			if(!(unres_sides & heading))
 				continue
 			var/mutable_appearance/floorlight = mutable_appearance('icons/obj/doors/airlocks/station/overlays.dmi', "unres_[heading]", FLOAT_LAYER, src, O_LIGHTING_VISUAL_PLANE, appearance_flags = RESET_COLOR | KEEP_APART)
-			floorlight.color = LIGHT_COLOR_DEFAULT
+			floorlight.color = LIGHT_COLOR_GREEN
 			switch (heading)
 				if (NORTH)
 					floorlight.pixel_w = 0
@@ -2543,10 +2544,11 @@
 /obj/machinery/door/airlock/multi_tile
 	icon = 'icons/obj/doors/airlocks/multi_tile/public/glass.dmi'
 	overlays_file = 'icons/obj/doors/airlocks/multi_tile/public/overlays.dmi'
+	note_overlay_file = 'icons/obj/doors/airlocks/multi_tile/public/overlays.dmi'
 	assemblytype = /obj/structure/door_assembly/multi_tile/door_assembly_public
 	multi_tile = TRUE
-	opacity = FALSE
-	glass = TRUE
+	opacity = TRUE
+	glass = FALSE
 
 /obj/machinery/door/airlock/multi_tile/setDir(newdir)
 	. = ..()
@@ -2566,6 +2568,8 @@
 	var/obj/machinery/door/filled_airlock
 
 /obj/machinery/door/airlock/multi_tile/public/glass
+	opacity = FALSE
+	glass = TRUE
 
 /obj/machinery/door/airlock/multi_tile/narsie_act()
 	return

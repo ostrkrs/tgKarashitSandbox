@@ -829,7 +829,6 @@
 	},
 /obj/item/weldingtool/largetank{
 	light_color = "#F57247";
-	max_fuel = 50;
 	pixel_x = -7;
 	pixel_y = 3
 	},

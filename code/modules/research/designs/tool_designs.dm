@@ -40,7 +40,7 @@
 	autolathe_exportable = FALSE
 
 /datum/design/exwelder
-	name = "Experimental Welding Tool"
+	name = "Experimental Welding Torch"
 	desc = "An experimental welder capable of self-fuel generation."
 	id = "exwelder"
 	build_type = PROTOLATHE | AWAY_LATHE
@@ -301,7 +301,7 @@
 	departmental_flags = DEPARTMENT_BITFLAG_ENGINEERING
 
 /datum/design/alienwelder
-	name = "Alien Welding Tool"
+	name = "Alien Welding Torch"
 	desc = "An advanced welding tool obtained through Abductor technology."
 	id = "alien_welder"
 	build_path = /obj/item/weldingtool/abductor
