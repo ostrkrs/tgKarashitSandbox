@@ -12,6 +12,7 @@
 	icon_state = "bulb-construct-item"
 	result_path = /obj/structure/light_construct/small
 	custom_materials = list(/datum/material/iron=SHEET_MATERIAL_AMOUNT)
+	pixel_shift = 29
 
 /obj/item/wallframe/light_fixture/try_build(turf/on_wall, user)
 	if(!..())

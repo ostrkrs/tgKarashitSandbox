@@ -142,24 +142,24 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/dim, 32)
 
 
 // -------- Bulb lights
-MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small, 32)
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small, 29)
 
 // ---- Bulb construct
-MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct/small, 32)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct/small, 29)
 
 // ---- Bulb frames
-MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 32)
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 29)
 
 // ---- Broken bulbs
-MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/broken, 32)
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/broken, 29)
 
 // ---- Red bulbs
-MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/dim, 32)
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/dim, 29)
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/red, 32)
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/red, 29)
 
 // ---- Red dim bulbs
-MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/red/dim, 32)
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/red/dim, 29)
 
 // ---- Blacklight bulbs
-MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/blacklight, 32)
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/blacklight, 29)
