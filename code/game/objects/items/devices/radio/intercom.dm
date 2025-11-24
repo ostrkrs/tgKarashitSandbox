@@ -1,7 +1,7 @@
 /obj/item/radio/intercom
 	name = "station intercom"
 	desc = "A trusty station intercom, ready to spring into action even when the headsets go silent."
-	icon = 'icons/obj/machines/wallmounts/intercom.dmi'
+	icon = 'icons/obj/machines/wallmounts/wallmounts.dmi'
 	icon_state = "intercom"
 	anchored = TRUE
 	w_class = WEIGHT_CLASS_BULKY
@@ -195,7 +195,7 @@
 /obj/item/wallframe/intercom
 	name = "intercom frame"
 	desc = "A ready-to-go intercom. Just slap it on a wall and screw it in!"
-	icon = 'icons/obj/machines/wallmounts/intercom.dmi'
+	icon = 'icons/obj/machines/wallmounts/wallmounts.dmi'
 	icon_state = "intercom"
 	result_path = /obj/item/radio/intercom/unscrewed
 	pixel_shift = 26
