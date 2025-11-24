@@ -183,6 +183,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 27)
 	name = "extinguisher cabinet frame"
 	desc = "Used for building wall-mounted extinguisher cabinets."
 	icon = 'icons/obj/wallmounts.dmi'
-	icon_state = "extinguisher" //Reuses wallmount icon, but no door overlay
+	icon_state = "extinguisher_assembly"
 	result_path = /obj/structure/extinguisher_cabinet
 	pixel_shift = 27

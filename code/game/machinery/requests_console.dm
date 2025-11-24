@@ -543,7 +543,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/requests_console/auto_name, 30)
 	name = "requests console"
 	desc = "An unmounted requests console. Attach it to a wall to use."
 	icon = 'icons/obj/machines/wallmounts/wallmounts.dmi'
-	icon_state = "req_comp_off"
+	icon_state = "req_comp_assembly"
 	result_path = /obj/machinery/requests_console/auto_name
 	pixel_shift = 30
 

@@ -118,7 +118,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light_switch, 24)
 	name = "light switch"
 	desc = "An unmounted light switch. Attach it to a wall to use."
 	icon = 'icons/obj/machines/wallmounts/wallmounts.dmi'
-	icon_state = "light-nopower"
+	icon_state = "light-assembly"
 	result_path = /obj/machinery/light_switch
 	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT)
 	pixel_shift = 26
