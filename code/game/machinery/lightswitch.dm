@@ -121,7 +121,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light_switch, 24)
 	icon_state = "light-assembly"
 	result_path = /obj/machinery/light_switch
 	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT)
-	pixel_shift = 26
+	pixel_shift = 24
 
 /obj/item/circuit_component/light_switch
 	display_name = "Light Switch"

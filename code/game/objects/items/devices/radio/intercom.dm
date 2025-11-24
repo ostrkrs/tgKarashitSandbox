@@ -196,7 +196,7 @@
 	name = "intercom frame"
 	desc = "A ready-to-go intercom. Just slap it on a wall and screw it in!"
 	icon = 'icons/obj/machines/wallmounts/wallmounts.dmi'
-	icon_state = "intercom"
+	icon_state = "intercom_assembly"
 	result_path = /obj/item/radio/intercom/unscrewed
 	pixel_shift = 30
 	custom_materials = list(/datum/material/iron = SMALL_MATERIAL_AMOUNT * 0.75, /datum/material/glass = SMALL_MATERIAL_AMOUNT * 0.25)
