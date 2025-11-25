@@ -1,7 +1,7 @@
 /obj/item/radio/intercom
 	name = "station intercom"
 	desc = "A trusty station intercom, ready to spring into action even when the headsets go silent."
-	icon = 'icons/obj/machines/wallmounts.dmi'
+	icon = 'icons/obj/machines/wallmounts/wallmounts.dmi'
 	icon_state = "intercom"
 	anchored = TRUE
 	w_class = WEIGHT_CLASS_BULKY
@@ -11,7 +11,7 @@
 	item_flags = NO_BLOOD_ON_ITEM
 
 	overlay_speaker_idle = "intercom_s"
-	overlay_speaker_active = "intercom_receive"
+	overlay_speaker_active = null
 
 	overlay_mic_idle = "intercom_m"
 	overlay_mic_active = null
@@ -195,13 +195,13 @@
 /obj/item/wallframe/intercom
 	name = "intercom frame"
 	desc = "A ready-to-go intercom. Just slap it on a wall and screw it in!"
-	icon = 'icons/obj/machines/wallmounts.dmi'
-	icon_state = "intercom"
+	icon = 'icons/obj/machines/wallmounts/wallmounts.dmi'
+	icon_state = "intercom_assembly"
 	result_path = /obj/item/radio/intercom/unscrewed
-	pixel_shift = 26
+	pixel_shift = 29
 	custom_materials = list(/datum/material/iron = SMALL_MATERIAL_AMOUNT * 0.75, /datum/material/glass = SMALL_MATERIAL_AMOUNT * 0.25)
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 27)
+MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 29)
 
 /obj/item/radio/intercom/chapel
 	name = "Confessional intercom"
@@ -233,8 +233,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 27)
 	desc = "A custom-made Syndicate-issue intercom used to transmit on all Nanotrasen frequencies. Particularly expensive."
 	freerange = TRUE
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/prison, 27)
-MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/chapel, 27)
-MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/command, 27)
-MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/syndicate, 27)
-MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/syndicate/freerange, 27)
+MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/prison, 29)
+MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/chapel, 29)
+MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/command, 29)
+MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/syndicate, 29)
+MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/syndicate/freerange, 29)

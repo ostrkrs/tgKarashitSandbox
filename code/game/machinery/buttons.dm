@@ -1,7 +1,7 @@
 /obj/machinery/button
 	name = "button"
 	desc = "A remote control switch."
-	icon = 'icons/obj/machines/wallmounts.dmi'
+	icon = 'icons/obj/machines/wallmounts/wallmounts.dmi'
 	base_icon_state = "button"
 	icon_state = "button"
 	power_channel = AREA_USAGE_ENVIRON
@@ -519,7 +519,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/button/door, 24)
 /obj/item/wallframe/button
 	name = "button frame"
 	desc = "Used for building buttons."
-	icon_state = "button"
+	icon_state = "button_assembly"
 	result_path = /obj/machinery/button
 	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT)
 	pixel_shift = 24
