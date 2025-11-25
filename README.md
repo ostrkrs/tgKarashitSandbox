@@ -1,2 +1,2 @@
-# tgVoyagers - WIP
-/tg/-based interplanetary ship travel build!
+# tgKarashitSandbox
+Just silly goober doing silly things.
