@@ -198,10 +198,10 @@
 	icon = 'icons/obj/machines/wallmounts/wallmounts.dmi'
 	icon_state = "intercom_assembly"
 	result_path = /obj/item/radio/intercom/unscrewed
-	pixel_shift = 30
+	pixel_shift = 29
 	custom_materials = list(/datum/material/iron = SMALL_MATERIAL_AMOUNT * 0.75, /datum/material/glass = SMALL_MATERIAL_AMOUNT * 0.25)
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 30)
+MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 29)
 
 /obj/item/radio/intercom/chapel
 	name = "Confessional intercom"
@@ -233,8 +233,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 30)
 	desc = "A custom-made Syndicate-issue intercom used to transmit on all Nanotrasen frequencies. Particularly expensive."
 	freerange = TRUE
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/prison, 30)
-MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/chapel, 30)
-MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/command, 30)
-MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/syndicate, 30)
-MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/syndicate/freerange, 30)
+MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/prison, 29)
+MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/chapel, 29)
+MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/command, 29)
+MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/syndicate, 29)
+MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/syndicate/freerange, 29)
