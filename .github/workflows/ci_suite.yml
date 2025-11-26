@@ -1,8 +1,14 @@
 name: CI Suite
 
 on:
+  push:
+    branches:
+      - main
+      - master
+      - "project/**"
   pull_request:
     branches:
+      - main
       - master
       - "project/**"
   merge_group:
