@@ -15,6 +15,19 @@
 	winset(user, "tgui_say.browser", "focus=true")
 	return TRUE
 
+/datum/keybinding/client/communication/whisper
+	hotkey_keys = list("ShiftT")
+	name = WHIS_CHANNEL
+	full_name = "IC Whisper"
+	keybind_signal = COMSIG_KB_CLIENT_WHISPER_DOWN
+
+/datum/keybinding/client/communication/whisper/down(client/user)
+	. = ..()
+	if(.)
+		return
+	winset(user, null, "command=[user.tgui_say_create_open_command(WHIS_CHANNEL)]")
+	return TRUE
+
 /datum/keybinding/client/communication/radio
 	hotkey_keys = list("Y")
 	name = RADIO_CHANNEL
