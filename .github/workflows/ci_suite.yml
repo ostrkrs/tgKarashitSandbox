@@ -73,7 +73,7 @@ jobs:
     name: Compare Screenshot Tests
     uses: ./.github/workflows/compare_screenshots.yml
 
-  completion_gate: # Serves as a non-moving target for branch rulesets
+  completion_gate: # Serves as a non-moving target for branch rulesets.
     if: always() && !cancelled()
     name: Completion Gate
     needs:
