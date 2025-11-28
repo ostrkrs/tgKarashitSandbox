@@ -21,6 +21,8 @@
 	closingLayer = CLOSED_FIREDOOR_LAYER
 	armor_type = /datum/armor/door_firedoor
 	interaction_flags_machine = INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON | INTERACT_MACHINE_REQUIRES_SILICON | INTERACT_MACHINE_OPEN
+	smoothing_groups = SMOOTH_GROUP_AIRLOCK
+	canSmoothWith = SMOOTH_GROUP_WALLS + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_GIRDER
 
 	COOLDOWN_DECLARE(activation_cooldown)
 
@@ -28,7 +30,6 @@
 	var/light_xoffset = 0
 	///Y offset for the overlay lights, so that they line up with the thin border firelocks
 	var/light_yoffset = 0
-
 
 	///The type of door frame to drop during deconstruction
 	var/assemblytype = /obj/structure/firelock_frame
@@ -735,6 +736,8 @@
 	flags_1 = ON_BORDER_1
 	can_atmos_pass = ATMOS_PASS_PROC
 	assemblytype = /obj/structure/firelock_frame/border_only
+	smoothing_groups = null
+	canSmoothWith = null
 
 /obj/machinery/door/firedoor/border_only/closed
 	icon_state = "door_closed"
