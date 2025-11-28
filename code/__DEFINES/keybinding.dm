@@ -33,6 +33,7 @@
 //Communication
 
 #define COMSIG_KB_CLIENT_SAY_DOWN "keybinding_client_say_down"
+#define COMSIG_KB_CLIENT_WHISPER_DOWN "keybinding_client_whisper_down"
 #define COMSIG_KB_CLIENT_RADIO_DOWN "keybinding_client_radio_down"
 #define COMSIG_KB_CLIENT_ME_DOWN "keybinding_client_me_down"
 #define COMSIG_KB_CLIENT_OOC_DOWN "keybinding_client_ooc_down"

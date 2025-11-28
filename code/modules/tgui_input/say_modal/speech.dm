@@ -10,7 +10,7 @@
 /datum/tgui_say/proc/alter_entry(payload)
 	var/entry = payload["entry"]
 	/// No OOC leaks
-	if(!entry || payload["channel"] == OOC_CHANNEL || payload["channel"] == ME_CHANNEL)
+	if(!entry || payload["channel"] == OOC_CHANNEL || payload["channel"] == ME_CHANNEL || payload["channel"] == WHIS_CHANNEL)
 		return pick(hurt_phrases)
 	/// Random trimming for larger sentences
 	if(length(entry) > 50)
@@ -34,6 +34,9 @@
 	switch(channel)
 		if(SAY_CHANNEL)
 			client.mob.say_verb(entry)
+			return TRUE
+		if(WHIS_CHANNEL)
+			client.mob.whisper_verb(entry)
 			return TRUE
 		if(RADIO_CHANNEL)
 			client.mob.say_verb(";" + entry)

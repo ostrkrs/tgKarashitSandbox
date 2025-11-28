@@ -10,7 +10,7 @@
 	var/obj/item/extinguisher/stored_extinguisher
 	var/opened = FALSE
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 29)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 27)
 
 /obj/structure/extinguisher_cabinet/Initialize(mapload, ndir, building)
 	. = ..()
@@ -183,6 +183,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 29)
 	name = "extinguisher cabinet frame"
 	desc = "Used for building wall-mounted extinguisher cabinets."
 	icon = 'icons/obj/wallmounts.dmi'
-	icon_state = "extinguisher" //Reuses wallmount icon, but no door overlay
+	icon_state = "extinguisher_assembly"
 	result_path = /obj/structure/extinguisher_cabinet
-	pixel_shift = 29
+	pixel_shift = 27

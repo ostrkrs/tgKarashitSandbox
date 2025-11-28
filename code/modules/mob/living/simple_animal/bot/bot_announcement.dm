@@ -4,7 +4,7 @@
 	desc = "Play a prerecorded message for the benefit of those around you."
 	background_icon_state = "bg_tech_blue"
 	overlay_icon_state = "bg_tech_blue_border"
-	button_icon = 'icons/obj/machines/wallmounts.dmi'
+	button_icon = 'icons/obj/machines/wallmounts/wallmounts.dmi'
 	button_icon_state = "intercom"
 	cooldown_time = 5 SECONDS
 	shared_cooldown = MOB_SHARED_COOLDOWN_BOT_ANNOUNCMENT
@@ -174,7 +174,7 @@
 	shared_cooldown = MOB_SHARED_COOLDOWN_BOT_ANNOUNCMENT
 	background_icon_state = "bg_tech_blue"
 	overlay_icon_state = "bg_tech_blue_border"
-	button_icon = 'icons/obj/machines/wallmounts.dmi'
+	button_icon = 'icons/obj/machines/wallmounts/wallmounts.dmi'
 	button_icon_state = "intercom"
 	/// The prefix that appears on this button
 	var/prefix

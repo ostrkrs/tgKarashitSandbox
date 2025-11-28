@@ -5,12 +5,14 @@
 	icon_state = "tube-construct-item"
 	result_path = /obj/structure/light_construct
 	wall_external = TRUE
+	pixel_shift = 32
 
 /obj/item/wallframe/light_fixture/small
 	name = "small light fixture frame"
 	icon_state = "bulb-construct-item"
 	result_path = /obj/structure/light_construct/small
 	custom_materials = list(/datum/material/iron=SHEET_MATERIAL_AMOUNT)
+	pixel_shift = 29
 
 /obj/item/wallframe/light_fixture/try_build(turf/on_wall, user)
 	if(!..())

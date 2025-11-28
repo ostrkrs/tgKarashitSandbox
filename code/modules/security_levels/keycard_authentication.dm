@@ -158,7 +158,7 @@ GLOBAL_DATUM_INIT(keycard_events, /datum/events, new)
 
 /// Subtype which is stuck to a wall
 /obj/machinery/keycard_auth/wall_mounted
-	icon = 'icons/obj/machines/wallmounts.dmi'
+	icon = 'icons/obj/machines/wallmounts/wallmounts.dmi'
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/keycard_auth/wall_mounted, 26)
 
