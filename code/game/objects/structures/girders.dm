@@ -446,6 +446,9 @@
 	state = GIRDER_REINF
 	girderpasschance = 0
 	max_integrity = 350
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = SMOOTH_GROUP_GIRDER
+	canSmoothWith = SMOOTH_GROUP_GIRDER + SMOOTH_GROUP_WALLS + SMOOTH_GROUP_AIRLOCK
 
 /obj/structure/girder/tram
 	name = "tram girder"

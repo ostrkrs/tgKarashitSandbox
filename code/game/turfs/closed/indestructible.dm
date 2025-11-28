@@ -131,7 +131,7 @@ INITIALIZE_IMMEDIATE(/turf/closed/indestructible/splashscreen)
 	base_icon_state = "plastitanium_wall"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 	smoothing_groups = SMOOTH_GROUP_WALLS + SMOOTH_GROUP_CLOSED_TURFS + SMOOTH_GROUP_SYNDICATE_WALLS
-	canSmoothWith = SMOOTH_GROUP_SHUTTLE_PARTS + SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_PLASTITANIUM_WALLS + SMOOTH_GROUP_SYNDICATE_WALLS
+	canSmoothWith = SMOOTH_GROUP_SHUTTLE_PARTS + SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_PLASTITANIUM_WALLS + SMOOTH_GROUP_SYNDICATE_WALLS + SMOOTH_GROUP_WALLS
 
 /turf/closed/indestructible/syndicate/nodiagonal
 	icon_state = "plastitanium_wall-15"
@@ -151,7 +151,7 @@ INITIALIZE_IMMEDIATE(/turf/closed/indestructible/splashscreen)
 	base_icon_state = "wood_wall"
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = SMOOTH_GROUP_WOOD_WALLS + SMOOTH_GROUP_WALLS + SMOOTH_GROUP_CLOSED_TURFS
-	canSmoothWith = SMOOTH_GROUP_WOOD_WALLS
+	canSmoothWith = SMOOTH_GROUP_WOOD_WALLS + SMOOTH_GROUP_WALLS
 
 
 /turf/closed/indestructible/alien
@@ -162,7 +162,7 @@ INITIALIZE_IMMEDIATE(/turf/closed/indestructible/splashscreen)
 	base_icon_state = "abductor_wall"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 	smoothing_groups = SMOOTH_GROUP_ABDUCTOR_WALLS + SMOOTH_GROUP_WALLS + SMOOTH_GROUP_CLOSED_TURFS
-	canSmoothWith = SMOOTH_GROUP_ABDUCTOR_WALLS
+	canSmoothWith = SMOOTH_GROUP_ABDUCTOR_WALLS + SMOOTH_GROUP_WALLS
 
 /turf/closed/indestructible/alien/nodiagonal
 	icon_state = "abductor_wall-15"
@@ -194,7 +194,7 @@ INITIALIZE_IMMEDIATE(/turf/closed/indestructible/splashscreen)
 	opacity = FALSE
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = SMOOTH_GROUP_WINDOW_FULLTILE
-	canSmoothWith = SMOOTH_GROUP_WINDOW_FULLTILE
+	canSmoothWith = SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
 
 /turf/closed/indestructible/fakeglass/Initialize(mapload)
 	. = ..()
@@ -209,7 +209,7 @@ INITIALIZE_IMMEDIATE(/turf/closed/indestructible/splashscreen)
 	opacity = FALSE
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = SMOOTH_GROUP_SHUTTLE_PARTS + SMOOTH_GROUP_WINDOW_FULLTILE_PLASTITANIUM
-	canSmoothWith = SMOOTH_GROUP_WINDOW_FULLTILE_PLASTITANIUM
+	canSmoothWith = SMOOTH_GROUP_WINDOW_FULLTILE_PLASTITANIUM + SMOOTH_GROUP_WALLS
 
 /turf/closed/indestructible/opsglass/Initialize(mapload)
 	. = ..()
@@ -287,7 +287,7 @@ INITIALIZE_IMMEDIATE(/turf/closed/indestructible/splashscreen)
 	base_icon_state = "iron_wall"
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = SMOOTH_GROUP_IRON_WALLS + SMOOTH_GROUP_WALLS + SMOOTH_GROUP_CLOSED_TURFS
-	canSmoothWith = SMOOTH_GROUP_IRON_WALLS
+	canSmoothWith = SMOOTH_GROUP_IRON_WALLS + SMOOTH_GROUP_WALLS
 	opacity = FALSE
 
 /turf/closed/indestructible/boss
