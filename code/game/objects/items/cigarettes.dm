@@ -348,7 +348,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	if(!lighting_text)
 		return ..()
 
-	if(!check_oxygen(user)) //cigarettes need oxygen
+	if(!check_oxydizer(user)) //cigarettes need oxygen
 		balloon_alert(user, "no air!")
 		return ..()
 
@@ -358,13 +358,13 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		to_chat(user, span_warning("There is nothing to smoke!"))
 
 /// Checks that we have enough air to smoke
-/obj/item/cigarette/proc/check_oxygen(mob/user)
-	if (reagents.has_reagent(/datum/reagent/oxygen))
+/obj/item/cigarette/proc/check_oxydizer(mob/user)
+	if(reagents.has_reagent(/datum/reagent/oxygen))
 		return TRUE
 	var/datum/gas_mixture/air = return_air()
-	if (!isnull(air) && air.has_gas(/datum/gas/oxygen, 1))
+	if(!isnull(air) && (air.has_gas(/datum/gas/oxygen, 1) || air.has_gas(/datum/gas/nitrous_oxide, 1)))
 		return TRUE
-	if (!iscarbon(user))
+	if(!iscarbon(user))
 		return FALSE
 	var/mob/living/carbon/the_smoker = user
 	return the_smoker.can_breathe_helmet()
@@ -559,7 +559,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/mob/living/user = isliving(loc) ? loc : null
 	user?.ignite_mob()
 
-	if(!check_oxygen(user))
+	if(!check_oxydizer(user))
 		extinguish()
 		return
 

@@ -165,9 +165,9 @@
 		. += "[initial(icon_state)]-[inserted_tank_state]"
 
 /// Checks that we have enough oxygen to weld
-/obj/item/weldingtool/fueled/proc/check_oxygen()
+/obj/item/weldingtool/fueled/proc/check_oxydizer()
 	var/datum/gas_mixture/air = return_air()
-	if(!isnull(air) && air.has_gas(/datum/gas/oxygen, 1))
+	if(!isnull(air) && (air.has_gas(/datum/gas/oxygen, 1) || air.has_gas(/datum/gas/nitrous_oxide, 1)))
 		return TRUE
 
 /obj/item/weldingtool/fueled/process(seconds_per_tick)
@@ -175,7 +175,7 @@
 		force = 15
 		damtype = BURN
 		burned_fuel_for += seconds_per_tick
-		if(need_oxygen && !check_oxygen(src.loc))
+		if(need_oxygen && !check_oxydizer(src.loc))
 			switched_off()
 		if(burned_fuel_for >= TOOL_FUEL_BURN_INTERVAL)
 			use(TRUE)
@@ -286,8 +286,7 @@
 	if(!inserted_tank)
 		balloon_alert(user, "no tank!")
 		return
-	if(need_oxygen && !check_oxygen(user)) //torches need oxygen
-		balloon_alert(user, "no oxygen!")
+	if(need_oxygen && !check_oxydizer(user)) //torches need oxygen
 		return
 	if(inserted_tank && !inserted_tank.reagents)
 		balloon_alert(user, "no fuel!")

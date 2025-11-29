@@ -140,6 +140,9 @@
 /obj/item/lighter/attack_self(mob/living/user)
 	if(!user.is_holding(src))
 		return ..()
+	if(!check_oxydizer(user)) //lighters need oxygen
+		playsound(src.loc , 'sound/items/lighter/lighter_off.ogg', 100, 1)
+		return
 	if(lit)
 		set_lit(FALSE)
 		if(fancy)
@@ -225,8 +228,16 @@
 		return FALSE
 	return TRUE
 
+/// Checks that we have enough oxygen to light it
+/obj/item/lighter/proc/check_oxydizer()
+	var/datum/gas_mixture/air = return_air()
+	if(!isnull(air) && (air.has_gas(/datum/gas/oxygen, 1) || air.has_gas(/datum/gas/nitrous_oxide, 1)))
+		return TRUE
+
 /obj/item/lighter/process(seconds_per_tick)
 	if(lit)
+		if(!check_oxydizer(src.loc))
+			set_lit(FALSE)
 		burned_fuel_for += seconds_per_tick
 		if(burned_fuel_for >= TOOL_FUEL_BURN_INTERVAL)
 			use(used = 0.25)
