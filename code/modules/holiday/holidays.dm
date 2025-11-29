@@ -590,17 +590,6 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 /datum/holiday/indigenous/getStationPrefix()
 	return pick("Endangered language", "Word", "Language", "Language revitalization", "Potato", "Corn")
 
-// AUGUST
-
-/datum/holiday/ukraine
-	name = "Independence Day of Ukraine"
-	begin_month = AUGUST
-	begin_day = 24
-	holiday_colors = list(COLOR_TRUE_BLUE, COLOR_TANGERINE_YELLOW)
-
-/datum/holiday/ukraine/getStationPrefix()
-	return pick("Kyiv", "Ukraine")
-
 // SEPTEMBER
 
 //Tiziran Unification Day is celebrated on Sept 1st, the day on which lizards were made a roundstart race
