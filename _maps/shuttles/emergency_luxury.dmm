@@ -477,7 +477,7 @@
 /turf/open/floor/plating,
 /area/shuttle/escape)
 "sH" = (
-/obj/structure/reagent_dispensers/fueltank/large,
+/obj/structure/reagent_dispensers/fueltank,
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/turf_decal/delivery,
 /obj/effect/decal/cleanable/dirt,

@@ -54,7 +54,7 @@
 /obj/item/reagent_containers/syringe/contraband/krokodil,
 /obj/item/screwdriver,
 /obj/effect/decal/cleanable/fuel_pool,
-/obj/structure/reagent_dispensers/fueltank/large,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plating/dumpsterair,
 /area/ruin/space/has_grav/garbagetruck/squat)
 "bR" = (
@@ -381,7 +381,7 @@
 /turf/open/floor/plating/dumpsterair,
 /area/ruin/space/has_grav/garbagetruck/squat)
 "tL" = (
-/obj/structure/reagent_dispensers/fueltank/large,
+/obj/structure/reagent_dispensers/fueltank,
 /obj/effect/decal/cleanable/fuel_pool,
 /turf/open/floor/plating/dumpsterair,
 /area/ruin/space/has_grav/garbagetruck/squat)
@@ -410,7 +410,7 @@
 	pixel_y = -3
 	},
 /obj/effect/decal/cleanable/fuel_pool,
-/obj/structure/reagent_dispensers/fueltank/large,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plating/dumpsterair,
 /area/ruin/space/has_grav/garbagetruck/squat)
 "uW" = (
@@ -534,7 +534,7 @@
 "BN" = (
 /obj/item/tank/internals/plasma/full,
 /obj/effect/decal/cleanable/fuel_pool,
-/obj/structure/reagent_dispensers/fueltank/large,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plating/dumpsterair,
 /area/ruin/space/has_grav/garbagetruck/squat)
 "Cm" = (

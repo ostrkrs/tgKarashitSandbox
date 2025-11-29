@@ -59227,7 +59227,7 @@
 /area/station/science/genetics)
 "qYY" = (
 /obj/machinery/airalarm/directional/south,
-/obj/structure/reagent_dispensers/fueltank/large,
+/obj/structure/reagent_dispensers/fueltank,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/iron/dark,
 /area/station/engineering/break_room)
@@ -74617,7 +74617,7 @@
 /turf/open/floor/iron,
 /area/station/security/prison/mess)
 "vwQ" = (
-/obj/structure/reagent_dispensers/fueltank/large,
+/obj/structure/reagent_dispensers/fueltank,
 /obj/effect/turf_decal/delivery/white{
 	color = "#ff6600"
 	},

@@ -584,7 +584,7 @@
 /area/ruin/space/has_grav/atmosasteroid)
 "Oz" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/cyan/visible,
-/obj/structure/reagent_dispensers/fueltank/large,
+/obj/structure/reagent_dispensers/fueltank,
 /obj/effect/turf_decal/delivery/red,
 /obj/machinery/light/directional/east,
 /turf/open/floor/iron/dark/co2_pressurized,
