@@ -132,7 +132,6 @@
 		inserted_tank = new inserted_tank
 
 	update_appearance()
-	register_item_context()
 	register_context()
 
 /obj/item/weldingtool/fueled/add_context(atom/source, list/context, obj/item/held_item, mob/living/user)
