@@ -116,6 +116,8 @@
 	var/obj/item/welder_tank/inserted_tank = /obj/item/welder_tank
 	/// When fuel was last removed.
 	var/burned_fuel_for = 0
+	/// TRUE if need oxygen to weld
+	var/need_oxygen = TRUE
 
 	activation_sound = 'sound/items/tools/welderactivate.ogg'
 	deactivation_sound = 'sound/items/tools/welderdeactivate.ogg'
@@ -163,11 +165,19 @@
 		var/inserted_tank_state = inserted_tank.icon_state
 		. += "[initial(icon_state)]-[inserted_tank_state]"
 
+/// Checks that we have enough oxygen to weld
+/obj/item/weldingtool/fueled/proc/check_oxygen()
+	var/datum/gas_mixture/air = return_air()
+	if(!isnull(air) && air.has_gas(/datum/gas/oxygen, 1))
+		return TRUE
+
 /obj/item/weldingtool/fueled/process(seconds_per_tick)
 	if(welding)
 		force = 15
 		damtype = BURN
 		burned_fuel_for += seconds_per_tick
+		if(need_oxygen && !check_oxygen(src.loc))
+			switched_off()
 		if(burned_fuel_for >= TOOL_FUEL_BURN_INTERVAL)
 			use(TRUE)
 		update_appearance()
@@ -276,6 +286,9 @@
 /obj/item/weldingtool/fueled/attack_self(mob/user)
 	if(!inserted_tank)
 		balloon_alert(user, "no tank!")
+		return
+	if(need_oxygen && !check_oxygen(user)) //torches need oxygen
+		balloon_alert(user, "no oxygen!")
 		return
 	if(inserted_tank && !inserted_tank.reagents)
 		balloon_alert(user, "no fuel!")
@@ -426,7 +439,7 @@
 /// ALIEN WELDER
 /obj/item/weldingtool/fueled/abductor
 	name = "alien welding torch"
-	desc = "An alien welding tool. Whatever fuel it uses, it never runs out."
+	desc = "An alien welding tool. Whatever fuel it uses, it can weld without oxygen and never runs out."
 	icon = 'icons/obj/antags/abductor.dmi'
 	icon_state = "welder"
 	toolspeed = 0.1
@@ -436,6 +449,7 @@
 	change_icons = FALSE
 	inserted_tank = /obj/item/welder_tank/mini
 	integrated_tank = TRUE
+	need_oxygen = FALSE
 
 /obj/item/weldingtool/fueled/abductor/process()
 	if(inserted_tank)
@@ -538,16 +552,8 @@
 	usesound = 'sound/items/tools/welder2.ogg'
 	var/obj/item/stock_parts/power_store/cell/inserted_cell = /obj/item/stock_parts/power_store/cell
 	var/power_use_amount = STANDARD_CELL_CHARGE * 0.2
-	var/list/prohibited_cells = list(
-		/obj/item/stock_parts/power_store/cell/crap,
-		/obj/item/stock_parts/power_store/cell/secborg,
-		/obj/item/stock_parts/power_store/cell/mini_egun,
-		/obj/item/stock_parts/power_store/cell/hos_gun,
-		/obj/item/stock_parts/power_store/cell/pulse,
-		/obj/item/stock_parts/power_store/cell/ethereal,
-		/obj/item/stock_parts/power_store/cell/crystal_cell,
-		/obj/item/stock_parts/power_store/cell/emergency_light,
-	)
+	/// List of cells we dont want to be insertable in welders
+	var/static/list/prohibited_cells
 
 /obj/item/weldingtool/electric/Initialize(mapload)
 	. = ..()
@@ -557,6 +563,18 @@
 
 	if(ispath(inserted_cell))
 		inserted_cell = new inserted_cell
+
+	if(!prohibited_cells)
+		prohibited_cells = typecacheof(list(
+			/obj/item/stock_parts/power_store/cell/crap,
+			/obj/item/stock_parts/power_store/cell/secborg,
+			/obj/item/stock_parts/power_store/cell/mini_egun,
+			/obj/item/stock_parts/power_store/cell/hos_gun,
+			/obj/item/stock_parts/power_store/cell/pulse,
+			/obj/item/stock_parts/power_store/cell/ethereal,
+			/obj/item/stock_parts/power_store/cell/crystal_cell,
+			/obj/item/stock_parts/power_store/cell/emergency_light,
+		))
 
 	update_appearance()
 	register_item_context()
@@ -635,12 +653,11 @@
 		return FALSE
 	return TRUE
 
-/obj/item/weldingtool/electric/use(used = 0)
+/obj/item/weldingtool/electric/use(used, power_use_amount)
 	if(!isOn() || !check_energy())
 		return FALSE
-
 	if(inserted_cell.charge >= used)
-		inserted_cell.use(power_use_amount * used)
+		inserted_cell.use(power_use_amount, force = TRUE)
 		check_energy()
 		return TRUE
 	else
@@ -658,13 +675,13 @@
 		return FALSE
 	return TRUE
 
-/obj/item/weldingtool/electric/attackby(obj/item/tool, mob/user, list/modifiers, list/attack_modifiers, list/prohibited_cells)
+/obj/item/weldingtool/electric/attackby(obj/item/tool, mob/user, list/modifiers, list/attack_modifiers)
 	if(istype(tool, /obj/item/stock_parts/power_store/cell))
-		if(istype(tool, prohibited_cells))
-			balloon_alert(user, "incompatible cell!")
-			return TRUE
 		if(inserted_cell)
 			to_chat(user, span_warning("\The [src] already has a cell inserted - remove it first."))
+			return TRUE
+		if(is_type_in_typecache(tool, prohibited_cells))
+			balloon_alert(user, "incompatible cell!")
 			return TRUE
 		inserted_cell = tool
 		balloon_alert(user, "inserted cell")
