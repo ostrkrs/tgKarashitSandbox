@@ -113,7 +113,7 @@
 	/// TRUE if using interchangeable fuel tanks, FALSE if using integrated fuel storage
 	var/integrated_tank = FALSE
 	/// Where the fuel is stored.
-	var/obj/item/welder_tank/tank = /obj/item/welder_tank
+	var/obj/item/welder_tank/inserted_tank = /obj/item/welder_tank
 	/// When fuel was last removed.
 	var/burned_fuel_for = 0
 
@@ -126,10 +126,19 @@
 	AddElement(/datum/element/tool_flash, light_range)
 	AddElement(/datum/element/falling_hazard, damage = force, wound_bonus = wound_bonus, hardhat_safety = TRUE, crushes = FALSE, impact_sound = hitsound)
 
-	if(ispath(tank))
-		tank = new tank
+	if(ispath(inserted_tank))
+		inserted_tank = new inserted_tank
 
 	update_appearance()
+	register_item_context()
+	register_context()
+
+/obj/item/weldingtool/fueled/add_context(atom/source, list/context, obj/item/held_item, mob/living/user)
+	if(inserted_tank)
+		context[SCREENTIP_CONTEXT_RMB] = "Remove tank"
+	else if(istype(held_item, /obj/item/welder_tank))
+		context[SCREENTIP_CONTEXT_LMB] = "Insert tank"
+	return CONTEXTUAL_SCREENTIP_SET
 
 /obj/item/weldingtool/fueled/update_icon_state()
 	if(welding)
@@ -141,17 +150,17 @@
 /obj/item/weldingtool/fueled/update_overlays()
 	. = ..()
 	if(change_icons)
-		if(!tank)
+		if(!inserted_tank)
 			. += "[initial(icon_state)][0]"
 		else
-			var/ratio = tank.get_fuel() / tank.max_fuel
+			var/ratio = inserted_tank.get_fuel() / inserted_tank.max_fuel
 			ratio = CEILING(ratio*4, 1) * 25
 			. += "[initial(icon_state)][ratio]"
 	if(welding)
 		. += "[initial(icon_state)]-on"
 
-	if(tank && !integrated_tank)
-		var/inserted_tank_state = tank.icon_state
+	if(inserted_tank && !integrated_tank)
+		var/inserted_tank_state = inserted_tank.icon_state
 		. += "[initial(icon_state)]-[inserted_tank_state]"
 
 /obj/item/weldingtool/fueled/process(seconds_per_tick)
@@ -185,16 +194,16 @@
 
 /obj/item/weldingtool/fueled/attackby(obj/item/tool, mob/user, list/modifiers, list/attack_modifiers)
 	if(istype(tool, /obj/item/stack/rods))
-		if(tank)
+		if(inserted_tank)
 			to_chat(user, span_warning("\The [src] has a tank attached - remove it first."))
 			return TRUE
 		flamethrower_rods(tool, user)
 	if(!integrated_tank)
 		if(istype(tool, /obj/item/welder_tank))
-			if(tank)
+			if(inserted_tank)
 				to_chat(user, span_warning("\The [src] already has a tank attached - remove it first."))
 				return TRUE
-			tank = tool
+			inserted_tank = tool
 			balloon_alert(user, "inserted tank")
 			user.transferItemToLoc(tool, src)
 			playsound(src, 'sound/items/tools/weldertank_insert.ogg', 25, 1)
@@ -205,9 +214,9 @@
 	update_appearance()
 
 /obj/item/weldingtool/fueled/proc/explode()
-	var/plasmaAmount = tank.reagents.get_reagent_amount(/datum/reagent/toxin/plasma)
+	var/plasmaAmount = inserted_tank.reagents.get_reagent_amount(/datum/reagent/toxin/plasma)
 	dyn_explosion(src, plasmaAmount/5, explosion_cause = src) // 20 plasma in a standard welder has a 4 power explosion. no breaches, but enough to kill/dismember holder
-	QDEL_NULL(tank)
+	QDEL_NULL(inserted_tank)
 	qdel(src)
 
 /obj/item/weldingtool/fueled/cyborg_unequip(mob/user)
@@ -217,7 +226,7 @@
 
 /obj/item/weldingtool/fueled/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
 	if(!status && interacting_with.is_refillable())
-		tank.reagents.trans_to(interacting_with, tank.reagents.total_volume, transferred_by = user)
+		inserted_tank.reagents.trans_to(interacting_with, inserted_tank.reagents.total_volume, transferred_by = user)
 		to_chat(user, span_notice("You empty [src]'s fuel tank into [interacting_with]."))
 		update_appearance()
 		return ITEM_INTERACT_SUCCESS
@@ -234,7 +243,7 @@
 	. = ..()
 	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
 		return
-	if(!tank)
+	if(!inserted_tank)
 		return
 	if(integrated_tank)
 		return
@@ -244,8 +253,8 @@
 			return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 		else
 			balloon_alert(user, "removed tank")
-			user.put_in_hands(tank)
-			tank = NONE
+			user.put_in_hands(inserted_tank)
+			inserted_tank = NONE
 			playsound(src, 'sound/items/tools/weldertank_remove.ogg', 25, 1)
 			update_icon()
 
@@ -265,13 +274,13 @@
 		user.log_message("set [key_name(attacked_mob)] on fire with [src].", LOG_ATTACK)
 
 /obj/item/weldingtool/fueled/attack_self(mob/user)
-	if(!tank)
+	if(!inserted_tank)
 		balloon_alert(user, "no tank!")
 		return
-	if(tank && !tank.reagents)
+	if(inserted_tank && !inserted_tank.reagents)
 		balloon_alert(user, "no fuel!")
 		return
-	if(tank.reagents.has_reagent(/datum/reagent/toxin/plasma))
+	if(inserted_tank.reagents.has_reagent(/datum/reagent/toxin/plasma))
 		message_admins("[ADMIN_LOOKUPFLW(user)] activated a rigged welder at [AREACOORD(user)].")
 		user.log_message("activated a rigged welder", LOG_VICTIM)
 		explode()
@@ -288,8 +297,8 @@
 	if(used > 0)
 		burned_fuel_for = 0
 
-	if(tank.get_fuel() >= used)
-		tank.reagents.remove_reagent(/datum/reagent/fuel, used)
+	if(inserted_tank.get_fuel() >= used)
+		inserted_tank.reagents.remove_reagent(/datum/reagent/fuel, used)
 		check_fuel()
 		return TRUE
 	else
@@ -297,7 +306,7 @@
 
 /// Turns off the welder if there is no more fuel (does this really need to be its own proc?)
 /obj/item/weldingtool/fueled/proc/check_fuel(mob/user)
-	if(tank.get_fuel() <= 0 && welding)
+	if(inserted_tank.get_fuel() <= 0 && welding)
 		set_light_on(FALSE)
 		switched_on(user)
 		update_appearance()
@@ -311,7 +320,7 @@
 		return
 	set_welding(!welding)
 	if(welding)
-		if(tank.get_fuel() >= 1)
+		if(inserted_tank.get_fuel() >= 1)
 			playsound(loc, activation_sound, 50, TRUE)
 			force = 15
 			damtype = BURN
@@ -327,15 +336,15 @@
 
 /obj/item/weldingtool/fueled/examine(mob/user)
 	. = ..()
-	if(tank)
-		. += "It contains [tank.get_fuel()] unit\s of fuel out of [tank.max_fuel]."
+	if(inserted_tank)
+		. += "It contains [inserted_tank.get_fuel()] unit\s of fuel out of [inserted_tank.max_fuel]."
 
 /// If welding tool ran out of fuel during a construction task, construction fails.
 /obj/item/weldingtool/fueled/tool_use_check(mob/living/user, amount, heat_required)
 	if(!isOn() || !check_fuel())
 		to_chat(user, span_warning("[src] has to be on to complete this task!"))
 		return FALSE
-	if(tank.get_fuel() < amount)
+	if(inserted_tank.get_fuel() < amount)
 		to_chat(user, span_warning("You need more welding fuel to complete this task!"))
 		return FALSE
 	if(heat < heat_required)
@@ -345,7 +354,7 @@
 
 /// Ran when the welder is attacked by a screwdriver.
 /obj/item/weldingtool/fueled/proc/flamethrower_screwdriver(obj/item/tool, mob/user)
-	if(tank)
+	if(inserted_tank)
 		to_chat(user, span_warning("Remove fuel tank first!"))
 		return
 	if(welding)
@@ -382,11 +391,13 @@
 		return ""
 
 /obj/item/weldingtool/fueled/empty
-	tank = NONE
+	inserted_tank = NONE
 
+/// LARGETANK WELDER
 /obj/item/weldingtool/fueled/largetank
-	tank = /obj/item/welder_tank/large
+	inserted_tank = /obj/item/welder_tank/large
 
+/// BORGIE WELDER
 /obj/item/weldingtool/fueled/cyborg
 	name = "integrated welding torch"
 	desc = "An advanced welder designed to be used in robotic systems. Custom framework doubles the speed of welding."
@@ -403,14 +414,14 @@
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron=SMALL_MATERIAL_AMOUNT*0.3, /datum/material/glass=SMALL_MATERIAL_AMOUNT*0.1)
 	change_icons = TRUE
-	tank = /obj/item/welder_tank/mini
+	inserted_tank = /obj/item/welder_tank/mini
 	integrated_tank = TRUE
 
 /obj/item/weldingtool/fueled/mini/flamethrower_screwdriver()
 	return
 
 /obj/item/weldingtool/fueled/mini/empty
-	tank = /obj/item/welder_tank/mini/empty
+	inserted_tank = /obj/item/welder_tank/mini/empty
 
 /// ALIEN WELDER
 /obj/item/weldingtool/fueled/abductor
@@ -423,13 +434,13 @@
 	light_system = NO_LIGHT_SUPPORT
 	light_range = 0
 	change_icons = FALSE
-	tank = /obj/item/welder_tank/mini
+	inserted_tank = /obj/item/welder_tank/mini
 	integrated_tank = TRUE
 
 /obj/item/weldingtool/fueled/abductor/process()
-	if(tank)
-		if(tank.get_fuel() <= tank.max_fuel)
-			tank.reagents.add_reagent(/datum/reagent/fuel, 1)
+	if(inserted_tank)
+		if(inserted_tank.get_fuel() <= inserted_tank.max_fuel)
+			inserted_tank.reagents.add_reagent(/datum/reagent/fuel, 1)
 	..()
 
 /// RND WELDER
@@ -444,17 +455,17 @@
 	light_range = 1
 	w_class = WEIGHT_CLASS_NORMAL
 	toolspeed = 0.5
-	tank = /obj/item/welder_tank/mini
+	inserted_tank = /obj/item/welder_tank/mini
 	integrated_tank = TRUE
 	var/last_gen = 0
 	var/nextrefueltick = 0
 
 /obj/item/weldingtool/fueled/experimental/process()
 	..()
-	if(tank)
-		if(tank.get_fuel() < tank.max_fuel && nextrefueltick < world.time)
+	if(inserted_tank)
+		if(inserted_tank.get_fuel() < inserted_tank.max_fuel && nextrefueltick < world.time)
 			nextrefueltick = world.time + 10
-			tank.reagents.add_reagent(/datum/reagent/fuel, 1)
+			inserted_tank.reagents.add_reagent(/datum/reagent/fuel, 1)
 
 
 /// MARK: WELDING TANKS
@@ -548,6 +559,15 @@
 		inserted_cell = new inserted_cell
 
 	update_appearance()
+	register_item_context()
+	register_context()
+
+/obj/item/weldingtool/electric/add_context(atom/source, list/context, obj/item/held_item, mob/living/user)
+	if(inserted_cell)
+		context[SCREENTIP_CONTEXT_RMB] = "Remove cell"
+	else if(istype(held_item, /obj/item/stock_parts/power_store/cell))
+		context[SCREENTIP_CONTEXT_LMB] = "Insert cell"
+	return CONTEXTUAL_SCREENTIP_SET
 
 /obj/item/weldingtool/electric/examine()
 	. = ..()

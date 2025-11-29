@@ -311,10 +311,10 @@
 
 	var/obj/item/weldingtool/fueled/refilling_welder = attacking_item
 	if(istype(refilling_welder) && !refilling_welder.welding)
-		if(refilling_welder.tank.reagents.has_reagent(/datum/reagent/fuel, refilling_welder.tank.max_fuel))
+		if(refilling_welder.inserted_tank.reagents.has_reagent(/datum/reagent/fuel, refilling_welder.inserted_tank.max_fuel))
 			to_chat(user, span_warning("Your [refilling_welder.name] is already full!"))
 			return
-		reagents.trans_to(refilling_welder.tank, refilling_welder.tank.max_fuel, transferred_by = user)
+		reagents.trans_to(refilling_welder.inserted_tank, refilling_welder.inserted_tank.max_fuel, transferred_by = user)
 		user.visible_message(span_notice("[user] refills [user.p_their()] [refilling_welder.name]."), span_notice("You refill [refilling_welder]."))
 		playsound(src, 'sound/effects/refill.ogg', 50, TRUE)
 		refilling_welder.update_appearance()
