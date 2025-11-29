@@ -339,12 +339,6 @@
 	log_bomber(user, "detonated a", src, "via [attacking_item.name]")
 	boom()
 
-/obj/structure/reagent_dispensers/fueltank/large
-	name = "high capacity fuel tank"
-	desc = "A tank full of a high quantity of welding fuel. Keep away from open flames."
-	icon_state = "fuel_high"
-	tank_volume = 5000
-
 /// Wall mounted dispeners, like pepper spray or virus food. Not a normal tank, and shouldn't be able to be turned into a plumbed stationary one.
 /obj/structure/reagent_dispensers/wall
 	anchored = TRUE
@@ -662,7 +656,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/reagent_dispensers/wall/virusfood, 30
 	. = ..()
 	AddComponent(/datum/component/simple_rotation)
 
-
 /obj/structure/reagent_dispensers/plumbed/storage/update_overlays()
 	. = ..()
 	if(!reagents)
@@ -674,13 +667,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/reagent_dispensers/wall/virusfood, 30
 	var/mutable_appearance/tank_color = mutable_appearance('icons/obj/medical/chemical_tanks.dmi', "tank_chem_overlay")
 	tank_color.color = mix_color_from_reagents(reagents.reagent_list)
 	. += tank_color
-
-/obj/structure/reagent_dispensers/plumbed/fuel
-	name = "stationary fuel tank"
-	icon_state = "fuel_stationary"
-	desc = "A stationary, plumbed, fuel tank."
-	reagent_id = /datum/reagent/fuel
-	accepts_rig = TRUE
 
 #undef REAGENT_SPILL_DIVISOR
 #undef COOLER_JUG_EJECT_TIME

@@ -349,7 +349,7 @@
 /turf/open/floor/iron,
 /area/ruin/powered/lizard_gas)
 "yH" = (
-/obj/structure/reagent_dispensers/plumbed/fuel,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plating,
 /area/ruin/powered/lizard_gas)
 "zh" = (

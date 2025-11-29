@@ -474,7 +474,7 @@
 "xN" = (
 /obj/structure/railing,
 /obj/effect/decal/cleanable/fuel_pool/hivis,
-/obj/structure/reagent_dispensers/fueltank/large,
+/obj/structure/reagent_dispensers/fueltank,
 /obj/effect/turf_decal/stripes/asteroid/line,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/plating,

@@ -548,7 +548,7 @@
 /area/shuttle/pirate)
 "qO" = (
 /obj/effect/turf_decal/bot/left,
-/obj/structure/reagent_dispensers/fueltank/large,
+/obj/structure/reagent_dispensers/fueltank,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable,
 /turf/open/floor/pod/dark,
