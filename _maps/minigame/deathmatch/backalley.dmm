@@ -513,7 +513,7 @@
 /turf/open/indestructible/white/textured,
 /area/deathmatch)
 "Re" = (
-/obj/structure/reagent_dispensers/fueltank/large,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/indestructible/plating,
 /area/deathmatch)
 "RE" = (

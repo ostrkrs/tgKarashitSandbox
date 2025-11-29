@@ -5199,7 +5199,7 @@
 /area/ruin/space/has_grav/hauntedtradingpost/aicore)
 "Ti" = (
 /obj/structure/sign/poster/ripped/directional/north,
-/obj/structure/reagent_dispensers/fueltank/large,
+/obj/structure/reagent_dispensers/fueltank,
 /obj/structure/cable/layer1,
 /obj/effect/decal/cleanable/fuel_pool,
 /turf/open/floor/catwalk_floor/iron_dark,

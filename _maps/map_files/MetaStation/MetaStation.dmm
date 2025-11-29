@@ -31745,7 +31745,7 @@
 /obj/effect/turf_decal/bot{
 	dir = 1
 	},
-/obj/structure/reagent_dispensers/fueltank/large,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/iron,
 /area/station/engineering/main)
 "kSD" = (
@@ -66977,7 +66977,7 @@
 /obj/machinery/camera/directional/south{
 	c_tag = "Atmospherics - Port-Fore"
 	},
-/obj/structure/reagent_dispensers/fueltank/large,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
 "wTO" = (

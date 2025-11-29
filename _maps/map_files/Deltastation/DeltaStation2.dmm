@@ -66947,7 +66947,7 @@
 "qBN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/status_display/ai/directional/south,
-/obj/structure/reagent_dispensers/fueltank/large,
+/obj/structure/reagent_dispensers/fueltank,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/iron/textured,
 /area/station/engineering/storage)
@@ -81749,7 +81749,7 @@
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
 "uiv" = (
-/obj/structure/reagent_dispensers/fueltank/large,
+/obj/structure/reagent_dispensers/fueltank,
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
 	},

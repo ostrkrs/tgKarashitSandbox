@@ -51339,7 +51339,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
-/obj/structure/reagent_dispensers/fueltank/large,
+/obj/structure/reagent_dispensers/fueltank,
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
@@ -64079,7 +64079,7 @@
 /turf/open/floor/iron/white,
 /area/station/science/lobby)
 "vnD" = (
-/obj/structure/reagent_dispensers/fueltank/large,
+/obj/structure/reagent_dispensers/fueltank,
 /obj/effect/turf_decal/bot{
 	dir = 1
 	},

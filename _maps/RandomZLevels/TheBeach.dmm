@@ -2691,7 +2691,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/structure/reagent_dispensers/fueltank/large,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/wood/parquet,
 /area/awaymission/beach)
 "Hg" = (

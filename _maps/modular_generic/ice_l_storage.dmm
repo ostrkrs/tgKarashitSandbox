@@ -51,7 +51,7 @@
 /turf/open/floor/plating,
 /area/template_noop)
 "l" = (
-/obj/structure/reagent_dispensers/fueltank/large,
+/obj/structure/reagent_dispensers/fueltank,
 /obj/effect/turf_decal/box,
 /turf/open/floor/plating,
 /area/template_noop)

@@ -331,7 +331,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/film_studio/solars)
 "fY" = (
-/obj/structure/reagent_dispensers/fueltank/large,
+/obj/structure/reagent_dispensers/fueltank,
 /obj/effect/turf_decal/bot,
 /obj/structure/sign/clock/directional/south,
 /turf/open/floor/plating,
