@@ -681,37 +681,6 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 /datum/holiday/programmers/getStationPrefix()
 	return pick("span>","DEBUG: ","null","/list","EVENT PREFIX NOT FOUND") //Portability
 
-// HEBREW
-
-/datum/holiday/hebrew
-	name = "If you see this the Hebrew holiday calendar code is broken"
-
-/datum/holiday/hebrew/shouldCelebrate(dd, mm, yyyy, ddd)
-	var/datum/foreign_calendar/hebrew/cal = new(yyyy, mm, dd)
-	return ..(cal.dd, cal.mm, cal.yyyy, ddd)
-
-/datum/holiday/hebrew/hanukkah
-	name = "Hanukkah"
-	begin_day = 25
-	begin_month = 9
-	end_day = 2
-	end_month = 10
-
-/datum/holiday/hebrew/hanukkah/greet()
-	return "Happy [pick("Hanukkah", "Chanukah")]!"
-
-/datum/holiday/hebrew/hanukkah/getStationPrefix()
-	return pick("Dreidel", "Menorah", "Latkes", "Gelt")
-
-/datum/holiday/hebrew/passover
-	name = "Passover"
-	begin_day = 15
-	begin_month = 1
-	end_day = 22
-
-/datum/holiday/hebrew/passover/getStationPrefix()
-	return pick("Matzah", "Moses", "Red Sea")
-
 // HOLIDAY ADDONS
 
 /datum/holiday/xmas/celebrate()
