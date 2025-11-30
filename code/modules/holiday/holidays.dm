@@ -609,10 +609,8 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 
 /datum/holiday/xmas/getStationPrefix()
 	return pick(
-		"Birthday",
 		"Chimney",
 		"Claus",
-		"Crucifixion",
 		"Elf",
 		"Fir",
 		"Ho Ho Ho",
