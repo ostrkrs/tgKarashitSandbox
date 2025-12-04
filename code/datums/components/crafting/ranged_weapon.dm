@@ -176,13 +176,13 @@
 	name = "Flamethrower"
 	result = /obj/item/flamethrower
 	reqs = list(
-		/obj/item/weldingtool/fueled = 1,
+		/obj/item/weldingtool/fueled/big = 1,
 		/obj/item/assembly/igniter = 1,
 		/obj/item/stack/rods = 1,
 	)
 	parts = list(
 		/obj/item/assembly/igniter = 1,
-		/obj/item/weldingtool/fueled = 1,
+		/obj/item/weldingtool/fueled/big = 1,
 	)
 	tool_behaviors = list(TOOL_SCREWDRIVER)
 	time = 1 SECONDS

@@ -445,6 +445,7 @@
 	custom_materials = list(/datum/material/iron=SMALL_MATERIAL_AMOUNT*2.8, /datum/material/glass=SMALL_MATERIAL_AMOUNT*1.2)
 	change_icons = FALSE
 	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	toolspeed = 0.5
 	inserted_tank = /obj/item/welder_tank/large
 
