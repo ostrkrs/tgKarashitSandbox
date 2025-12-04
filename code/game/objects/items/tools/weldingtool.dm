@@ -197,16 +197,7 @@
 	user.visible_message(span_suicide("[user] welds [user.p_their()] every orifice closed! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return FIRELOSS
 
-/obj/item/weldingtool/fueled/screwdriver_act(mob/living/user, obj/item/tool)
-	flamethrower_screwdriver(tool, user)
-	return ITEM_INTERACT_SUCCESS
-
 /obj/item/weldingtool/fueled/attackby(obj/item/tool, mob/user, list/modifiers, list/attack_modifiers)
-	if(istype(tool, /obj/item/stack/rods))
-		if(inserted_tank)
-			to_chat(user, span_warning("\The [src] has a tank attached - remove it first."))
-			return TRUE
-		flamethrower_rods(tool, user)
 	if(!integrated_tank)
 		if(istype(tool, /obj/item/welder_tank))
 			if(inserted_tank)
@@ -396,9 +387,6 @@
 	inserted_tank = /obj/item/welder_tank/mini
 	integrated_tank = TRUE
 
-/obj/item/weldingtool/fueled/mini/flamethrower_screwdriver()
-	return
-
 /obj/item/weldingtool/fueled/mini/empty
 	inserted_tank = /obj/item/welder_tank/mini/empty
 
@@ -459,6 +447,18 @@
 	w_class = WEIGHT_CLASS_BULKY
 	toolspeed = 0.5
 	inserted_tank = /obj/item/welder_tank/large
+
+/obj/item/weldingtool/fueled/big/screwdriver_act(mob/living/user, obj/item/tool)
+	flamethrower_screwdriver(tool, user)
+	return ITEM_INTERACT_SUCCESS
+
+/obj/item/weldingtool/fueled/big/attackby(obj/item/tool, mob/user, list/modifiers, list/attack_modifiers)
+	..()
+	if(istype(tool, /obj/item/stack/rods))
+		if(inserted_tank)
+			to_chat(user, span_warning("\The [src] has a tank attached - remove it first."))
+			return TRUE
+		flamethrower_rods(tool, user)
 
 /// Ran when the welder is attacked by a screwdriver.
 /obj/item/weldingtool/fueled/big/proc/flamethrower_screwdriver(obj/item/tool, mob/user)
