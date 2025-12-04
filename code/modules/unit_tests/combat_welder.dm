@@ -11,16 +11,16 @@
 	weapon.melee_attack_chain(tider, victim)
 
 	TEST_ASSERT_NOTEQUAL(victim.getFireLoss(), 0, "Victim did not get burned by welder.")
-	TEST_ASSERT_EQUAL(weapon.tank.get_fuel(), weapon.tank.max_fuel - 1, "Welder did not consume fuel on attacking a mob")
+	TEST_ASSERT_EQUAL(weapon.inserted_tank.get_fuel(), weapon.inserted_tank.max_fuel - 1, "Welder did not consume fuel on attacking a mob")
 
 	var/obj/structure/blob/blobby = EASY_ALLOCATE()
 	weapon.melee_attack_chain(tider, blobby)
 
 	TEST_ASSERT_NOTEQUAL(blobby.get_integrity(), blobby.max_integrity, "Blob did not get burned by welder.")
-	TEST_ASSERT_EQUAL(weapon.tank.get_fuel(), weapon.tank.max_fuel - 2, "Welder did not consume fuel on attacking a blob")
+	TEST_ASSERT_EQUAL(weapon.inserted_tank.get_fuel(), weapon.inserted_tank.max_fuel - 2, "Welder did not consume fuel on attacking a blob")
 
 	weapon.force = 999
 	weapon.melee_attack_chain(tider, blobby)
 
 	TEST_ASSERT(QDELETED(blobby), "Blob was not destroyed by welder.")
-	TEST_ASSERT_EQUAL(weapon.tank.get_fuel(), weapon.tank.max_fuel - 3, "Welder did not consume fuel on deleting a blob")
+	TEST_ASSERT_EQUAL(weapon.inserted_tank.get_fuel(), weapon.inserted_tank.max_fuel - 3, "Welder did not consume fuel on deleting a blob")
