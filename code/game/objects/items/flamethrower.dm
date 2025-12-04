@@ -11,7 +11,7 @@
 	throwforce = 10
 	throw_speed = 1
 	throw_range = 5
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_BULKY
 	custom_materials = list(/datum/material/iron= HALF_SHEET_MATERIAL_AMOUNT * 0.5)
 	resistance_flags = FIRE_PROOF
 	trigger_guard = TRIGGER_GUARD_NORMAL
@@ -24,7 +24,7 @@
 	var/status = FALSE
 	var/lit = FALSE //on or off
 	var/operating = FALSE//cooldown
-	var/obj/item/weldingtool/fueled/weldtool = null
+	var/obj/item/weldingtool/fueled/big/weldtool = null
 	var/obj/item/assembly/igniter/igniter = null
 	var/obj/item/tank/internals/plasma/ptank = null
 	var/warned_admins = FALSE //for the message_admins() when lit
@@ -195,7 +195,7 @@
 
 /obj/item/flamethrower/on_craft_completion(list/components, datum/crafting_recipe/current_recipe, atom/crafter)
 	. =..()
-	weldtool = locate(/obj/item/weldingtool/fueled) in contents
+	weldtool = locate(/obj/item/weldingtool/fueled/big) in contents
 	igniter = locate(/obj/item/assembly/igniter) in contents
 	weldtool.status = FALSE
 	igniter.secured = FALSE
@@ -247,7 +247,7 @@
 	)
 	if(create_full)
 		if(!weldtool)
-			weldtool = new /obj/item/weldingtool/fueled(src)
+			weldtool = new /obj/item/weldingtool/fueled/big(src)
 		weldtool.status = FALSE
 		if(!igniter)
 			igniter = new igniter_type(src)

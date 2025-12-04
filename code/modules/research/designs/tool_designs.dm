@@ -302,7 +302,7 @@
 
 /datum/design/alienwelder
 	name = "Alien Welding Torch"
-	desc = "An advanced welding tool obtained through Abductor technology."
+	desc = "An advanced welding torch obtained through Abductor technology."
 	id = "alien_welder"
 	build_path = /obj/item/weldingtool/fueled/abductor
 	build_type = PROTOLATHE | AWAY_LATHE

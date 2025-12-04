@@ -35,7 +35,7 @@
 /datum/export/weldingtool
 	cost = CARGO_CRATE_VALUE * 0.025
 	unit_name = "welding torch"
-	export_types = list(/obj/item/weldingtool/fueled)
+	export_types = list(/obj/item/weldingtool)
 	include_subtypes = FALSE
 
 /datum/export/weldingtool/emergency

@@ -363,38 +363,6 @@
 		return FALSE
 	return TRUE
 
-/// Ran when the welder is attacked by a screwdriver.
-/obj/item/weldingtool/fueled/proc/flamethrower_screwdriver(obj/item/tool, mob/user)
-	if(inserted_tank)
-		to_chat(user, span_warning("Remove fuel tank first!"))
-		return
-	if(welding)
-		to_chat(user, span_warning("Turn it off first!"))
-		return
-	status = !status
-	if(status)
-		to_chat(user, span_notice("You resecure [src] and close the fuel tank."))
-		reagents.flags &= ~(OPENCONTAINER)
-	else
-		to_chat(user, span_notice("[src] can now be attached, modified, and refuelled."))
-		reagents.flags |= OPENCONTAINER
-	add_fingerprint(user)
-
-/// First step of building a flamethrower (when a welder is attacked by rods)
-/obj/item/weldingtool/fueled/proc/flamethrower_rods(obj/item/tool, mob/user)
-	if(!status)
-		var/obj/item/stack/rods/used_rods = tool
-		if (used_rods.use(1))
-			var/obj/item/flamethrower/flamethrower_frame = new /obj/item/flamethrower(user.loc)
-			if(!remove_item_from_storage(flamethrower_frame, user))
-				user.transferItemToLoc(src, flamethrower_frame, TRUE)
-			flamethrower_frame.weldtool = src
-			add_fingerprint(user)
-			to_chat(user, span_notice("You add a rod to a welder, starting to build a flamethrower."))
-			user.put_in_hands(flamethrower_frame)
-		else
-			to_chat(user, span_warning("You need one rod to start building a flamethrower!"))
-
 /obj/item/weldingtool/fueled/ignition_effect(atom/ignitable_atom, mob/user)
 	if(use_tool(ignitable_atom, user, 0))
 		return span_rose("[user] casually lights [ignitable_atom] with [src], what a badass.")
@@ -479,6 +447,50 @@
 			nextrefueltick = world.time + 10
 			inserted_tank.reagents.add_reagent(/datum/reagent/fuel, 1)
 
+/// BIG WELDER
+/// Mostly used for flamethrower crafting
+/obj/item/weldingtool/fueled/big
+	name = "industrial welding torch"
+	desc = "An industrial-grade fueled welder, trades all compactness for unparalleled welding speed."
+	icon_state = "bigwelder"
+	inhand_icon_state = "bigwelder"
+	custom_materials = list(/datum/material/iron=SMALL_MATERIAL_AMOUNT*2.8, /datum/material/glass=SMALL_MATERIAL_AMOUNT*1.2)
+	change_icons = FALSE
+	w_class = WEIGHT_CLASS_BULKY
+	toolspeed = 0.5
+	inserted_tank = /obj/item/welder_tank/large
+
+/// Ran when the welder is attacked by a screwdriver.
+/obj/item/weldingtool/fueled/big/proc/flamethrower_screwdriver(obj/item/tool, mob/user)
+	if(inserted_tank)
+		to_chat(user, span_warning("Remove fuel tank first!"))
+		return
+	if(welding)
+		to_chat(user, span_warning("Turn it off first!"))
+		return
+	status = !status
+	if(status)
+		to_chat(user, span_notice("You resecure [src] and close the fuel tank."))
+		reagents.flags &= ~(OPENCONTAINER)
+	else
+		to_chat(user, span_notice("[src] can now be attached, modified, and refuelled."))
+		reagents.flags |= OPENCONTAINER
+	add_fingerprint(user)
+
+/// First step of building a flamethrower (when a welder is attacked by rods)
+/obj/item/weldingtool/fueled/big/proc/flamethrower_rods(obj/item/tool, mob/user)
+	if(!status)
+		var/obj/item/stack/rods/used_rods = tool
+		if (used_rods.use(1))
+			var/obj/item/flamethrower/flamethrower_frame = new /obj/item/flamethrower(user.loc)
+			if(!remove_item_from_storage(flamethrower_frame, user))
+				user.transferItemToLoc(src, flamethrower_frame, TRUE)
+			flamethrower_frame.weldtool = src
+			add_fingerprint(user)
+			to_chat(user, span_notice("You add a rod to a welder, starting to build a flamethrower."))
+			user.put_in_hands(flamethrower_frame)
+		else
+			to_chat(user, span_warning("You need one rod to start building a flamethrower!"))
 
 /// MARK: WELDING TANKS
 /obj/item/welder_tank
