@@ -65142,9 +65142,6 @@
 "sMQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
-/obj/item/food/energybar{
-	pixel_y = 2
-	},
 /obj/effect/turf_decal/tile/bar/opposingcorners,
 /turf/open/floor/iron,
 /area/station/security/prison/mess)
@@ -77037,9 +77034,7 @@
 "wgd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
-/obj/item/food/energybar{
-	pixel_y = 2
-	},
+,
 /obj/item/storage/bag/tray/cafeteria{
 	pixel_y = 3
 	},

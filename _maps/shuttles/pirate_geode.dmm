@@ -841,10 +841,6 @@
 /area/shuttle/pirate)
 "Pr" = (
 /obj/structure/table/wood,
-/obj/item/food/energybar{
-	pixel_y = 9
-	},
-/obj/item/food/energybar,
 /turf/open/misc/dirt/station,
 /area/shuttle/pirate)
 "PB" = (
