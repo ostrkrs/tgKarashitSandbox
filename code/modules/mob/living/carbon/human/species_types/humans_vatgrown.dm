@@ -13,11 +13,11 @@
 	vat_humie.set_hairstyle("Bald", update = TRUE)
 
 /datum/species/vat_grown_human/get_species_description()
-	return "ВЫРАЩЕННЫЕ В ПРОБИРКАХ ЛЮДИ (надо будет дополнить)."
+	return "ВЫРАЩЕННЫЕ В ПРОБИРКАХ ЛЮДИ (надо будет дополнить)"
 
 /datum/species/vat_grown_human/get_species_lore()
 	return list(
-		"ВЫРАЩЕННЫЕ В ПРОБИРКАХ ЛЮДИ (надо будет дополнить).",
+		"ВЫРАЩЕННЫЕ В ПРОБИРКАХ ЛЮДИ (надо будет дополнить)",
 	)
 
 /datum/species/vat_grown_human/check_roundstart_eligible()
