@@ -342,20 +342,6 @@
 	max_occurrences_modifier = 5 //All but one loan event will occur over the course of a round.
 	trait_to_give = STATION_TRAIT_LOANER_SHUTTLE
 
-/datum/station_trait/random_event_weight_modifier/wise_cows
-	name = "Wise Cow Invasion"
-	report_message = "Bluespace harmonic readings show unusual interpolative signals between your sector and agricultural sector MMF-D-02. Expect an increase in cow encounters. Encownters, if you will."
-	trait_type = STATION_TRAIT_POSITIVE
-	weight = 1
-	event_control_path = /datum/round_event_control/wisdomcow
-	weight_multiplier = 3
-	max_occurrences_modifier = 10 //lotta cows
-
-/datum/station_trait/random_event_weight_modifier/wise_cows/get_pulsar_message()
-	var/advisory_string = "Advisory Level: <b>Cow Planet</b></center><BR>" //We're gonna go fast and we're gonna go far.
-	advisory_string += "Your sector's advisory level is Cow Planet. We don't really know what this one means -- the model we use to create these threat reports hasn't produced this result before. Watch out for cows, I guess? Good luck!"
-	return advisory_string
-
 /datum/station_trait/bright_day
 	name = "Bright Day"
 	report_message = "The stars shine bright and the clouds are scarcer than usual. It's a bright day here on the Ice Moon's surface."

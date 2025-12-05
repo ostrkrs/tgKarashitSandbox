@@ -29,20 +29,6 @@
 	begin_day += (begin_week - 1) * 7 + 1
 	return ..(dd, mm, yy, ddd)
 
-/datum/holiday/nth_week/thanksgiving
-	name = "Thanksgiving in the United States"
-	timezones = list(TIMEZONE_EST, TIMEZONE_CST, TIMEZONE_MST, TIMEZONE_PST, TIMEZONE_AKST, TIMEZONE_HST)
-	begin_week = 4
-	begin_month = NOVEMBER
-	begin_weekday = THURSDAY
-	holiday_hat = /obj/item/clothing/head/hats/tophat //This is the closest we can get to a pilgrim's hat
-
-/datum/holiday/nth_week/thanksgiving/canada
-	name = "Thanksgiving in Canada"
-	begin_week = 2
-	begin_month = OCTOBER
-	begin_weekday = MONDAY
-
 /datum/holiday/nth_week/mother
 	name = "Mother's Day"
 	begin_week = 2

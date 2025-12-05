@@ -113,50 +113,6 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 
 // The actual holidays
 
-// JANUARY
-
-//Fleet Day is celebrated on Jan 19th, the date on which moths were merged (#34498)
-/datum/holiday/fleet_day
-	name = "Fleet Day"
-	begin_month = JANUARY
-	begin_day = 19
-	holiday_hat = /obj/item/clothing/head/mothcap
-
-/datum/holiday/fleet_day/greet()
-	return "This day commemorates another year of successful survival aboard the Mothic Grand Nomad Fleet. Moths galaxywide are encouraged to eat, drink, and be merry."
-
-/datum/holiday/fleet_day/getStationPrefix()
-	return pick("Moth", "Fleet", "Nomadic")
-
-// FEBRUARY
-
-/datum/holiday/groundhog
-	name = "Groundhog Day"
-	begin_day = 2
-	begin_month = FEBRUARY
-
-/datum/holiday/groundhog/getStationPrefix()
-	return pick("Deja Vu") //I have been to this place before
-
-/datum/holiday/nz
-	name = "Waitangi Day"
-	timezones = list(TIMEZONE_NZDT, TIMEZONE_CHADT)
-	begin_day = 6
-	begin_month = FEBRUARY
-	holiday_colors = list(
-		COLOR_UNION_JACK_BLUE,
-		COLOR_WHITE,
-		COLOR_UNION_JACK_RED,
-		COLOR_WHITE,
-	)
-
-/datum/holiday/nz/getStationPrefix()
-	return pick("Aotearoa","Kiwi","Fish 'n' Chips","Kākāpō","Southern Cross")
-
-/datum/holiday/nz/greet()
-	var/nz_age = text2num(time2text(world.timeofday, "YYYY", TIMEZONE_NZST)) - 1840
-	return "On this day [nz_age] years ago, New Zealand's Treaty of Waitangi, the founding document of the nation, was signed!"
-
 /datum/holiday/valentines
 	name = VALENTINES
 	begin_day = 13
@@ -227,11 +183,6 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 /datum/holiday/random_kindness/greet()
 	return "Go do some random acts of kindness for a stranger!" //haha yeah right
 
-/datum/holiday/leap
-	name = "Leap Day"
-	begin_day = 29
-	begin_month = FEBRUARY
-
 // MARCH
 
 /datum/holiday/pi
@@ -257,29 +208,6 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 
 /datum/holiday/pi/getStationPrefix()
 	return pick("Sine","Cosine","Tangent","Secant", "Cosecant", "Cotangent")
-
-/datum/holiday/no_this_is_patrick
-	name = "St. Patrick's Day"
-	begin_day = 17
-	begin_month = MARCH
-	holiday_hat = /obj/item/clothing/head/soft/green
-	holiday_colors = list(
-		COLOR_IRISH_GREEN,
-		COLOR_WHITE,
-		COLOR_IRISH_ORANGE,
-	)
-	holiday_pattern = PATTERN_VERTICAL_STRIPE
-	/// Could we settle this over a pint?
-	holiday_mail = list(
-		/obj/item/reagent_containers/cup/glass/bottle/ale,
-		/obj/item/reagent_containers/cup/glass/drinkingglass/filled/irish_cream,
-	)
-
-/datum/holiday/no_this_is_patrick/getStationPrefix()
-	return pick("Blarney","Green","Leprechaun","Booze")
-
-/datum/holiday/no_this_is_patrick/greet()
-	return "Happy National Inebriation Day!"
 
 // APRIL
 
@@ -344,16 +272,6 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 	begin_day = 22
 	begin_month = APRIL
 
-/datum/holiday/anz
-	name = "ANZAC Day"
-	timezones = list(TIMEZONE_TKT, TIMEZONE_TOT, TIMEZONE_NZST, TIMEZONE_NFT, TIMEZONE_LHST, TIMEZONE_AEST, TIMEZONE_ACST, TIMEZONE_ACWST, TIMEZONE_AWST, TIMEZONE_CXT, TIMEZONE_CCT, TIMEZONE_CKT, TIMEZONE_NUT)
-	begin_day = 25
-	begin_month = APRIL
-	holiday_hat = /obj/item/food/grown/poppy
-
-/datum/holiday/anz/getStationPrefix()
-	return pick("Australian","New Zealand","Poppy", "Southern Cross")
-
 // MAY
 
 /datum/holiday/labor
@@ -362,18 +280,6 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 	begin_month = MAY
 	holiday_hat = /obj/item/clothing/head/utility/hardhat
 	no_mail_holiday = TRUE
-
-//Draconic Day is celebrated on May 3rd, the date on which the Draconic language was merged (#26780)
-/datum/holiday/draconic_day
-	name = "Draconic Language Day"
-	begin_month = MAY
-	begin_day = 3
-
-/datum/holiday/draconic_day/greet()
-	return "On this day, Lizardkind celebrates their language with literature and other cultural works."
-
-/datum/holiday/draconic_day/getStationPrefix()
-	return pick("Draconic", "Literature", "Reading")
 
 /datum/holiday/firefighter
 	name = "Firefighter's Day"
@@ -418,18 +324,6 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 
 // JUNE
 
-//The Festival of Atrakor's Might (Tizira's Moon) is celebrated on June 15th, the date on which the lizard visual revamp was merged (#9808)
-/datum/holiday/atrakor_festival
-	name = "Festival of Atrakor's Might"
-	begin_month = JUNE
-	begin_day = 15
-
-/datum/holiday/atrakor_festival/greet()
-	return "On this day, the Lizards traditionally celebrate the Festival of Atrakor's Might, where they honour the moon god with lavishly adorned clothing, large portions of food, and a massive celebration into the night."
-
-/datum/holiday/atrakor_festival/getStationPrefix()
-	return pick("Moon", "Night Sky", "Celebration")
-
 /// Garbage DAYYYYY
 /// Huh?.... NOOOO
 /// *GUNSHOT*
@@ -449,35 +343,6 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 	begin_day = 21
 	begin_month = JUNE
 	holiday_hat = /obj/item/clothing/head/costume/garland
-
-/datum/holiday/pride_week
-	name = PRIDE_WEEK
-	begin_month = JUNE
-	// Stonewall was June 28th, this captures its week.
-	begin_day = 23
-	end_day = 29
-	holiday_colors = list(
-		COLOR_PRIDE_PURPLE,
-		COLOR_PRIDE_BLUE,
-		COLOR_PRIDE_GREEN,
-		COLOR_PRIDE_YELLOW,
-		COLOR_PRIDE_ORANGE,
-		COLOR_PRIDE_RED,
-	)
-	holiday_mail = list(
-		/obj/item/bedsheet/rainbow,
-		/obj/item/clothing/accessory/pride,
-		/obj/item/clothing/gloves/color/rainbow,
-		/obj/item/clothing/head/costume/garland/rainbowbunch,
-		/obj/item/clothing/head/soft/rainbow,
-		/obj/item/clothing/shoes/sneakers/rainbow,
-		/obj/item/clothing/under/color/jumpskirt/rainbow,
-		/obj/item/clothing/under/color/rainbow,
-		/obj/item/food/egg/rainbow,
-		/obj/item/food/grown/rainbow_flower,
-		/obj/item/food/snowcones/rainbow,
-		/obj/item/toy/crayon/rainbow,
-	)
 
 // JULY
 
@@ -507,50 +372,11 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 /datum/holiday/ufo/getStationPrefix() //Is such a thing even possible?
 	return pick("Ayy","Truth","Tsoukalos","Mulder","Scully") //Yes it is!
 
-/datum/holiday/usa
-	name = "US Independence Day"
-	timezones = list(TIMEZONE_EDT, TIMEZONE_CDT, TIMEZONE_MDT, TIMEZONE_MST, TIMEZONE_PDT, TIMEZONE_AKDT, TIMEZONE_HDT, TIMEZONE_HST)
-	begin_day = 4
-	begin_month = JULY
-	no_mail_holiday = TRUE
-	holiday_hat = /obj/item/clothing/head/cowboy/brown
-	holiday_colors = list(
-		COLOR_OLD_GLORY_BLUE,
-		COLOR_OLD_GLORY_RED,
-		COLOR_WHITE,
-		COLOR_OLD_GLORY_RED,
-		COLOR_WHITE,
-	)
-
-
-/datum/holiday/usa/getStationPrefix()
-	return pick("Independent","American","Burger","Bald Eagle","Star-Spangled", "Fireworks")
-
 /datum/holiday/writer
 	name = "Writer's Day"
 	begin_day = 8
 	begin_month = JULY
 	holiday_mail = list(/obj/item/pen/fountain)
-
-/datum/holiday/france
-	name = "Bastille Day"
-	timezones = list(TIMEZONE_CEST)
-	begin_day = 14
-	begin_month = JULY
-	holiday_hat = /obj/item/clothing/head/beret
-	no_mail_holiday = TRUE
-	holiday_colors = list(
-		COLOR_FRENCH_BLUE,
-		COLOR_WHITE,
-		COLOR_FRENCH_RED
-	)
-	holiday_pattern = PATTERN_VERTICAL_STRIPE
-
-/datum/holiday/france/getStationPrefix()
-	return pick("Francais", "Fromage", "Zut", "Merde", "Sacrebleu")
-
-/datum/holiday/france/greet()
-	return "Do you hear the people sing?"
 
 /datum/holiday/hotdogday
 	name = HOTDOG_DAY
@@ -560,16 +386,6 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 
 /datum/holiday/hotdogday/greet()
 	return "Happy National Hot Dog Day!"
-
-//Gary Gygax's birthday, a fitting day for Wizard's Day
-/datum/holiday/wizards_day
-	name = "Wizard's Day"
-	begin_month = JULY
-	begin_day = 27
-	holiday_hat = /obj/item/clothing/head/wizard
-
-/datum/holiday/wizards_day/getStationPrefix()
-	return pick("Dungeon", "Elf", "Magic", "D20", "Edition")
 
 /datum/holiday/friendship
 	name = "Friendship Day"
@@ -590,32 +406,7 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 /datum/holiday/indigenous/getStationPrefix()
 	return pick("Endangered language", "Word", "Language", "Language revitalization", "Potato", "Corn")
 
-// AUGUST
-
-/datum/holiday/ukraine
-	name = "Independence Day of Ukraine"
-	begin_month = AUGUST
-	begin_day = 24
-	holiday_colors = list(COLOR_TRUE_BLUE, COLOR_TANGERINE_YELLOW)
-
-/datum/holiday/ukraine/getStationPrefix()
-	return pick("Kyiv", "Ukraine")
-
 // SEPTEMBER
-
-//Tiziran Unification Day is celebrated on Sept 1st, the day on which lizards were made a roundstart race
-/datum/holiday/tiziran_unification
-	name = "Tiziran Unification Day"
-	begin_month = SEPTEMBER
-	begin_day = 1
-	holiday_hat = /obj/item/clothing/head/costume/lizard
-	holiday_mail = list(/obj/item/toy/plush/lizard_plushie)
-
-/datum/holiday/tiziran_unification/greet()
-	return "On this day over 400 years ago, Lizardkind first united under a single banner, ready to face the stars as one unified people."
-
-/datum/holiday/tiziran_unification/getStationPrefix()
-	return pick("Tizira", "Lizard", "Imperial")
 
 /datum/holiday/ianbirthday
 	name = IAN_HOLIDAY //github.com/tgstation/tgstation/commit/de7e4f0de0d568cd6e1f0d7bcc3fd34700598acb
@@ -683,17 +474,6 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 	begin_month = OCTOBER
 	holiday_hat = /obj/item/clothing/head/hats/tophat
 
-/datum/holiday/un_day
-	name = "Anniversary of the Foundation of the United Nations"
-	begin_month = OCTOBER
-	begin_day = 24
-
-/datum/holiday/un_day/greet()
-	return "On this day in 1945, the United Nations was founded, laying the foundation for humanity's united government!"
-
-/datum/holiday/un_day/getStationPrefix()
-	return pick("United", "Cooperation", "Humanitarian")
-
 /datum/holiday/halloween
 	name = HALLOWEEN
 	begin_day = 29
@@ -713,15 +493,6 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 	return pick("Bone-Rattling","Mr. Bones' Own","2SPOOKY","Spooky","Scary","Skeletons")
 
 // NOVEMBER
-
-/datum/holiday/vegan
-	name = "Vegan Day"
-	begin_day = 1
-	begin_month = NOVEMBER
-	holiday_mail = list(/obj/item/food/tofu)
-
-/datum/holiday/vegan/getStationPrefix()
-	return pick("Tofu", "Tempeh", "Seitan", "Tofurkey")
 
 /datum/holiday/october_revolution
 	name = "October Revolution"
@@ -793,23 +564,6 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 /datum/holiday/hello/greet()
 	return "[pick(list("Aloha", "Bonjour", "Hello", "Hi", "Greetings", "Salutations", "Bienvenidos", "Hola", "Howdy", "Ni hao", "Guten Tag", "Konnichiwa", "G'day cunt"))]! " + ..()
 
-//The Festival of Holy Lights is celebrated on Nov 28th, the date on which ethereals were merged (#40995)
-/datum/holiday/holy_lights
-	name = "Festival of Holy Lights"
-	begin_month = NOVEMBER
-	begin_day = 28
-	/// If there's more of them I forgot
-	holiday_mail = list(
-		/obj/item/food/energybar,
-		/obj/item/food/pieslice/bacid_pie,
-	)
-
-/datum/holiday/holy_lights/greet()
-	return "The Festival of Holy Lights is the final day of the Ethereal calendar. It is typically a day of prayer followed by celebration to close out the year in style."
-
-/datum/holiday/holy_lights/getStationPrefix()
-	return pick("Ethereal", "Lantern", "Holy")
-
 // DECEMBER
 
 /datum/holiday/festive_season
@@ -855,15 +609,11 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 
 /datum/holiday/xmas/getStationPrefix()
 	return pick(
-		"Bible",
-		"Birthday",
 		"Chimney",
 		"Claus",
-		"Crucifixion",
 		"Elf",
 		"Fir",
 		"Ho Ho Ho",
-		"Jesus",
 		"Jolly",
 		"Merry",
 		"Present",
@@ -928,61 +678,6 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 
 /datum/holiday/programmers/getStationPrefix()
 	return pick("span>","DEBUG: ","null","/list","EVENT PREFIX NOT FOUND") //Portability
-
-// ISLAMIC
-
-/datum/holiday/islamic
-	name = "Islamic calendar code broken"
-
-/datum/holiday/islamic/shouldCelebrate(dd, mm, yyyy, ddd)
-	var/datum/foreign_calendar/islamic/cal = new(yyyy, mm, dd)
-	return ..(cal.dd, cal.mm, cal.yyyy, ddd)
-
-/datum/holiday/islamic/ramadan
-	name = "Start of Ramadan"
-	begin_month = 9
-	begin_day = 1
-	end_day = 3
-
-/datum/holiday/islamic/ramadan/getStationPrefix()
-	return pick("Haram","Halaal","Jihad","Muslim", "Al", "Mohammad", "Rashidun", "Umayyad", "Abbasid", "Abdul", "Fatimid", "Ayyubid", "Almohad", "Abu")
-
-/datum/holiday/islamic/ramadan/end
-	name = "End of Ramadan"
-	end_month = 10
-	begin_day = 28
-	end_day = 1
-
-// HEBREW
-
-/datum/holiday/hebrew
-	name = "If you see this the Hebrew holiday calendar code is broken"
-
-/datum/holiday/hebrew/shouldCelebrate(dd, mm, yyyy, ddd)
-	var/datum/foreign_calendar/hebrew/cal = new(yyyy, mm, dd)
-	return ..(cal.dd, cal.mm, cal.yyyy, ddd)
-
-/datum/holiday/hebrew/hanukkah
-	name = "Hanukkah"
-	begin_day = 25
-	begin_month = 9
-	end_day = 2
-	end_month = 10
-
-/datum/holiday/hebrew/hanukkah/greet()
-	return "Happy [pick("Hanukkah", "Chanukah")]!"
-
-/datum/holiday/hebrew/hanukkah/getStationPrefix()
-	return pick("Dreidel", "Menorah", "Latkes", "Gelt")
-
-/datum/holiday/hebrew/passover
-	name = "Passover"
-	begin_day = 15
-	begin_month = 1
-	end_day = 22
-
-/datum/holiday/hebrew/passover/getStationPrefix()
-	return pick("Matzah", "Moses", "Red Sea")
 
 // HOLIDAY ADDONS
 
