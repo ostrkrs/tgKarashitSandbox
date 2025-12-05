@@ -254,7 +254,6 @@
 		/mob/living/basic/chick,
 		/mob/living/basic/chicken,
 		/mob/living/basic/cow,
-		/mob/living/basic/cow/wisdom,
 		/mob/living/basic/crab,
 		/mob/living/basic/goat,
 		/mob/living/basic/gorilla,
