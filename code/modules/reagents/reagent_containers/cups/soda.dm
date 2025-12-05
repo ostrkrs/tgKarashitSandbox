@@ -27,7 +27,7 @@
 
 /obj/item/reagent_containers/cup/soda_cans/random/Initialize(mapload)
 	..()
-	var/T = pick(subtypesof(/obj/item/reagent_containers/cup/soda_cans) - /obj/item/reagent_containers/cup/soda_cans/random)
+	var/T = pick(subtypesof(/obj/item/reagent_containers/cup/soda_cans) - /obj/item/reagent_containers/cup/soda_cans/random - /obj/item/reagent_containers/cup/soda_cans/volt_energy)
 	new T(loc)
 	return INITIALIZE_HINT_QDEL
 

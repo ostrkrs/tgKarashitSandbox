@@ -24292,7 +24292,6 @@
 	c_tag = "Prison Cafeteria";
 	network = list("ss13","prison")
 	},
-/obj/item/food/energybar,
 /obj/effect/turf_decal/tile/red/opposingcorners,
 /turf/open/floor/iron/white,
 /area/station/security/prison/mess)

@@ -42244,7 +42244,6 @@
 /area/station/command/bridge)
 "oGw" = (
 /obj/structure/table,
-/obj/item/food/energybar,
 /turf/open/floor/iron,
 /area/station/security/prison)
 "oGB" = (
