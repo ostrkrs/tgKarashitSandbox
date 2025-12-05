@@ -11,7 +11,6 @@
 
 /datum/species/vat_grown_human/prepare_human_for_preview(mob/living/carbon/human/species/vat_grown/vat_humie)
 	vat_humie.set_hairstyle("Bald", update = TRUE)
-	vat_humie.skin_tone = "albino"
 
 /datum/species/vat_grown_human/get_species_description()
 	return "ВЫРАЩЕННЫЕ В ПРОБИРКАХ ЛЮДИ (надо будет дополнить)."
