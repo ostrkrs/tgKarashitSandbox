@@ -1079,7 +1079,6 @@
 /mob/living/carbon/human/species/vat_grown
 	race = /datum/species/vat_grown_human
 
-
 /mob/living/carbon/human/species/abductor
 	race = /datum/species/abductor
 
