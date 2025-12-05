@@ -1,0 +1,54 @@
+/datum/species/vat_grown_human
+	name = "\improper Vat-Grown Human"
+	id = SPECIES_VATGROWN_HUMAN
+	inherent_traits = list(
+		TRAIT_USES_SKINTONES,
+		TRAIT_IMMUNODEFICIENCY,
+	)
+	skinned_type = /obj/item/stack/sheet/animalhide/human
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
+	payday_modifier = 0.8
+
+/datum/species/vat_grown_human/prepare_human_for_preview(mob/living/carbon/human/species/vat_grown/vat_humie)
+	vat_humie.set_hairstyle("Bald", update = TRUE)
+	vat_humie.skin_tone = "albino"
+
+/datum/species/vat_grown_human/get_species_description()
+	return "ВЫРАЩЕННЫЕ В ПРОБИРКАХ ЛЮДИ (надо будет дополнить)."
+
+/datum/species/vat_grown_human/get_species_lore()
+	return list(
+		"ВЫРАСТИЛИ В ПРОБИРКАХ ЛЮДИ (надо будет дополнить).",
+	)
+
+/datum/species/vat_grown_human/check_roundstart_eligible()
+	return TRUE
+
+/datum/species/vat_grown_human/on_species_gain(mob/living/carbon/human/human_who_gained_species, datum/species/old_species, pref_load, regenerate_icons)
+	. = ..()
+	var/metabolism_efficiency = human_who_gained_species.metabolism_efficiency
+	metabolism_efficiency = 1.3
+
+/datum/species/vat_grown_human/on_species_loss(mob/living/carbon/human/human_who_lost_species, datum/species/new_species, pref_load)
+	. = ..()
+	var/metabolism_efficiency = human_who_lost_species.metabolism_efficiency
+	metabolism_efficiency = metabolism_efficiency
+
+/datum/species/vat_grown_human/create_pref_unique_perks()
+	var/list/to_add = list()
+
+	to_add += list(list(
+		SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
+		SPECIES_PERK_ICON = "bullhorn",
+		SPECIES_PERK_NAME = "Fast Metabolism",
+		SPECIES_PERK_DESC = "Vat-grown people have a faster metabolism than baseliners and other human subtypes. However, this also means they live shorter lives.",
+	))
+
+	to_add += list(list(
+		SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
+		SPECIES_PERK_ICON = "bullhorn",
+		SPECIES_PERK_NAME = "Weak Immunity",
+		SPECIES_PERK_DESC = "Due to the imperfection of vat-growing technology in maintaining natural microflora at the fetal stage, vat-grown humans has reduced immunity.",
+	))
+
+	return to_add
