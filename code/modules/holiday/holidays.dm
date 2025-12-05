@@ -180,6 +180,11 @@ GLOBAL_LIST_INIT(holiday_mail, list())
 /datum/holiday/random_kindness/greet()
 	return "Go do some random acts of kindness for a stranger!" //haha yeah right
 
+/datum/holiday/leap
+	name = "Leap Day"
+	begin_day = 29
+	begin_month = FEBRUARY
+
 // MARCH
 
 /datum/holiday/pi

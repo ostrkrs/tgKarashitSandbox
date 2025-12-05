@@ -14,13 +14,13 @@ jobs:
       pull-requests: write
     steps:
       - name: Clone
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Branch
         run: |
           git branch -f tgs-dmapi-update
           git checkout tgs-dmapi-update
-          git reset --hard master
+          git reset --hard main
 
       - name: Apply DMAPI update
         uses: tgstation/tgs-dmapi-updater@v2
