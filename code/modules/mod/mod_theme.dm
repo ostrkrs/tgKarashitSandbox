@@ -250,6 +250,7 @@
 		/obj/item/construction/rcd,
 		/obj/item/fireaxe/metal_h2_axe,
 		/obj/item/storage/bag/construction,
+		/obj/item/weldingtool/fueled/big,
 	)
 	variants = list(
 		"engineering" = list(
@@ -317,6 +318,7 @@
 		/obj/item/fireaxe/metal_h2_axe,
 		/obj/item/pipe_dispenser,
 		/obj/item/t_scanner,
+		/obj/item/weldingtool/fueled/big,
 	)
 	variants = list(
 		"atmospheric" = list(
@@ -389,6 +391,7 @@
 		/obj/item/pipe_dispenser,
 		/obj/item/storage/bag/construction,
 		/obj/item/t_scanner,
+		/obj/item/weldingtool/fueled/big,
 	)
 	variants = list(
 		"advanced" = list(

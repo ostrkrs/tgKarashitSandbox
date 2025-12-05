@@ -74,7 +74,7 @@
 	name = "Flamethrower (Lethal/Highly Destructive)"
 	id = "flamethrower"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron =SMALL_MATERIAL_AMOUNT*5)
+	materials = list(/datum/material/iron =SHEET_MATERIAL_AMOUNT*5)
 	build_path = /obj/item/flamethrower/full
 	category = list(
 		RND_CATEGORY_HACKED,

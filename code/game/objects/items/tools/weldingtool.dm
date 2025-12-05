@@ -28,6 +28,7 @@
 	var/welding = FALSE
 	/// Used in process(), dictates whether or not we're calling STOP_PROCESSING whilst we're not welding.
 	var/can_off_process = FALSE
+	var/force_when_on = 15
 	var/emits_light = TRUE
 	var/activation_sound
 	var/deactivation_sound
@@ -172,7 +173,7 @@
 
 /obj/item/weldingtool/fueled/process(seconds_per_tick)
 	if(welding)
-		force = 15
+		force = force_when_on
 		damtype = BURN
 		burned_fuel_for += seconds_per_tick
 		if(need_oxygen && !check_oxydizer(src.loc))
@@ -183,7 +184,7 @@
 
 	//Welders left on now use up fuel, but lets not have them run out quite that fast
 	else
-		force = 3
+		force = force
 		damtype = BRUTE
 		update_appearance()
 		if(!can_off_process)
@@ -324,7 +325,7 @@
 	if(welding)
 		if(inserted_tank.get_fuel() >= 1)
 			playsound(loc, activation_sound, 50, TRUE)
-			force = 15
+			force = force_when_on
 			damtype = BURN
 			hitsound = 'sound/items/tools/welder.ogg'
 			update_appearance()
@@ -439,10 +440,14 @@
 /// Mostly used for flamethrower crafting
 /obj/item/weldingtool/fueled/big
 	name = "industrial welding torch"
-	desc = "An industrial-grade fueled welder, trades all compactness for unparalleled welding speed."
+	desc = "A heavy, industrial-grade fueled welder, trades all compactness for unparalleled welding speed."
+	icon = 'icons/obj/bigwelder.dmi'
 	icon_state = "bigwelder"
 	inhand_icon_state = "bigwelder"
-	custom_materials = list(/datum/material/iron=SMALL_MATERIAL_AMOUNT*2.8, /datum/material/glass=SMALL_MATERIAL_AMOUNT*1.2)
+	force_when_on = 20
+	force = 5
+	throwforce = 7
+	custom_materials = list(/datum/material/iron=SHEET_MATERIAL_AMOUNT*4, /datum/material/glass=SHEET_MATERIAL_AMOUNT*1)
 	change_icons = FALSE
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
@@ -629,7 +634,7 @@
 	set_welding(!welding)
 	if(welding)
 		if(inserted_cell.charge >= power_use_amount)
-			force = 15
+			force = force_when_on
 			damtype = BURN
 			hitsound = 'sound/items/tools/welder2.ogg'
 			update_appearance()
@@ -642,12 +647,12 @@
 
 /obj/item/weldingtool/electric/process()
 	if(welding)
-		force = 15
+		force = force_when_on
 		damtype = BURN
 		update_appearance()
 
 	else
-		force = 3
+		force = force
 		damtype = BRUTE
 		update_appearance()
 		if(!can_off_process)
