@@ -9,7 +9,7 @@ on:
       - labeled
       - closed
     branches:
-      - main
+      - master
 
 concurrency:
   group: "discord-discussions-${{ github.head_ref }}"

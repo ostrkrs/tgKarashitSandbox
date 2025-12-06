@@ -1,17 +1,13 @@
 name: CI Suite
 
 on:
-  push:
-    branches:
-      - main
-      - "project/**"
   pull_request:
     branches:
-      - main
+      - master
       - "project/**"
   merge_group:
     branches:
-      - main
+      - master
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -73,7 +69,7 @@ jobs:
     name: Compare Screenshot Tests
     uses: ./.github/workflows/compare_screenshots.yml
 
-  completion_gate: # Serves as a non-moving target for branch rulesets.
+  completion_gate: # Serves as a non-moving target for branch rulesets
     if: always() && !cancelled()
     name: Completion Gate
     needs:
