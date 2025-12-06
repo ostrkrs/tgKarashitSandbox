@@ -35,15 +35,6 @@ jobs:
           sudo dpkg --add-architecture i386
           sudo apt-get update
           sudo apt-get install zlib1g-dev:i386
-
-      - name: Fix permissions
-        run: |
-          echo "🔧 Исправляю права доступа..."
-          chmod +x tools/build/build.sh 2>/dev/null || true
-          chmod +x tools/bootstrap/python 2>/dev/null || true
-          chmod +x tools/*.sh 2>/dev/null || true
-          chmod +x tools/**/*.sh 2>/dev/null || true
-
       - name: Restore BYOND from Cache
         uses: ./.github/actions/restore_or_install_byond
         with:
