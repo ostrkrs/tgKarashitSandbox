@@ -1076,6 +1076,9 @@
 		return FALSE
 	return head_covered || HAS_TRAIT(src, TRAIT_HEAD_ATMOS_SEALED)
 
+/mob/living/carbon/human/species/vat_grown
+	race = /datum/species/vat_grown_human
+
 /mob/living/carbon/human/species/abductor
 	race = /datum/species/abductor
 
